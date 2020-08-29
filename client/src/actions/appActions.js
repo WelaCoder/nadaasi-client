@@ -21,7 +21,9 @@ import {
   LOAD_SHIPPING,
   SET_SEARCH,
 } from "./types";
+
 import { toast } from "react-toastify";
+import { API } from "../constants/constants";
 export const addProduct = (data) => async (dispatch) => {
   try {
     dispatch({
@@ -32,7 +34,7 @@ export const addProduct = (data) => async (dispatch) => {
       console.log(pair[0] + ", " + pair[1]);
     }
     console.log("add product");
-    const res = await axios.post("/api/product", data);
+    const res = await axios.post(`${API}/api/product`, data);
     dispatch({
       type: SET_ADDING_PRODUCT,
       payload: false,
@@ -50,7 +52,7 @@ export const getProducts = () => async (dispatch) => {
       type: SET_LOADING,
       payload: true,
     });
-    const res = await axios.get("/api/product");
+    const res = await axios.get(`${API}/api/product`);
     console.log(res.data.products);
     dispatch({
       type: GET_PRODUCTS,
@@ -138,7 +140,7 @@ export const addToCart = (choosenProduct) => async (dispatch) => {
       }
     }
 
-    const res = await axios.post("/api/cart", choosenProduct, {
+    const res = await axios.post(`${API}/api/cart`, choosenProduct, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -154,7 +156,7 @@ export const addToCart = (choosenProduct) => async (dispatch) => {
 
 export const loadCart = () => async (dispatch) => {
   try {
-    const res = await axios.get("/api/cart");
+    const res = await axios.get(`${API}/api/cart`);
 
     dispatch({
       type: LOAD_CART,
@@ -169,7 +171,7 @@ export const updateCount = (cartId, count) => async (dispatch) => {
   try {
     console.log(cartId);
     const res = await axios.post(
-      "/api/cart/" + cartId + "/updateQuantity",
+      `${API}/api/cart/` + cartId + "/updateQuantity",
       { quantity: count },
       {
         headers: {
@@ -189,7 +191,7 @@ export const updateCount = (cartId, count) => async (dispatch) => {
 
 export const deleteItemFromCart = (id) => async (dispatch) => {
   try {
-    const res = await axios.delete("/api/cart/" + id);
+    const res = await axios.delete(`${API}/api/cart/` + id);
 
     dispatch({
       type: DELETE_ITEM_FROM_CART,
@@ -259,7 +261,7 @@ export const setCurrentPage = (page) => async (dispatch) => {
 };
 export const loadShipping = () => async (dispatch) => {
   try {
-    const res = await axios.get("/api/shipping");
+    const res = await axios.get(`${API}/api/shipping`);
 
     dispatch({
       type: LOAD_SHIPPING,

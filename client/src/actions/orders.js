@@ -9,14 +9,15 @@ import {
 import axios from "axios";
 import { toast } from "react-toastify";
 import setAuthToken from "../utils/setAuthToken";
+import { API } from "../constants/constants";
 export const loadOrders = () => async (dispatch) => {
   try {
-    let res = await axios.get(`/api/order/`);
+    let res = await axios.get(`${API}/api/order/`);
     dispatch({
       type: LOAD_ORDERS,
       payload: res.data.orders,
     });
-    res = await axios.get("/api/user");
+    res = await axios.get(`${API}/api/user`);
     dispatch({
       type: LOAD_USER,
       payload: res.data,
@@ -31,7 +32,7 @@ export const setCurrentOrder = (orderId) => async (dispatch) => {
     console.log("getting order");
     console.log(orderId);
     setAuthToken(localStorage.token);
-    const res = await axios.get(`/api/order/${orderId}`);
+    const res = await axios.get(`${API}/api/order/${orderId}`);
     dispatch({
       type: SET_CURRENT_ORDER,
       payload: res.data.order,
@@ -47,7 +48,7 @@ export const rateProduct = (orderId, productId, review) => async (dispatch) => {
     setAuthToken(localStorage.token);
     console.log(orderId);
     const res = await axios.post(
-      `/api/order/${orderId}/rateProduct/${productId}`,
+      `${API}/api/order/${orderId}/rateProduct/${productId}`,
       review,
       {
         headers: {

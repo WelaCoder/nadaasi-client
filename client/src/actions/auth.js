@@ -10,13 +10,14 @@ import {
 import setAuthToken from "../utils/setAuthToken";
 import { loadOrders } from "./orders";
 import { loadCart, loadShipping } from "./appActions";
+import { API } from "../constants/constants";
 // LoadUser
 export const LoadUser = () => async (dispatch) => {
   if (localStorage.token) {
     setAuthToken(localStorage.token);
   }
   try {
-    let res = await axios.get("/api/user");
+    let res = await axios.get(`${API}/api/user`);
     dispatch({
       type: LOAD_USER,
       payload: res.data,
@@ -54,7 +55,7 @@ export const signUp = ({
       email,
       password,
     });
-    const res = await axios.post("/api/user/signup", body, config);
+    const res = await axios.post(`${API}/api/user/signup`, body, config);
     dispatch({
       type: AUTH_CUSTOMER_SUCCESS,
       payload: res.data,
@@ -76,7 +77,7 @@ export const login = ({ email, password }) => async (dispatch) => {
       },
     };
     const body = JSON.stringify({ email, password });
-    const res = await axios.post("/api/user/login", body, config);
+    const res = await axios.post(`${API}/api/user/login`, body, config);
 
     dispatch({
       type: AUTH_CUSTOMER_SUCCESS,

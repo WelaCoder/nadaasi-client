@@ -7,6 +7,7 @@ import {
   UPDATE_COUPON,
   APPLY_COUPON,
 } from "./types";
+import { API } from "../constants/constants";
 //create coupon
 
 export const createCoupon = ({ name, code, value, isActive }) => async (
@@ -20,7 +21,7 @@ export const createCoupon = ({ name, code, value, isActive }) => async (
     };
 
     const body = JSON.stringify({ name, code, value, isActive });
-    const res = await axios.post("/api/coupon", body, config);
+    const res = await axios.post(`${API}/api/coupon`, body, config);
     dispatch({
       type: CREATE_COUPON,
       payload: res.data,
@@ -35,7 +36,7 @@ export const createCoupon = ({ name, code, value, isActive }) => async (
 // update Coupon
 export const updateCoupon = (id, status) => async (dispatch) => {
   try {
-    const res = await axios.patch(`/api/coupon/${id}`, status);
+    const res = await axios.patch(`${API}/api/coupon/${id}`, status);
     dispatch({
       type: UPDATE_COUPON,
       payload: res.data,
@@ -50,7 +51,7 @@ export const updateCoupon = (id, status) => async (dispatch) => {
 //get all coupon
 export const getAllCoupons = () => async (dispatch) => {
   try {
-    const res = await axios.get("/api/coupon");
+    const res = await axios.get(`${API}/api/coupon`);
     dispatch({
       type: GET_ALL_COUPON,
       payload: res.data,
@@ -72,7 +73,11 @@ export const applyCoupon = (code) => async (dispatch) => {
     };
 
     // const body = JSON.stringify({ name, code, value, isActive });
-    const res = await axios.post("/api/voucher/applyCoupon", { code }, config);
+    const res = await axios.post(
+      `${API}/api/voucher/applyCoupon`,
+      { code },
+      config
+    );
     dispatch({
       type: APPLY_COUPON,
       payload: res.data,
