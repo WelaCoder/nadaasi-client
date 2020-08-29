@@ -14,7 +14,7 @@ export const createSession = (order, user) => async (dispatch) => {
       payload: res.data,
     });
     if (res.data.success) {
-      window.open(`http://${API}/api/payment/` + user._id);
+      window.open(`${API}/api/payment/` + user._id);
     }
     // await axios.post('/payment',{html: res.data.session.html_snippet},config)
   } catch (error) {

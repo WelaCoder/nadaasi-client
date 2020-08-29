@@ -1,3 +1,3 @@
 // pagination
-export const API = "http://nadassi-api.herokuapp.com";
+export const API = "https://nadassi-api.herokuapp.com";
 // TESTIMONIALS
