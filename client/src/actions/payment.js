@@ -1,5 +1,6 @@
 import { CREATE_PAYMENT_SESSION } from "./types";
 import axios from "axios";
+import { API } from "../constants/constants";
 export const createSession = (order, user) => async (dispatch) => {
   try {
     const config = {
@@ -13,7 +14,7 @@ export const createSession = (order, user) => async (dispatch) => {
       payload: res.data,
     });
     if (res.data.success) {
-      window.open("http://localhost:5000/api/payment/" + user._id);
+      window.open(`http://${API}/api/payment/` + user._id);
     }
     // await axios.post('/payment',{html: res.data.session.html_snippet},config)
   } catch (error) {
