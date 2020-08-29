@@ -62,23 +62,6 @@ const Orders = ({ currentOrder, setCurrentOrder }) => {
                   <span>{o.details.price}</span>
                 </h6>
               </div>
-              <div class="font-Futura-medium  ml-0-mb d-flex  justify-content-between">
-                <h6 class=" mb-0">
-                  <span class="mr-1">VAT: </span>
-                  <span>
-                    {Number(o.quantity) * Number(o.details.price) * (24 / 100)}
-                  </span>
-                </h6>
-              </div>
-              <div class="font-Futura-medium  ml-0-mb d-flex  justify-content-between">
-                <h6 class="font-weight-bold mb-0">
-                  <span class="mr-1">SUBTOTAL: </span>
-                  <span>
-                    {Number(o.quantity) * Number(o.details.price) +
-                      Number(o.quantity) * Number(o.details.price) * (24 / 100)}
-                  </span>
-                </h6>
-              </div>
             </div>
           </div>
         ))

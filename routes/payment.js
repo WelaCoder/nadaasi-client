@@ -110,7 +110,7 @@ router.post("/", auth, async (req, res) => {
           return c;
         }),
         orderId: order.order_id,
-        amount: totalAmount / 100,
+        amount: (totalAmount - discountAmount) / 100,
         email: req.body.email,
         country: req.body.country,
         postalCode: req.body.postalCode,

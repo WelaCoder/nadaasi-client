@@ -55,12 +55,7 @@ const OrderShow = ({ user }) => {
                       {currentOrder && currentOrder.orderId}
                     </div>
                   </div>
-                  <div class="row mb-3">
-                    <div class="col-md-6 p-0">TOTAL</div>
-                    <div class="col-md-6 p-0">
-                      $ {currentOrder && currentOrder.amount}
-                    </div>
-                  </div>
+
                   <div class="row mb-3">
                     <div class="col-md-6 p-0">STATUS</div>
                     <div class="col-md-6 p-0">
@@ -71,6 +66,26 @@ const OrderShow = ({ user }) => {
                     <div class="col-md-6 p-0">COUNTRY</div>
                     <div class="col-md-6 p-0">
                       {currentOrder && currentOrder.country.name}
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-md-6 p-0">SHIPPING</div>
+                    <div class="col-md-6 p-0">
+                      {currentOrder && currentOrder.shipping == "standard"
+                        ? "Standard"
+                        : "Fast"}
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-md-6 p-0">DISCOUNT</div>
+                    <div class="col-md-6 p-0">
+                      €{currentOrder && currentOrder.discount}
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-md-6 p-0">TOTAL(tax incl)</div>
+                    <div class="col-md-6 p-0">
+                      € {currentOrder && currentOrder.amount}
                     </div>
                   </div>
                   <div class="row mb-3">
