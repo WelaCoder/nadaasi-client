@@ -1,0 +1,59 @@
+#addColorBtn,
+#findStyleBtn {
+  background-color: #ffffff !important;
+}
+#orderContainer {
+  margin-bottom: 400px !important;
+}
+.order-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px !important;
+}
+#paginationLink:hover {
+  color: black !important;
+}
+.my-node-enter {
+  opacity: 0;
+}
+.my-node-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.my-node-exit {
+  opacity: 1;
+}
+.my-node-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+.item-enter {
+  opacity: 0;
+}
+.item-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.item-exit {
+  opacity: 1;
+}
+.item-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}
+#relevantProduct {
+  cursor: pointer;
+  color: black !important;
+}
+#reviewsHr {
+  background-color: black;
+  height: 2px;
+  width: 50%;
+  margin-left: 1.5rem !important;
+}
+.modal-dialog {
+  max-width: 500px !important;
+  margin: 1.75rem auto !important;
+}
