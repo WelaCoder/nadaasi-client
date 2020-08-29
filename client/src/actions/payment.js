@@ -8,7 +8,7 @@ export const createSession = (order, user) => async (dispatch) => {
         "Content-Type": "application/json",
       },
     };
-    const res = await axios.post("/api/payment", order, config);
+    const res = await axios.post(`${API}/api/payment`, order, config);
     dispatch({
       type: CREATE_PAYMENT_SESSION,
       payload: res.data,
