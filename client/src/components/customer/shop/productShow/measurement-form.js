@@ -30,7 +30,7 @@ const MeasurementForm = ({ choosenProduct, setChoosenProduct }) => {
               type="text"
               className="form-control text-white bg-transparent border-top-0 border-left-0 border-right-0"
               onChange={(e) =>
-                setChoosenProduct({ size: null, overBust: e.target.value })
+                setChoosenProduct({ size: "Custom", overBust: e.target.value })
               }
               value={choosenProduct?.overBust}
             />
@@ -45,7 +45,7 @@ const MeasurementForm = ({ choosenProduct, setChoosenProduct }) => {
             <input
               type="text"
               onChange={(e) =>
-                setChoosenProduct({ size: null, bust: e.target.value })
+                setChoosenProduct({ size: "Custom", bust: e.target.value })
               }
               value={choosenProduct?.bust}
               className="form-control text-white bg-transparent border-top-0 border-left-0 border-right-0"
@@ -61,7 +61,7 @@ const MeasurementForm = ({ choosenProduct, setChoosenProduct }) => {
             <input
               type="text"
               onChange={(e) =>
-                setChoosenProduct({ size: null, underBust: e.target.value })
+                setChoosenProduct({ size: "Custom", underBust: e.target.value })
               }
               value={choosenProduct?.underBust}
               className="form-control text-white bg-transparent border-top-0 border-left-0 border-right-0"
@@ -76,7 +76,7 @@ const MeasurementForm = ({ choosenProduct, setChoosenProduct }) => {
           <div className="form-group ml-3 mb-0">
             <input
               onChange={(e) =>
-                setChoosenProduct({ size: null, waist: e.target.value })
+                setChoosenProduct({ size: "Custom", waist: e.target.value })
               }
               value={choosenProduct?.waist}
               type="text"
@@ -92,7 +92,7 @@ const MeasurementForm = ({ choosenProduct, setChoosenProduct }) => {
           <div className="form-group ml-3 mb-0">
             <input
               onChange={(e) =>
-                setChoosenProduct({ size: null, hips: e.target.value })
+                setChoosenProduct({ size: "Custom", hips: e.target.value })
               }
               value={choosenProduct?.hips}
               type="text"
@@ -109,7 +109,10 @@ const MeasurementForm = ({ choosenProduct, setChoosenProduct }) => {
             <input
               type="text"
               onChange={(e) =>
-                setChoosenProduct({ size: null, neckToHeel: e.target.value })
+                setChoosenProduct({
+                  size: "Custom",
+                  neckToHeel: e.target.value,
+                })
               }
               value={choosenProduct?.neckToHeel}
               className="form-control text-white bg-transparent border-top-0 border-left-0 border-right-0"
@@ -126,7 +129,7 @@ const MeasurementForm = ({ choosenProduct, setChoosenProduct }) => {
               type="text"
               onChange={(e) =>
                 setChoosenProduct({
-                  size: null,
+                  size: "Custom",
                   neckToAboveHeel: e.target.value,
                 })
               }
@@ -145,7 +148,7 @@ const MeasurementForm = ({ choosenProduct, setChoosenProduct }) => {
               type="text"
               onChange={(e) =>
                 setChoosenProduct({
-                  size: null,
+                  size: "Custom",
                   aboveKneeToAnkle: e.target.value,
                 })
               }
@@ -162,7 +165,7 @@ const MeasurementForm = ({ choosenProduct, setChoosenProduct }) => {
           <div className="form-group ml-3 mb-0">
             <input
               onChange={(e) =>
-                setChoosenProduct({ size: null, armLength: e.target.value })
+                setChoosenProduct({ size: "Custom", armLength: e.target.value })
               }
               value={choosenProduct?.armLength}
               type="text"
@@ -178,7 +181,10 @@ const MeasurementForm = ({ choosenProduct, setChoosenProduct }) => {
           <div className="form-group ml-3 mb-0">
             <input
               onChange={(e) =>
-                setChoosenProduct({ size: null, shoulderSeam: e.target.value })
+                setChoosenProduct({
+                  size: "Custom",
+                  shoulderSeam: e.target.value,
+                })
               }
               value={choosenProduct?.shoulderSeam}
               type="text"
@@ -194,7 +200,7 @@ const MeasurementForm = ({ choosenProduct, setChoosenProduct }) => {
           <div className="form-group ml-3 mb-0">
             <input
               onChange={(e) =>
-                setChoosenProduct({ size: null, armHole: e.target.value })
+                setChoosenProduct({ size: "Custom", armHole: e.target.value })
               }
               value={choosenProduct?.armHole}
               type="text"
@@ -210,7 +216,7 @@ const MeasurementForm = ({ choosenProduct, setChoosenProduct }) => {
           <div className="form-group ml-3 mb-0">
             <input
               onChange={(e) =>
-                setChoosenProduct({ size: null, bicep: e.target.value })
+                setChoosenProduct({ size: "Custom", bicep: e.target.value })
               }
               value={choosenProduct?.bicep}
               type="text"
@@ -226,7 +232,7 @@ const MeasurementForm = ({ choosenProduct, setChoosenProduct }) => {
           <div className="form-group ml-3 mb-0">
             <input
               onChange={(e) =>
-                setChoosenProduct({ size: null, foreArm: e.target.value })
+                setChoosenProduct({ size: "Custom", foreArm: e.target.value })
               }
               value={choosenProduct?.foreArm}
               type="text"
@@ -242,7 +248,7 @@ const MeasurementForm = ({ choosenProduct, setChoosenProduct }) => {
           <div className="form-group ml-3 mb-0">
             <input
               onChange={(e) =>
-                setChoosenProduct({ size: null, wrist: e.target.value })
+                setChoosenProduct({ size: "Custom", wrist: e.target.value })
               }
               value={choosenProduct?.wrist}
               type="text"
@@ -259,7 +265,7 @@ const MeasurementForm = ({ choosenProduct, setChoosenProduct }) => {
             <input
               type="text"
               onChange={(e) =>
-                setChoosenProduct({ size: null, vNeckCut: e.target.value })
+                setChoosenProduct({ size: "Custom", vNeckCut: e.target.value })
               }
               value={choosenProduct?.vNeckCut}
               className="form-control text-white bg-transparent border-top-0 border-left-0 border-right-0"
@@ -276,7 +282,7 @@ const MeasurementForm = ({ choosenProduct, setChoosenProduct }) => {
               type="text"
               onChange={(e) =>
                 setChoosenProduct({
-                  size: null,
+                  size: "Custom",
                   shoulderToWaist: e.target.value,
                 })
               }
@@ -295,7 +301,7 @@ const MeasurementForm = ({ choosenProduct, setChoosenProduct }) => {
               type="text"
               onChange={(e) =>
                 setChoosenProduct({
-                  size: null,
+                  size: "Custom",
                   waistToAboveKnee: e.target.value,
                 })
               }
@@ -313,7 +319,7 @@ const MeasurementForm = ({ choosenProduct, setChoosenProduct }) => {
             <input
               type="text"
               onChange={(e) =>
-                setChoosenProduct({ size: null, hip: e.target.value })
+                setChoosenProduct({ size: "Custom", hip: e.target.value })
               }
               value={choosenProduct?.hip}
               className="form-control text-white bg-transparent border-top-0 border-left-0 border-right-0"
