@@ -6,7 +6,7 @@ const connectDB = require("./config/db");
 
 const PORT = process.env.PORT || 5000;
 
-connectDB();
+// connectDB();
 // app.get("/uploads/:file", (req, res) => {
 //   res.sendFile(__dirname + "/client/public/uploads/" + req.params.file);
 // });
