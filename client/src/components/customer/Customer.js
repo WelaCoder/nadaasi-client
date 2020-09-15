@@ -26,6 +26,11 @@ import CustomerRoute from "../../utils/CustomerRoute";
 import Profile from "./profile/Profile";
 import OrderShow from "./profile/OrderShow/OrderShow";
 import BonusPage from "./bonus/BonusPage";
+import RefundPolicy from "./pages/RefundPolicy";
+import SecurePayment from "./pages/SecurePayment";
+import Policy from './pages/Policy';
+import MerchartsReturn from './merchantsreturn/MerchantsReturn';
+import SizeChart from "./pages/SizeChart";
 const Customer = ({
   toastMessage,
   loadCart,
@@ -76,6 +81,11 @@ const Customer = ({
         <Route exact path="/user/sign-in" component={Login} />
         <Route exact path="/user/sign-up" component={SignUp} />
         <Route exact path="/shop-item/:id" component={ProductShow} />
+        <Route exact path="/refundpolicy" component={RefundPolicy} />
+        <Route exact path="/securepayment" component={SecurePayment} />
+        <Route exact path="/sizechart" component={SizeChart} />
+        <Route exact path="/merchantreturn" component={MerchartsReturn} />
+        <Route exact path="/policy" component={Policy} />
         <Route path="*" component={() => <Redirect to="/" />} />
       </Switch>
       <Footer />

@@ -26,11 +26,11 @@ export const LoadUser = () => async (dispatch) => {
     dispatch(loadCart());
     dispatch(loadShipping());
   } catch (error) {
-    console.log(error.response.data.msg);
+
     // toast.error(error.response.data.msg, { autoClose: "1500" });
     dispatch({
       type: AUTH_CUSTOMER_FAILURE,
-      payload: error.response.data.msg,
+      payload: error,
     });
   }
 };
@@ -64,7 +64,7 @@ export const signUp = ({
   } catch (error) {
     dispatch({
       type: AUTH_CUSTOMER_FAILURE,
-      payload: error.response.data.msg,
+      payload: error,
     });
   }
 };
@@ -85,10 +85,10 @@ export const login = ({ email, password }) => async (dispatch) => {
     });
     dispatch(LoadUser());
   } catch (error) {
-    toast.error(error.response.data.msg, { autoClose: "1500" });
+    toast.error("Failed to Login", { autoClose: "1500" });
     dispatch({
       type: AUTH_CUSTOMER_FAILURE,
-      payload: error.response.data.msg,
+      payload: error,
     });
   }
 };

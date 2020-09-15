@@ -1,13 +1,13 @@
 import React from "react";
-import { ContactCardsList } from "./contact-card-list";
-import  ContactForm  from "./contact-form";
-import { ContactInfo } from "./contact-info";
-import { ContactBanner } from "./contact-banner";
+import { ContactCardsList } from "../contact/contact-card-list";
+import  MerchantsReturnForm from "./MerchartReturnForm"
+import { ContactInfo } from "./ContactInfo";
+import { MerchartReturnBanner } from "./MerchantReturnBanner";
 import { Container } from "react-bootstrap";
 
-const ContactPage = () => (
+const MerchartsReturn = () => (
   <div className="bg-white">
-    <ContactBanner heading="Contact Us" subheading="Working Service 24/7" />
+    <MerchartReturnBanner heading="Merchants Return" subheading="Working Service 24/7" />
     <Container>
       <div className="col-md-9 mx-auto mt-10 mb-2">
         <div className="row contact-row">
@@ -15,7 +15,7 @@ const ContactPage = () => (
             <ContactInfo />
           </div>
           <div className=" ml-2 contact px-0 col">
-            <ContactForm />
+            <MerchantsReturnForm />
           </div>
         </div>
         <ContactCardsList />
@@ -24,4 +24,4 @@ const ContactPage = () => (
   </div>
 );
 
-export default ContactPage;
+export default MerchartsReturn;

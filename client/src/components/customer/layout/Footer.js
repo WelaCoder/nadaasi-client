@@ -33,16 +33,16 @@ const Footer = () => (
     <div className="footer-info">
       <h2>Information</h2>
       <p>
-        <a href="/">Secure Payment</a>
+        <Link to="/securepayment">Secure Payment</Link>
       </p>
       <p>
-        <a href="/">Size Chart</a>
+        <Link to="/sizechart">Size Chart</Link>
       </p>
       <p>
-        <a href="/">Privacy Policy</a>
+        <Link to="/policy">Privacy Policy</Link>
       </p>
       <p>
-        <a href="/">Refund Policy</a>
+        <Link to="/refundpolicy">Refund Policy</Link>
       </p>
     </div>
     <div className="footer-personal w-100">
@@ -54,7 +54,7 @@ const Footer = () => (
         </Link>
       </p>
       <p>
-        <Link to="/user" className="card-link">
+        <Link to="/merchantreturn" className="card-link">
           Merchandise Returns
         </Link>
       </p>

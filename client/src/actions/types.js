@@ -51,3 +51,9 @@ export const USE_BALANCE = "USE_BALANCE";
 export const APPLY_COUPON = "APPLY_COUPON";
 export const LOAD_SHIPPING = "LOAD_SHIPPING";
 export const SET_SEARCH = "SET_SEARCH";
+// Return Request Admin
+export const GET_MARCHANT_RETURN_REQUEST = 'GET_MARCHANT_RETURN_REQUEST'
+export const CLEAR_RETURN_ISSUE = 'CLEAR_RETURN_ISSUE'
+// create reutrn request
+export const CREATE_REQUEST = 'CREATE_REQUEST'
+export const ERROR = 'ERROR'

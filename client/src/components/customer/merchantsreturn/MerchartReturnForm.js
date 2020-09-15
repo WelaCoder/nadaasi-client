@@ -3,19 +3,19 @@ import React, { useState } from "react";
 // import { toast } from "react-toastify";
 // import { toastConfig } from "../../../config/toastConfig";
 import { connect } from "react-redux";
-import { createFeedback} from '../../../actions/feedback';
-import { set } from "mongoose";
+import { returnMerchant} from '../../../actions/return';
+// import { set } from "mongoose";
 
-const ContactForm = ({createFeedback}) => {
+const MerchartsReturnForm = ({returnMerchant}) => {
   // const { register, handleSubmit, reset } = useForm();
   const [ isLoading, setIsLoading ] = useState(false);
   const [ formdata, setformdata ] = useState({
     name: '',
-    subject: '',
+    orderId: '',
     email: '',
-    message: '',
+    problem: '',
   })
-  const { name, subject, email, message } = formdata;
+  const { name, orderId , email, problem } = formdata;
 
   const onChange = e => {
     setformdata({ 
@@ -27,7 +27,7 @@ const ContactForm = ({createFeedback}) => {
     e.preventDefault();
   
     setIsLoading(true)
-    createFeedback({ name, subject, email, message })
+    returnMerchant({ name, orderId, email ,problem })
     setTimeout(() => {
       setIsLoading(false)
     }, 700);
@@ -55,10 +55,10 @@ const ContactForm = ({createFeedback}) => {
         <input
           type="text"
           className="form-control shadow-contact border-0 input-contact  "
-          placeholder="Subject *"
+          placeholder="Order_Id *"
           required
-          name="subject"
-          value={ subject }
+          name="orderId"
+          value={ orderId }
           onChange={onChange}
           // ref={register}
         />
@@ -78,11 +78,11 @@ const ContactForm = ({createFeedback}) => {
       <div className="form-group">
         <textarea
           className="form-control shadow-contact border-0 input-contact"
-          placeholder="Message"
+          placeholder="Problem *"
           rows="4"
           required
-          name="message"
-          value={ message }
+          name="problem"
+          value={ problem }
           onChange={onChange}
           // ref={register}
         ></textarea>
@@ -104,4 +104,4 @@ const ContactForm = ({createFeedback}) => {
   );
 };
 
-export default connect(null , {createFeedback})(ContactForm);
+export default connect(null , {returnMerchant})(MerchartsReturnForm);
