@@ -1,71 +1,175 @@
-/*! CSS Used from: https://www.nadaasi.fi/themes/PRS01/assets/css/theme.css ; media=all */
+/* ! CSS Used from: https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css
+*,::after,::before{box-sizing:border-box;}
+section{display:block;}
+h2{margin-top:0;margin-bottom:.5rem;}
+p{margin-top:0;margin-bottom:1rem;}
+ol{margin-top:0;margin-bottom:1rem;}
+table{border-collapse:collapse;}
+h2{margin-bottom:.5rem;font-weight:500;line-height:1.2;}
+h2{font-size:2rem;}
+.col-md-6,.col-sm-12{position:relative;width:100%;padding-right:15px;padding-left:15px;}
+@media (min-width:576px){
+.col-sm-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;}
+}
+@media (min-width:768px){
+.col-md-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%;}
+}
+@media print{
+*,::after,::before{text-shadow:none!important;box-shadow:none!important;}
+thead{display:table-header-group;}
+tr{page-break-inside:avoid;}
+h2,p{orphans:3;widows:3;}
+h2{page-break-after:avoid;}
+} */
+/*! CSS Used from: http://localhost:3000/styles/index.css */
+p{margin-bottom:0.85rem;}
+/*! CSS Used from: Embedded */
+p{margin-bottom:0.85rem;}
+/*! CSS Used from: Embedded */
 @media all{
-    footer,header,section{display:block;}
-    h1{font-size:2em;margin:0.67em 0;}
-    @media print{
-    *,*::before,*::after,*::first-letter,*::first-line{text-shadow:none!important;box-shadow:none!important;-moz-box-shadow:none!important;-webkit-box-shadow:none!important;}
-    thead{display:table-header-group;}
-    tr{page-break-inside:avoid;}
-    p,h2{orphans:3;widows:3;}
-    h2{page-break-after:avoid;}
-    }
-    *,*::before,*::after{box-sizing:inherit;}
-    h1,h2{margin-top:0;margin-bottom:.5rem;}
-    p{margin-top:0;margin-bottom:1rem;}
-    ol{margin-top:0;margin-bottom:1rem;}
-    table{border-collapse:collapse;background-color:transparent;}
-    h1,h2{margin-bottom:0.5rem;font-family:inherit;font-weight:700;line-height:1.1;color:inherit;}
-    h1{font-size:1.375rem;}
-    h2{font-size:1.25rem;}
-    .container{margin-left:auto;margin-right:auto;padding-left:10px;padding-right:10px;}
-    @media (min-width: 992px){
-    .container{padding:0;}
-    }
-    .container::after{content:"";display:table;clear:both;}
-    @media (min-width: 544px){
-    .container{max-width:576px;}
-    }
-    @media (min-width: 768px){
-    .container{max-width:720px;}
-    }
-    @media (min-width: 992px){
-    .container{max-width:940px;}
-    }
-    @media (min-width: 1200px){
-    .container{max-width:1180px;}
-    }
-    .col-sm-12,.col-md-6{position:relative;min-height:1px;padding-right:10px;padding-left:10px;}
-    @media (min-width: 544px){
-    .col-sm-12{float:left;width:100%;}
-    }
-    @media (min-width: 768px){
-    .col-md-6{float:left;width:50%;}
-    }
-    p{font-size:16px;color:#777777;font-weight:400;}
-    .page-content.page-cms{padding:0;text-align:justify;}
-    #content-wrapper > section#main{float:left;width:100%;}
-    #main .page-header{margin-bottom:1.5625rem;}
-    #main .page-content{margin-bottom:1.5625rem;text-align:left;}
-    #main .page-footer{margin-bottom:20px;float:left;width:100%;}
-    @media (max-width: 991px){
-    .container{max-width:740px;}
-    }
-    #content{float:left !important;width:100%!important;text-align:center!important}
-    .tt-innerpagetitle{color:#777777;font-size:22px;font-weight:500;line-height:24px;margin:0 auto 25px;padding:0;position:relative;text-align:left;text-transform:capitalize;}
-    @media (max-width: 767px){
-    .container{max-width:100%;}
-    }
-    }
-    /*! CSS Used from: https://www.nadaasi.fi/themes/PRS01/assets/css/custom.css ; media=all */
-    @media all{
-    .size-info-table-eu,.size-info-table{width:100%;margin-bottom:40px;}
-    .size-info-table-eu td{padding:10px;border:1px solid #e4e4e4;text-align:center;}
-    .size-info-table-eu thead td{font-weight:700;}
-    .size-info-table td{padding:10px;border:1px solid #e4e4e4;border-width:0px 1px 1px 0px;}
-    .size-info-table thead td{text-align:center;font-weight:700;}
-    .size-info-table tbody tr td:first-child{font-weight:700;}
-    .page-header{display:none;}
-    @media (max-width: 767px){
-    .size-info-table td{padding:4px!important;}
-    }
-    }
+section{display:block;}
+@media print{
+*,*::before,*::after,*::first-letter,*::first-line{text-shadow:none!important;box-shadow:none!important;-moz-box-shadow:none!important;-webkit-box-shadow:none!important;}
+p{orphans:3;widows:3;}
+}
+*,*::before,*::after{box-sizing:inherit;}
+p{margin-top:0;margin-bottom:1rem;}
+ol{margin-top:0;margin-bottom:1rem;}
+p{font-size:16px;color:#777777;font-weight:400;}
+.page-content.page-cms{padding:0;text-align:justify;}
+}
+@media all{
+@media print{
+*,*::before,*::after,*::first-letter,*::first-line{text-shadow:none!important;box-shadow:none!important;-moz-box-shadow:none!important;-webkit-box-shadow:none!important;}
+}
+*,*::before,*::after{box-sizing:inherit;}
+ol{margin-top:0!important;margin-bottom:1rem!important;}
+}
+/*! CSS Used from: Embedded */
+*,::after,::before{box-sizing:border-box;}
+section{display:block;}
+h2{margin-top:0;margin-bottom:.5rem;}
+p{margin-top:0;margin-bottom:1rem;}
+h2{margin-bottom:.5rem;font-weight:500;line-height:1.2;}
+h2{font-size:2rem;}
+@media print{
+*,::after,::before{text-shadow:none!important;box-shadow:none!important;}
+h2,p{orphans:3;widows:3;}
+h2{page-break-after:avoid;}
+}
+p{margin-bottom:0.85rem;}
+p{margin-bottom:0.85rem;}
+@media all{
+section{display:block;}
+@media print{
+*,*::before,*::after,*::first-letter,*::first-line{text-shadow:none!important;box-shadow:none!important;-moz-box-shadow:none!important;-webkit-box-shadow:none!important;}
+p{orphans:3;widows:3;}
+}
+*,*::before,*::after{box-sizing:inherit;}
+p{margin-top:0;margin-bottom:1rem;}
+p{font-size:16px;color:#777777;font-weight:400;}
+.page-content.page-cms{padding:0;text-align:justify;}
+}
+@media all{
+@media print{
+*,*::before,*::after,*::first-letter,*::first-line{text-shadow:none!important;box-shadow:none!important;-moz-box-shadow:none!important;-webkit-box-shadow:none!important;}
+}
+*,*::before,*::after{box-sizing:inherit;}
+}
+@media all{
+section{display:block;}
+@media print{
+*,*::before,*::after,*::first-letter,*::first-line{text-shadow:none!important;box-shadow:none!important;-moz-box-shadow:none!important;-webkit-box-shadow:none!important;}
+p,h2{orphans:3;widows:3;}
+h2{page-break-after:avoid;}
+}
+*,*::before,*::after{box-sizing:inherit;}
+h2{margin-top:0;margin-bottom:.5rem;}
+p{margin-top:0;margin-bottom:1rem;}
+h2{margin-bottom:0.5rem;font-family:inherit;font-weight:700;line-height:1.1;color:inherit;}
+h2{font-size:1.25rem;}
+p{font-size:16px;color:#777777;font-weight:400;}
+.page-content.page-cms{padding:0;text-align:justify;}
+}
+*,::after,::before{box-sizing:border-box;}
+section{display:block;}
+h2{margin-top:0;margin-bottom:.5rem;}
+p{margin-top:0;margin-bottom:1rem;}
+h2{margin-bottom:.5rem;font-weight:500;line-height:1.2;}
+h2{font-size:2rem;}
+@media print{
+*,::after,::before{text-shadow:none!important;box-shadow:none!important;}
+h2,p{orphans:3;widows:3;}
+h2{page-break-after:avoid;}
+}
+p{margin-bottom:0.85rem;}
+p{margin-bottom:0.85rem;}
+h2{margin-top:0;margin-bottom:.5rem;}
+p{margin-top:0;margin-bottom:1rem;}
+h2{margin-bottom:0.5rem;font-family:inherit;font-weight:700;line-height:1.1;color:inherit;}
+h2{font-size:1.25rem;}
+p{font-size:16px;color:#777777;font-weight:400;}
+*{padding:0;margin:0;}
+*{padding:0;margin:0;}
+*{padding:0;margin:0;}
+/*! CSS Used from: Embedded */
+*,::after,::before{box-sizing:border-box;}
+section{display:block;}
+h2{margin-top:0;margin-bottom:.5rem;}
+p{margin-top:0;margin-bottom:1rem;}
+h2{margin-bottom:.5rem;font-weight:500;line-height:1.2;}
+h2{font-size:2rem;}
+@media print{
+*,::after,::before{text-shadow:none!important;box-shadow:none!important;}
+h2,p{orphans:3;widows:3;}
+h2{page-break-after:avoid;}
+}
+p{margin-bottom:0.85rem;}
+p{margin-bottom:0.85rem;}
+h2{margin-top:0;margin-bottom:.5rem;}
+p{margin-top:0;margin-bottom:1rem;}
+h2{margin-bottom:0.5rem;font-family:inherit;font-weight:700;line-height:1.1;color:inherit;}
+h2{font-size:1.25rem;}
+p{font-size:16px;color:#777777;font-weight:400;}
+*{padding:0;margin:0;}
+*{padding:0;margin:0;}
+/*! CSS Used from: Embedded */
+@media all{
+section{display:block;}
+@media print{
+/* *,*::before,*::after,*::first-letter,*::first-line{text-shadow:none!important;box-shadow:none!important;-moz-box-shadow:none!important;-webkit-box-shadow:none!important;} */
+thead{display:table-header-group;}
+tr{page-break-inside:avoid;}
+p,h2{orphans:3;widows:3;}
+h2{page-break-after:avoid;}
+}
+/* *,*::before,*::after{box-sizing:inherit;} */
+h2{margin-top:0;margin-bottom:.5rem;}
+p{margin-top:0;margin-bottom:1rem;}
+ol{margin-top:0;margin-bottom:1rem;}
+table{border-collapse:collapse;background-color:transparent;}
+h2{margin-bottom:0.5rem;font-family:inherit;font-weight:700;line-height:1.1;color:inherit;}
+h2{font-size:1.25rem;}
+/* .col-sm-12,.col-md-6{position:relative;min-height:1px;padding-right:10px;padding-left:10px;}
+@media (min-width: 544px){
+.col-sm-12{float:left;width:100%;}
+}
+@media (min-width: 768px){
+.col-md-6{float:left;width:50%;}
+} */
+p{font-size:16px;color:#777777;font-weight:400;}
+.page-content.page-cms{padding:0;text-align:justify;}
+}
+@media all{
+.size-info-table-eu,.size-info-table{width:100%;margin-bottom:40px;}
+.size-info-table-eu td{padding:10px;border:1px solid #e4e4e4;text-align:center;}
+.size-info-table-eu thead td{font-weight:700;}
+.size-info-table td{padding:10px;border:1px solid #e4e4e4;border-width:0px 1px 1px 0px;}
+.size-info-table thead td{text-align:center;font-weight:700;}
+.size-info-table tbody tr td:first-child{font-weight:700;}
+@media (max-width: 767px){
+.size-info-table td{padding:4px!important;}
+}
+}
+/*! CSS Used from: Embedded */
+*{padding:0;margin:0;}

@@ -2,8 +2,8 @@ import React from 'react'
 import './SizeChart.css'
 const SizeChart = () => {
   return (
-    <div id='#main' className="container">
-      <section style={{marginTop: '50px'}} id="#content" class="page-content page-cms page-cms-9">
+    <div id='' className="container">
+      <section style={{ marginTop: '50px' }} id="" class="">
         <div class="col-sm-12 col-md-6">
           <h2>Detailed Guide</h2>
           <p>A detailed breakdown of our sizes</p>

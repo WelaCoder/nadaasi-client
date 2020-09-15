@@ -5,7 +5,7 @@ const Policy = () => {
   return (
     <div className="container">
 
-      <section style={{ marginTop: '50px', marginBottom: '60px' }} id="#content" class="page-content page-cms page-cms-7">
+      <section style={{ marginTop: '50px', marginBottom: '60px' }} id="" class="">
         <h1>Privacy Policy</h1>
         <p>NADAASI is committed to respecting your privacy. NADAASI is the sole owner of
         the information collected on www.nadaasi.fi. The information is used entirely
