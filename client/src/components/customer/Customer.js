@@ -84,7 +84,7 @@ const Customer = ({
         <Route exact path="/refundpolicy" component={RefundPolicy} />
         <Route exact path="/securepayment" component={SecurePayment} />
         <Route exact path="/sizechart" component={SizeChart} />
-        <Route exact path="/merchantreturn" component={MerchartsReturn} />
+        <CustomerRoute exact path="/merchantreturn" component={MerchartsReturn} />
         <Route exact path="/policy" component={Policy} />
         <Route path="*" component={() => <Redirect to="/" />} />
       </Switch>
