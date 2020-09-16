@@ -59,6 +59,7 @@ const CartTotal = ({
       createSession({ ...order, useBalance, appliedCoupon }, user);
     }
   };
+
   const countryName = (code) => {
     switch (code) {
       case "FI":
@@ -123,6 +124,37 @@ const CartTotal = ({
   }
   if (user && useBalance) {
     balanceDiscount = user.balance;
+  }
+  if (user && appliedCoupon && appliedCoupon.isActive) {
+    let units = 0;
+    for (let index = 0; index < cart.length; index++) {
+      const cartProduct = cart[index];
+      units += cartProduct.quantity;
+    }
+    switch (appliedCoupon.discountType) {
+      case 'di':
+
+        balanceDiscount = units * appliedCoupon.discount;
+        break;
+      case 'pi':
+        balanceDiscount = 0;
+        for (let index = 0; index < cart.length; index++) {
+          const cartProduct = cart[index];
+          balanceDiscount += (cartProduct.details.price * appliedCoupon.discount / 100) * cartProduct.quantity
+        }
+        break;
+      case 'fs':
+        balanceDiscount = 0;
+        shippingCost = 0;
+        break;
+      case 'dst':
+      case 'dt':
+        balanceDiscount = appliedCoupon.discount;
+        break;
+      default:
+        balanceDiscount = 0;
+        break;
+    }
   }
   return (
     <form
@@ -200,7 +232,7 @@ const CartTotal = ({
                 placeholder="Town / City"
                 required
                 onChange={onChange}
-                // ref={register}
+              // ref={register}
               />
             </div>
             <div className="form-group">
@@ -210,7 +242,7 @@ const CartTotal = ({
                 placeholder="Postal Code"
                 required
                 onChange={onChange}
-                // ref={register}
+              // ref={register}
               />
             </div>
             <div className="form-group">
@@ -221,7 +253,7 @@ const CartTotal = ({
                 placeholder="Email Address"
                 required
                 onChange={onChange}
-                // ref={register}
+              // ref={register}
               />
             </div>
           </div>
@@ -278,18 +310,18 @@ const CartTotal = ({
         <div className="row no-wrap">
           {
             // product?.coupon?.isActive
-            useBalance && (
+            (
               <>
-                <div className="col-md-6 mt-2 p-0">Balance </div>
+                <div className="col-md-6 mt-2 p-0">Discount </div>
                 <div className="col-md-6 mt-2 d-flex justify-content-end p-0 ">
                   - €
-                  {balanceDiscount >= total() + total() * (24 / 100)
-                    ? total() + total() * (24 / 100)
+                  {balanceDiscount >= total()
+                    ? total()
                     : // product?.coupon?.isActive
-                      //   ? cartTotal - product.coupon.value
-                      //   : cartTotal
+                    //   ? cartTotal - product.coupon.value
+                    //   : cartTotal
 
-                      balanceDiscount}
+                    balanceDiscount}
                   {
                     // product.coupon.value
                   }
@@ -302,22 +334,21 @@ const CartTotal = ({
       <div className="row ">
         <div className="col-md-12 d-flex p-0 justify-content-end">
           €{" "}
-          {balanceDiscount >= total() + total() * (24 / 100)
+          {balanceDiscount >= total()
             ? shippingCost
             : // product?.coupon?.isActive
-              //   ? cartTotal - product.coupon.value
-              //   : cartTotal
+            //   ? cartTotal - product.coupon.value
+            //   : cartTotal
 
-              total() + total() * (24 / 100) - balanceDiscount + shippingCost}
+            total() - balanceDiscount + shippingCost}
         </div>
       </div>
       <div className="row mt-3 ">
         <button
           disabled={cart == null || cart.length == 0}
           type="submit"
-          className={`btn text-uppercase btn-dark btn-block letter-spacing-none ${
-            cart == null && "disabled"
-          } ${cart && cart.length == 0 && "disabled"}`}
+          className={`btn text-uppercase btn-dark btn-block letter-spacing-none ${cart == null && "disabled"
+            } ${cart && cart.length == 0 && "disabled"}`}
         >
           Proceed to checkout
         </button>

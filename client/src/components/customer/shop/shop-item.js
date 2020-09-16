@@ -1,4 +1,5 @@
 import React from "react";
+import { API } from '../../../constants/constants'
 import Like from "../../../assets/images/home/icons/heart.svg";
 import { Ratings, ItemDetails, Price } from "../utils/details";
 
@@ -19,7 +20,7 @@ export const ShopItem = ({ product }) => {
         >
           <img
             className="img-full-shop"
-            src={`/uploads/${images[0]}`}
+            src={`${API}/uploads/${images[0]}`}
             alt="image not found"
           />
         </div>
