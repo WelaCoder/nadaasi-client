@@ -31,6 +31,7 @@ import SecurePayment from "./pages/SecurePayment";
 import Policy from './pages/Policy';
 import MerchartsReturn from './merchantsreturn/MerchantsReturn';
 import SizeChart from "./pages/SizeChart";
+import invite from "./earn/invite";
 const Customer = ({
   toastMessage,
   loadCart,
@@ -77,6 +78,7 @@ const Customer = ({
         <Route exact path="/shop" component={ShopPage} />
         <CustomerRoute exact path="/user" component={Profile} />
         <CustomerRoute exact path="/bonus" component={BonusPage} />
+        <CustomerRoute exact path="/invite" component={invite} />
         <CustomerRoute exact path="/order/:id" component={OrderShow} />
         <Route exact path="/user/sign-in" component={Login} />
         <Route exact path="/user/sign-up" component={SignUp} />

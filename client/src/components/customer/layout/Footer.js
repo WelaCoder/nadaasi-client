@@ -78,7 +78,7 @@ const Footer = () => (
       <h2>Bonus</h2>
 
       <p>
-        <Link to="/bonus" className="card-link">
+        <Link to="/invite" className="card-link">
           Invite & Earn
         </Link>
       </p>
