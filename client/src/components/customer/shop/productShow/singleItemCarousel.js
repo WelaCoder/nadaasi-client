@@ -4,6 +4,7 @@ import { ShopCarousel } from "../../utils/shop-carousel";
 // import { selectProduct } from '../../features/product/productSlice';
 import Skeleton from "react-loading-skeleton";
 import { connect } from "react-redux";
+import { API } from "../../../../constants/constants";
 const SingleItemCarousel = ({ currentProduct }) => {
   // const { product } = useSelector(selectProduct);
   // const {
@@ -25,7 +26,7 @@ const SingleItemCarousel = ({ currentProduct }) => {
         {currentProduct.images.map((image) => (
           <img
             className="img-full"
-            src={`/uploads/${image}`}
+            src={`${API}/uploads/${image}`}
             alt={image}
             key={image}
           />

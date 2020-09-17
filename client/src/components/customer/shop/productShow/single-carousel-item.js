@@ -4,6 +4,7 @@ import { ItemDetails, Price, Ratings } from "../../utils/details";
 import { Link } from "react-router-dom";
 import { setCurrentProduct } from "../../../../actions/appActions";
 import { connect } from "react-redux";
+import { API } from "../../../../constants/constants";
 const SingleCarouselItem = ({ item, setCurrentProduct }) => {
   const { images, name, rating, price, _id } = item;
   return (
@@ -14,7 +15,7 @@ const SingleCarouselItem = ({ item, setCurrentProduct }) => {
     >
       <div className="w-100-mb px-1">
         <div className=" shadow-shop">
-          <img className="img-full" src={`/uploads/${images[0]}`} alt="" />
+          <img className="img-full" src={`${API}/uploads/${images[0]}`} alt="" />
         </div>
         <div className="product-info py-2">
           <ItemDetails>

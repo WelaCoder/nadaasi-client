@@ -11,7 +11,9 @@ import Alandsbanken from "../../../assets/images/Cart/banks/alandsbanken.svg";
 import Klarna from "../../../assets/images/Cart/banks/klarna_logo_black.png";
 import { createSession } from "../../../actions/payment";
 import axios from "axios";
+
 import { connect } from "react-redux";
+import { toast } from "react-toastify";
 const CartTotal = ({
   cart,
   createSession,
@@ -19,6 +21,7 @@ const CartTotal = ({
   useBalance,
   shipping,
   appliedCoupon,
+  usePoints
 }) => {
   const total = () => {
     var total = 0;
@@ -45,7 +48,7 @@ const CartTotal = ({
     tax: 0,
     vat: 24,
   });
-
+  const [disabled, setDisabled] = useState(false);
   const onChange = (e) => {
     setOrder({
       ...order,
@@ -56,7 +59,7 @@ const CartTotal = ({
     e.preventDefault();
     console.log(order);
     if (user) {
-      createSession({ ...order, useBalance, appliedCoupon }, user);
+      createSession({ ...order, useBalance, appliedCoupon, usePoints }, user);
     }
   };
 
@@ -124,6 +127,21 @@ const CartTotal = ({
   }
   if (user && useBalance) {
     balanceDiscount = user.balance;
+  }
+
+  if (user && usePoints) {
+    let units = 0;
+    for (let index = 0; index < cart.length; index++) {
+      const cartProduct = cart[index];
+      units += cartProduct.quantity;
+    }
+    if ((units * 5) <= user.points) {
+      balanceDiscount = total()
+
+    } else {
+      toast.error(`You don't have enough points`);
+
+    }
   }
   if (user && appliedCoupon && appliedCoupon.isActive) {
     let units = 0;
@@ -381,6 +399,7 @@ const mapStateToProps = (state) => ({
   cart: state.app.cart,
   user: state.app.user,
   useBalance: state.app.useBalance,
+  usePoints: state.app.usePoints,
   appliedCoupon: state.app.appliedCoupon,
   shipping: state.app.shipping,
 });

@@ -19,6 +19,7 @@ import {
   SET_RELEVANT_DRESSES,
   CLEAR_CURRENT_PRODUCT,
   LOAD_SHIPPING,
+  USE_POINTS,
   SET_SEARCH,
 } from "./types";
 
@@ -71,7 +72,7 @@ export const setCurrentProduct = (productId) => async (dispatch) => {
     dispatch({
       type: CLEAR_CURRENT_PRODUCT,
     });
-    for (let index = 0; index < 200000; index++) {}
+    for (let index = 0; index < 200000; index++) { }
     dispatch({
       type: SET_CURRENT_PRODUCT,
       payload: productId,
@@ -161,6 +162,17 @@ export const loadCart = () => async (dispatch) => {
     dispatch({
       type: LOAD_CART,
       payload: res.data.cartItems,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const setUsePoints = (value) => async (dispatch) => {
+  try {
+
+    dispatch({
+      type: USE_POINTS,
+      payload: value,
     });
   } catch (error) {
     console.log(error);

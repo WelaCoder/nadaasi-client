@@ -48,6 +48,7 @@ export const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 // TESTIMONIALS
 export const GET_TESTIMONIALS = "GET_TESTIMONIALS";
 export const USE_BALANCE = "USE_BALANCE";
+export const USE_POINTS = "USE_POINTS";
 export const APPLY_COUPON = "APPLY_COUPON";
 export const LOAD_SHIPPING = "LOAD_SHIPPING";
 export const SET_SEARCH = "SET_SEARCH";

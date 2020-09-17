@@ -27,7 +27,7 @@ import {
   USE_BALANCE,
   LOAD_SHIPPING,
   APPLY_COUPON,
-  SET_SEARCH,
+  SET_SEARCH, USE_POINTS
 } from "../actions/types";
 import { toast } from "react-toastify";
 const initialState = {
@@ -47,6 +47,7 @@ const initialState = {
     quantity: 1,
   },
   useBalance: true,
+  usePoints: false,
   cart: null,
   currentProduct: null,
   toastMessage: null,
@@ -79,6 +80,7 @@ export default (state = initialState, action) => {
         ...state,
         appliedCoupon: action.payload.coupon,
         useBalance: false,
+        usePoints: false,
       };
 
     case LOAD_SHIPPING:
@@ -90,7 +92,16 @@ export default (state = initialState, action) => {
       return {
         ...state,
         appliedCoupon: action.payload ? null : state.appledCoupon,
+        usePoints: action.payload ? false : state.usePoints,
         useBalance: action.payload,
+
+      };
+    case USE_POINTS:
+      return {
+        ...state,
+        appliedCoupon: action.payload ? null : state.appledCoupon,
+        useBalance: action.payload ? false : state.useBalance,
+        usePoints: action.payload,
       };
     case GET_TESTIMONIALS:
       return {

@@ -79,3 +79,6 @@
   margin: 10px;
   background-color: #1d1717;
 }
+.carousel__title, .carousel__subtitle,.home-btn{
+  font-family: FuturaLtBT;
+}
