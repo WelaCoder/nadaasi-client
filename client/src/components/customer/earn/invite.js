@@ -13,7 +13,7 @@ const Invite = ({ user }) => {
     };
     const ref = useRef(null);
     useEffect(() => {
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 0);
     }, [])
     return (
         <div ref={ref}>
@@ -78,7 +78,7 @@ const Invite = ({ user }) => {
                     />
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 const mapStateToProps = (state) => ({
