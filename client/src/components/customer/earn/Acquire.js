@@ -1,17 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react'
-import acquire1 from '../../../assets/images/earn/invite1.png'
-import acquire2 from '../../../assets/images/earn/invite2.png'
-import acquire3 from '../../../assets/images/earn/invite3.png'
-import acquire4 from '../../../assets/images/earn/invite4.png'
+import React, { useState, useRef, useEffect } from 'react'
+import acquire1 from '../../../assets/images/earn/acquire1.png'
+import acquire2 from '../../../assets/images/earn/acquire2.png'
+import acquire3 from '../../../assets/images/earn/acquire3.png'
+import acquire4 from '../../../assets/images/earn/acquire4.png'
 import { Carousel } from 'react-bootstrap'
 import { connect } from 'react-redux'
-const Invite = ({ user }) => {
+const Acquire = ({ user }) => {
     const [index, setIndex] = useState(0);
-
+    const ref = useRef(null);
     const handleSelect = (selectedIndex, e) => {
         setIndex(selectedIndex);
     };
-    const ref = useRef(null);
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
@@ -64,7 +63,7 @@ const Invite = ({ user }) => {
                     </Carousel>
                 </div>
             </div>
-            <div className="d-flex row  justify-content-center" style={{ paddingBottom: '30px', backgroundColor: '#ffffff' }}>
+            {/* <div className="d-flex row  justify-content-center" style={{ paddingBottom: '30px', backgroundColor: '#ffffff' }}>
                 <div className="col-4">
                     <input
                         // readOnly={true}
@@ -77,11 +76,11 @@ const Invite = ({ user }) => {
                         }}
                     />
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
 const mapStateToProps = (state) => ({
     user: state.app.user,
 });
-export default connect(mapStateToProps)(Invite);
+export default connect(mapStateToProps)(Acquire);

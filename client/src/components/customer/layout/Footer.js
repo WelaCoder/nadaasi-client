@@ -83,8 +83,13 @@ const Footer = () => (
         </Link>
       </p>
       <p>
-        <Link to="/bonus" className="card-link">
+        <Link to="/acquire" className="card-link">
           Acquire & Earn
+        </Link>
+      </p>
+      <p>
+        <Link to="/bonus" className="card-link">
+          Vouchers & Activities
         </Link>
       </p>
     </div>
