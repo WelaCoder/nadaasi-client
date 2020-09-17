@@ -32,7 +32,7 @@ import Policy from './pages/Policy';
 import MerchartsReturn from './merchantsreturn/MerchantsReturn';
 import SizeChart from "./pages/SizeChart";
 import Acquire from "./earn/Acquire";
-import Invite from './earn/Invite'
+import Invite from './earn/inviteer'
 const Customer = ({
   toastMessage,
   loadCart,
