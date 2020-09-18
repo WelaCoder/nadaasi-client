@@ -3,21 +3,21 @@ import { connect } from "react-redux";
 import { setFilters } from "../../../../actions/appActions";
 import Skeleton from "react-loading-skeleton";
 import Select from "react-select";
-const DressTypeFilter = ({ loadingProducts, setFilters }) => {
-  const dressTypeOptions = [
-    {
-      label: "All",
-      value: null,
-    },
-    {
-      label: "Casual",
-      value: "casual",
-    },
-    {
-      label: "Evening",
-      value: "evening",
-    },
-  ];
+const DressTypeFilter = ({ loadingProducts, setFilters, dressTypeOptions }) => {
+  // const dressTypeOptions = [
+  //   {
+  //     label: "All",
+  //     value: null,
+  //   },
+  //   {
+  //     label: "Casual",
+  //     value: "Casual",
+  //   },
+  //   {
+  //     label: "Evening",
+  //     value: "Evening",
+  //   },
+  // ];
   return (
     <>
       {loadingProducts ? (
@@ -28,24 +28,25 @@ const DressTypeFilter = ({ loadingProducts, setFilters }) => {
           </div>
         </>
       ) : (
-        <div className="filters__item__shop">
-          <h3 className="filters__heading">Dress Type</h3>
-          <Select
-            isClearable={true}
-            options={dressTypeOptions}
-            onChange={(option) => {
-              console.log(option);
-              setFilters({
-                dressType: option?.value,
-              });
-            }}
-          />
-        </div>
-      )}
+          <div className="filters__item__shop">
+            <h3 className="filters__heading">Dress Type</h3>
+            <Select
+              isClearable={true}
+              options={dressTypeOptions}
+              onChange={(option) => {
+                console.log(option);
+                setFilters({
+                  dressType: option?.value,
+                });
+              }}
+            />
+          </div>
+        )}
     </>
   );
 };
 const mapStateToProps = (state) => ({
   loadingProducts: state.app.loadingProducts,
+  dressTypeOptions: state.app.dressTypeOptions,
 });
 export default connect(mapStateToProps, { setFilters })(DressTypeFilter);

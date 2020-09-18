@@ -61,6 +61,10 @@ const Profile = ({ user, LoadUser, orders }) => {
                       <div class="col-md-6 p-0">{user && user.email}</div>
                     </div>
                     <div class="row mb-3">
+                      <div class="col-md-6 p-0">BODY TYPE</div>
+                      <div class="col-md-6 p-0">{user && user.bodyType}</div>
+                    </div>
+                    <div class="row mb-3">
                       <div class="col-md-6 p-0">BALANCE</div>
                       <div class="col-md-6 p-0 ">
                         <span className="text-info mr-1">
@@ -72,7 +76,9 @@ const Profile = ({ user, LoadUser, orders }) => {
                     <div class="row mb-3">
                       <div class="col-md-6 p-0 ">POINTS</div>
                       <div class="col-md-6 p-0 text-info">
+
                         {user && user.points}
+
                       </div>
                     </div>
                     <div class="row mb-3">

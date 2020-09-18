@@ -20,7 +20,9 @@ import {
   CLEAR_CURRENT_PRODUCT,
   LOAD_SHIPPING,
   USE_POINTS,
+  LOAD_DRESS_TYPES,
   SET_SEARCH,
+  GET_VOUCHER, SET_BODY_TYPE
 } from "./types";
 
 import { toast } from "react-toastify";
@@ -64,6 +66,20 @@ export const getProducts = () => async (dispatch) => {
       payload: false,
     });
   } catch (error) {
+    console.log(error);
+  }
+};
+export const getVoucher = () => async (dispatch) => {
+  try {
+
+    const res = await axios.get(`${API}/api/voucher`);
+    toast.success('Successfully got 100€ voucher');
+    dispatch({
+      type: GET_VOUCHER,
+      payload: res.data,
+    });
+  } catch (error) {
+    toast.error(`You don't have enough points...`);
     console.log(error);
   }
 };
@@ -155,10 +171,28 @@ export const addToCart = (choosenProduct) => async (dispatch) => {
   }
 };
 
+
+export const setBodyType = (bodyType) => async (dispatch) => {
+  try {
+
+
+    const res = await axios.put(`${API}/api/user/setBodyType`, { bodyType }, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    dispatch({
+      type: SET_BODY_TYPE,
+      payload: res.data,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const loadCart = () => async (dispatch) => {
   try {
     const res = await axios.get(`${API}/api/cart`);
-
     dispatch({
       type: LOAD_CART,
       payload: res.data.cartItems,
@@ -200,7 +234,19 @@ export const updateCount = (cartId, count) => async (dispatch) => {
     console.log(error);
   }
 };
+export const loadDressTypes = () => async (dispatch) => {
+  try {
+    console.log('loading dress types');
+    const res = await axios.get(`${API}/api/dressType`);
 
+    dispatch({
+      type: LOAD_DRESS_TYPES,
+      payload: res.data,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
 export const deleteItemFromCart = (id) => async (dispatch) => {
   try {
     const res = await axios.delete(`${API}/api/cart/` + id);

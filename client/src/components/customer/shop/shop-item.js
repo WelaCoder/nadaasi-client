@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom";
 import FadeIn from "react-fade-in";
 
 export const ShopItem = ({ product }) => {
-  const { name, rating, price, images, _id } = product;
+  const { name, rating, price, images, _id, originalPrice, sale } = product;
   const history = useHistory();
   return (
     <FadeIn>
@@ -30,7 +30,7 @@ export const ShopItem = ({ product }) => {
             <img src={Like} width="17px" alt="like" />
           </ItemDetails>
           <ItemDetails>
-            <Price currency="€" price={price} />
+            <Price currency="€" price={price} sale={sale} originalPrice={originalPrice} />
             <Ratings rating={rating} />
           </ItemDetails>
         </div>

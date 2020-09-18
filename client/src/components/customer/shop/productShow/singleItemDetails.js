@@ -79,45 +79,46 @@ const SingleItemDetails = ({
           </button>
         </>
       ) : (
-        <>
-          <h4 className="font-Futura-bold mb-0">{currentProduct.name}</h4>
-          <div className="d-flex justify-content-between align-items-center py-2">
-            <Price
-              currency="$"
-              price={
-                // price
-                currentProduct.price
-              }
-            />
-            <Ratings
-              rating={
-                // rating
-                currentProduct.rating
-              }
-            />
-          </div>
-          <Measurements />
-          <Quantity />
-          <FilterColors />
-          <div className=" mt-5">
-            <button
-              onClick={() => {
-                if (isAuthenticated) {
-                  addToCart(choosenProduct);
-                } else {
-                  toast.error("You must be logged in first...");
+          <>
+            <h4 className="font-Futura-bold mb-0">{currentProduct.name}</h4>
+            <div className="d-flex justify-content-between align-items-center py-2">
+              <Price
+                currency="€"
+                price={
+                  currentProduct.price
                 }
-              }}
-              className="btn btn-dark btn-block"
-            >
-              {
-                // inCart(_id) ? "Already In Cart" :
-                "ADD TO CART"
-              }
-            </button>
-          </div>
-        </>
-      )}
+                sale={currentProduct.sale}
+                originalPrice={currentProduct.originalPrice}
+              />
+              <Ratings
+                rating={
+                  // rating
+                  currentProduct.rating
+                }
+              />
+            </div>
+            <Measurements />
+            <Quantity />
+            <FilterColors />
+            <div className=" mt-5">
+              <button
+                onClick={() => {
+                  if (isAuthenticated) {
+                    addToCart(choosenProduct);
+                  } else {
+                    toast.error("You must be logged in first...");
+                  }
+                }}
+                className="btn btn-dark btn-block"
+              >
+                {
+                  // inCart(_id) ? "Already In Cart" :
+                  "ADD TO CART"
+                }
+              </button>
+            </div>
+          </>
+        )}
     </div>
   );
 };

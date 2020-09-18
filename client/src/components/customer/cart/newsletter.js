@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import Toggle from "react-toggle";
 import { connect } from "react-redux";
@@ -8,9 +8,7 @@ const NewsLetter = ({ setUseBalance, useBalance, usePoints, setUsePoints }) => {
   return (
     <div class="d-flex align-items-center flex-col-mb justify-content-between w-100 cart-details  font-Futura-light">
       <div className="font-Futura-light">
-        <Form.Group>
-          <Form.Check type="checkbox" label="Subscribe to our newsletter" />
-        </Form.Group>
+
       </div>
       <div className="d-flex justify-content-end align-items-center">
         <span className="mr-2">Use Points</span>

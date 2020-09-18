@@ -52,9 +52,12 @@ export const USE_POINTS = "USE_POINTS";
 export const APPLY_COUPON = "APPLY_COUPON";
 export const LOAD_SHIPPING = "LOAD_SHIPPING";
 export const SET_SEARCH = "SET_SEARCH";
+export const LOAD_DRESS_TYPES = "LOAD_DRESS_TYPES";
 // Return Request Admin
 export const GET_MARCHANT_RETURN_REQUEST = 'GET_MARCHANT_RETURN_REQUEST'
 export const CLEAR_RETURN_ISSUE = 'CLEAR_RETURN_ISSUE'
 // create reutrn request
 export const CREATE_REQUEST = 'CREATE_REQUEST'
 export const ERROR = 'ERROR'
+export const GET_VOUCHER = 'GET_VOUCHER'
+export const SET_BODY_TYPE = 'SET_BODY_TYPE'

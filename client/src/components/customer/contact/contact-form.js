@@ -3,31 +3,32 @@ import React, { useState } from "react";
 // import { toast } from "react-toastify";
 // import { toastConfig } from "../../../config/toastConfig";
 import { connect } from "react-redux";
-import { createFeedback} from '../../../actions/feedback';
+import { createFeedback } from '../../../actions/feedback';
 import { set } from "mongoose";
 
-const ContactForm = ({createFeedback}) => {
+const ContactForm = ({ createFeedback }) => {
   // const { register, handleSubmit, reset } = useForm();
-  const [ isLoading, setIsLoading ] = useState(false);
-  const [ formdata, setformdata ] = useState({
+  const [isLoading, setIsLoading] = useState(false);
+  const [formdata, setformdata] = useState({
     name: '',
     subject: '',
     email: '',
     message: '',
+    phone: '',
   })
-  const { name, subject, email, message } = formdata;
+  const { name, subject, email, message, phone } = formdata;
 
   const onChange = e => {
-    setformdata({ 
+    setformdata({
       ...formdata,
-      [ e.target.name] : e.target.value
+      [e.target.name]: e.target.value
     })
   }
-  const onSubmit = e =>{
+  const onSubmit = e => {
     e.preventDefault();
-  
+
     setIsLoading(true)
-    createFeedback({ name, subject, email, message })
+    createFeedback({ name, subject, email, message, phone })
     setTimeout(() => {
       setIsLoading(false)
     }, 700);
@@ -46,9 +47,9 @@ const ContactForm = ({createFeedback}) => {
           placeholder="Name *"
           required
           name="name"
-          value={ name }
+          value={name}
           onChange={onChange}
-          // ref={register}
+        // ref={register}
         />
       </div>
       <div className="form-group">
@@ -58,9 +59,9 @@ const ContactForm = ({createFeedback}) => {
           placeholder="Subject *"
           required
           name="subject"
-          value={ subject }
+          value={subject}
           onChange={onChange}
-          // ref={register}
+        // ref={register}
         />
       </div>
       <div className="form-group">
@@ -70,9 +71,20 @@ const ContactForm = ({createFeedback}) => {
           placeholder="Email *"
           required
           name="email"
-          value={ email }
+          value={email}
           onChange={onChange}
-          // ref={register}
+        // ref={register}
+        />
+      </div>
+      <div className="form-group">
+        <input
+          type="text"
+          className="form-control shadow-contact border-0 input-contact  "
+          placeholder="Phone"
+          name="phone"
+          value={phone}
+          onChange={onChange}
+        // ref={register}
         />
       </div>
       <div className="form-group">
@@ -82,16 +94,16 @@ const ContactForm = ({createFeedback}) => {
           rows="4"
           required
           name="message"
-          value={ message }
+          value={message}
           onChange={onChange}
-          // ref={register}
+        // ref={register}
         ></textarea>
       </div>
 
       <button
         type="submit"
         className="btn border-0 shadow-contact border-0 btn-outline-dark btn-block font-weight-bold"
-        // disabled={isLoading}
+      // disabled={isLoading}
       >
         <span
           className={isLoading ? "mr-2 spinner-border spinner-border-sm" : ""}
@@ -104,4 +116,4 @@ const ContactForm = ({createFeedback}) => {
   );
 };
 
-export default connect(null , {createFeedback})(ContactForm);
+export default connect(null, { createFeedback })(ContactForm);

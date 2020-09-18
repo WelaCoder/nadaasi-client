@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import { toast } from 'react-toastify'
 import {
   CREATE_FEEDBACK,
   CREATE_FEEDBACK_ERROR,
@@ -10,20 +10,21 @@ import {
 } from './types'
 import { API } from "../constants/constants";
 
-export const createFeedback = ({ name, subject, email, message }) => async (dispatch) => {
+export const createFeedback = ({ name, subject, email, message, phone }) => async (dispatch) => {
   try {
     const config = {
       headers: {
         'Content-Type': 'application/json'
       }
     }
-    const body = JSON.stringify({ name, subject, email, message });
+    const body = JSON.stringify({ name, subject, email, message, phone });
     const res = await axios.post(`${API}/api/feedback`, body, config);
     console.log(res.data);
     dispatch({
       type: CREATE_FEEDBACK,
       payload: res.data
     })
+    toast.success("Successfully submitted feedback...")
   } catch (error) {
     dispatch({
       type: CREATE_FEEDBACK_ERROR

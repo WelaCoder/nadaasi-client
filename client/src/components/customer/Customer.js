@@ -17,7 +17,7 @@ import SignUp from "./signup/SignUp";
 import { connect } from "react-redux";
 import ProductShow from "./shop/productShow/ProductShow";
 import { ToastContainer, toast } from "react-toastify";
-import { loadCart } from "../../actions/appActions";
+import { loadCart, loadDressTypes } from "../../actions/appActions";
 import { LoadUser } from "../../actions/auth";
 import { loadOrders } from "../../actions/orders";
 import { getTestimonials } from "../../actions/testimonials";
@@ -41,6 +41,7 @@ const Customer = ({
   loadOrders,
   getTestimonials,
   orders,
+  loadDressTypes
 }) => {
   useEffect(() => {
     if (toastMessage != null) {
@@ -57,6 +58,7 @@ const Customer = ({
     if (localStorage.token && !auth.isAdmin) {
       setAuthToken(localStorage.token);
     }
+    loadDressTypes();
     getTestimonials();
     LoadUser();
   }, []);
@@ -108,4 +110,5 @@ export default connect(mapStateToProps, {
   LoadUser,
   loadOrders,
   getTestimonials,
+  loadDressTypes
 })(Customer);

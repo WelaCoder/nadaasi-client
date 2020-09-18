@@ -3,31 +3,32 @@ import React, { useState } from "react";
 // import { toast } from "react-toastify";
 // import { toastConfig } from "../../../config/toastConfig";
 import { connect } from "react-redux";
-import { returnMerchant} from '../../../actions/return';
+import { returnMerchant } from '../../../actions/return';
 // import { set } from "mongoose";
 
-const MerchartsReturnForm = ({returnMerchant}) => {
+const MerchartsReturnForm = ({ returnMerchant }) => {
   // const { register, handleSubmit, reset } = useForm();
-  const [ isLoading, setIsLoading ] = useState(false);
-  const [ formdata, setformdata ] = useState({
+  const [isLoading, setIsLoading] = useState(false);
+  const [formdata, setformdata] = useState({
     name: '',
     orderId: '',
     email: '',
     problem: '',
+    phone: '',
   })
-  const { name, orderId , email, problem } = formdata;
+  const { name, orderId, email, problem, phone } = formdata;
 
   const onChange = e => {
-    setformdata({ 
+    setformdata({
       ...formdata,
-      [ e.target.name] : e.target.value
+      [e.target.name]: e.target.value
     })
   }
-  const onSubmit = e =>{
+  const onSubmit = e => {
     e.preventDefault();
-  
+
     setIsLoading(true)
-    returnMerchant({ name, orderId, email ,problem })
+    returnMerchant({ name, orderId, email, problem, phone })
     setTimeout(() => {
       setIsLoading(false)
     }, 700);
@@ -46,9 +47,9 @@ const MerchartsReturnForm = ({returnMerchant}) => {
           placeholder="Name *"
           required
           name="name"
-          value={ name }
+          value={name}
           onChange={onChange}
-          // ref={register}
+        // ref={register}
         />
       </div>
       <div className="form-group">
@@ -58,9 +59,9 @@ const MerchartsReturnForm = ({returnMerchant}) => {
           placeholder="Order_Id *"
           required
           name="orderId"
-          value={ orderId }
+          value={orderId}
           onChange={onChange}
-          // ref={register}
+        // ref={register}
         />
       </div>
       <div className="form-group">
@@ -70,9 +71,20 @@ const MerchartsReturnForm = ({returnMerchant}) => {
           placeholder="Email *"
           required
           name="email"
-          value={ email }
+          value={email}
           onChange={onChange}
-          // ref={register}
+        // ref={register}
+        />
+      </div>
+      <div className="form-group">
+        <input
+          type="text"
+          className="form-control shadow-contact border-0 input-contact  "
+          placeholder="Phone"
+          name="phone"
+          value={phone}
+          onChange={onChange}
+        // ref={register}
         />
       </div>
       <div className="form-group">
@@ -82,16 +94,16 @@ const MerchartsReturnForm = ({returnMerchant}) => {
           rows="4"
           required
           name="problem"
-          value={ problem }
+          value={problem}
           onChange={onChange}
-          // ref={register}
+        // ref={register}
         ></textarea>
       </div>
 
       <button
         type="submit"
         className="btn border-0 shadow-contact border-0 btn-outline-dark btn-block font-weight-bold"
-        // disabled={isLoading}
+      // disabled={isLoading}
       >
         <span
           className={isLoading ? "mr-2 spinner-border spinner-border-sm" : ""}
@@ -104,4 +116,4 @@ const MerchartsReturnForm = ({returnMerchant}) => {
   );
 };
 
-export default connect(null , {returnMerchant})(MerchartsReturnForm);
+export default connect(null, { returnMerchant })(MerchartsReturnForm);

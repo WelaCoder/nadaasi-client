@@ -63,7 +63,7 @@ const Footer = () => (
           Orders
         </Link>
       </p>
-      <p>
+      {/* <p>
         <Link to="/user" className="card-link">
           Credit slips
         </Link>
@@ -72,7 +72,7 @@ const Footer = () => (
         <Link to="/user" className="card-link">
           Addresses
         </Link>
-      </p>
+      </p> */}
     </div>
     <div className="footer-personal w-100">
       <h2>Bonus</h2>

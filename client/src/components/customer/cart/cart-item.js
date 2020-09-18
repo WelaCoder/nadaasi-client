@@ -7,7 +7,7 @@ import { CartImage } from "./cart-image";
 import { Price } from "../utils/details";
 
 export const CartItem = ({ item }) => {
-  const { images, name, price } = item.product;
+  const { images, name, price, sale, originalPrice } = item.product;
   const { quantity, _id } = item;
   console.log(item);
   return (
@@ -31,7 +31,7 @@ export const CartItem = ({ item }) => {
           className="font-Futura-medium  ml-0-mb d-flex 
         justify-content-between"
         >
-          <Price currency="$" price={price * quantity} />
+          <Price currency="€" price={price * quantity} sale={sale} originalPrice={originalPrice * quantity} />
           <CartDelete showMobile />
         </div>
       </div>

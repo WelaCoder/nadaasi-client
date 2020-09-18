@@ -23,11 +23,12 @@ import {
   SET_RELEVANT_DRESSES,
   CLEAR_CURRENT_PRODUCT,
   RATE_PRODUCT,
+  LOAD_DRESS_TYPES,
   GET_TESTIMONIALS,
   USE_BALANCE,
   LOAD_SHIPPING,
   APPLY_COUPON,
-  SET_SEARCH, USE_POINTS
+  SET_SEARCH, USE_POINTS, GET_VOUCHER, SET_BODY_TYPE
 } from "../actions/types";
 import { toast } from "react-toastify";
 const initialState = {
@@ -63,6 +64,7 @@ const initialState = {
   },
   orders: null,
   relevantProducts: [],
+  dressTypeOptions: [],
   currentOrder: null,
   currentPage: 1,
   testimonials: null,
@@ -70,6 +72,21 @@ const initialState = {
 };
 export default (state = initialState, action) => {
   switch (action.type) {
+    case GET_VOUCHER:
+      return {
+        ...state,
+        user: action.payload,
+      }
+    case SET_BODY_TYPE:
+      return {
+        ...state,
+        user: action.payload,
+      }
+    case LOAD_DRESS_TYPES:
+      return {
+        ...state,
+        dressTypeOptions: action.payload
+      }
     case SET_SEARCH:
       return {
         ...state,

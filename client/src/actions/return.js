@@ -1,20 +1,23 @@
 import axios from "axios";
 import { GET_MARCHANT_RETURN_REQUEST, CREATE_REQUEST, CLEAR_RETURN_ISSUE, ERROR } from './types'
 import { API } from "../constants/constants";
+import { toast } from 'react-toastify'
 
-export const returnMerchant = ({ name, orderId, email, problem }) => async (dispatch) => {
+export const returnMerchant = ({ name, orderId, email, problem, phone }) => async (dispatch) => {
     try {
         const config = {
             headers: {
                 "Content-Type": "application/json"
             }
         }
-        const body = JSON.stringify({ name, orderId, email, problem });
+        const body = JSON.stringify({ name, orderId, email, problem, phone });
         console.log('object');
         const res = await axios.post(`${API}/api/merchantreturn`, body, config)
         dispatch({
             type: CREATE_REQUEST,
         })
+        toast.success("Successfully submitted return request...")
+
     } catch (error) {
         dispatch({
             type: ERROR

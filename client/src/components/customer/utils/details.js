@@ -22,11 +22,23 @@ export const ItemDetails = ({ children }) => {
   );
 };
 
-export const Price = ({ currency, price }) => {
+export const Price = ({ currency, price, sale, originalPrice }) => {
   return (
     <h6 className="font-weight-bold mb-0">
-      <span className="mr-1">{currency}</span>
-      <span>{price}</span>
+
+      {sale ? <><span className="mr-1">
+        {currency}
+      </span>
+        <span className='mr-1'>
+          {price}
+        </span>
+        <span style={{ textDecoration: 'line-through' }}>
+          {originalPrice}
+        </span>
+      </> : <><span className="mr-1">
+        {currency}
+      </span><span>{price}</span></>}
+
     </h6>
   );
 };

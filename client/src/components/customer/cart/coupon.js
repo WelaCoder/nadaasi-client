@@ -39,7 +39,7 @@ const Coupon = ({ cart, applyCoupon, appliedCoupon }) => {
             🎉
           </span>{" "}
           <span>
-            {appliedCoupon.id != null ? `Voucher has been applied with discount of ${appliedCoupon.discount}%.` : `${appliedCoupon.name} applied successfully...`}
+            {appliedCoupon.id != null ? `Voucher has been applied with discount of ${appliedCoupon.discount}%.` : `${appliedCoupon.name || 'Voucher'} applied successfully...`}
           </span>
         </div>
       ) : (

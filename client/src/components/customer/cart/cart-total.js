@@ -23,6 +23,7 @@ const CartTotal = ({
   appliedCoupon,
   usePoints
 }) => {
+  const [isLoading, setIsLoading] = useState(false);
   const total = () => {
     var total = 0;
     if (cart != null && cart.length != 0) {
@@ -55,11 +56,13 @@ const CartTotal = ({
       [e.target.name]: e.target.value,
     });
   };
-  const onClick = (e) => {
+  const onClick = async (e) => {
     e.preventDefault();
     console.log(order);
     if (user) {
-      createSession({ ...order, useBalance, appliedCoupon, usePoints }, user);
+      setIsLoading(true);
+      await createSession({ ...order, useBalance, appliedCoupon, usePoints }, user);
+      setIsLoading(false);
     }
   };
 
@@ -363,12 +366,19 @@ const CartTotal = ({
       </div>
       <div className="row mt-3 ">
         <button
-          disabled={cart == null || cart.length == 0}
+          disabled={cart == null || cart.length == 0 || isLoading}
           type="submit"
           className={`btn text-uppercase btn-dark btn-block letter-spacing-none ${cart == null && "disabled"
             } ${cart && cart.length == 0 && "disabled"}`}
         >
-          Proceed to checkout
+          <span
+            className={
+              isLoading ? "mr-2 spinner-border spinner-border-sm" : ""
+            }
+            role="status"
+            aria-hidden="true"
+          ></span>
+          {isLoading ? 'Proceeding to checkout' : 'Proceed to checkout'}
         </button>
         <small className="text-muted letter-spacing-none py-1">
           By clicking "Proceed to Checkout" i approve terms user terms and

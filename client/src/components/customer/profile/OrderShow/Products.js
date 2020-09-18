@@ -6,6 +6,7 @@ import { useParams, useLocation } from "react-router-dom";
 
 import Star from "../../../../assets/images/home/icons/star.svg";
 import ReviewProduct from "./ReviewProduct";
+import { API } from "../../../../constants/constants";
 const Orders = ({ currentOrder, setCurrentOrder }) => {
   const params = useParams();
 
@@ -27,7 +28,7 @@ const Orders = ({ currentOrder, setCurrentOrder }) => {
               <div class="cart-item-img shadow-shop mt-2">
                 <img
                   class="order-img"
-                  src={`/uploads/${o.details.images[0]}`}
+                  src={`${API}/uploads/${o.details.images[0]}`}
                   alt=""
                 />
               </div>
