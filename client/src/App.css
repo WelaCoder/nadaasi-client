@@ -85,3 +85,13 @@
 .menu{
   text-transform: none !important;
 }
+.custom-size-button{
+  border-radius: 10%;
+}
+.custom-size-button:hover{
+  color: white;
+  background-color: black;
+}
+.filter-input{
+  height: initial !important;
+}

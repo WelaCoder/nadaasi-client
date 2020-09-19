@@ -20,7 +20,7 @@ const SingleCarouselItem = ({ item, setCurrentProduct }) => {
         <div className="product-info py-2">
           <ItemDetails>
             <h6 className="font-weight-bold mb-0">{name}.</h6>
-            <img src={Like} width="17px" alt="like" />
+            {/* <img src={Like} width="17px" alt="like" /> */}
           </ItemDetails>
           <ItemDetails>
             <Price currency="€" price={price} sale={sale} originalPrice={originalPrice} />

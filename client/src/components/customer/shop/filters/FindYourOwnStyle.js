@@ -3,7 +3,7 @@ import { Modal, Button } from "react-bootstrap";
 import Skeleton from "react-loading-skeleton";
 import { connect } from "react-redux";
 import { setBodyType, setFilters } from "../../../../actions/appActions";
-const FindYourOwnStyle = ({ loadingProducts, setFilters, setBodyType }) => {
+const FindYourOwnStyle = ({ loadingProducts, setFilters, setBodyType, filters }) => {
   const isLoading = false;
   const [showModal, setShowModal] = useState(false);
   const [ownStyle, setOwnStyle] = useState({
@@ -65,13 +65,19 @@ const FindYourOwnStyle = ({ loadingProducts, setFilters, setBodyType }) => {
         </>
       ) : (
           <>
-            <div
+            {filters.bodyType == null ? <div
               id={"findStyleBtn"}
               class="shadow-shop cursor-pointer mt-3 mb-0 py-2 text-center text-uppercase  font-Futura-bold "
               onClick={() => setShowModal(true)}
             >
               <div>Find your own style </div>
-            </div>
+            </div> : <div
+              id={"findStyleBtn"}
+              class="shadow-shop cursor-pointer mt-3 mb-0 py-2 text-center text-uppercase  font-Futura-bold "
+              onClick={() => setFilters({ bodyType: null })}
+            >
+                <div>Clear Body Type Filter </div>
+              </div>}
 
             <Modal show={showModal} onHide={() => setShowModal(false)}>
               <div style={{ backgroundColor: "white" }}>
@@ -174,5 +180,6 @@ const FindYourOwnStyle = ({ loadingProducts, setFilters, setBodyType }) => {
 };
 const mapStateToProps = (state) => ({
   loadingProducts: state.app.loadingProducts,
+  filters: state.app.filters,
 });
 export default connect(mapStateToProps, { setFilters, setBodyType })(FindYourOwnStyle);

@@ -73,7 +73,7 @@ const Measurements = ({
 
       <span
         onClick={handleShow}
-        className="letter-spacing-cart cursor-pointer shadow-shop ml-3 py-2 text-uppercase mb-0 px-1 font-Futura-light"
+        className="letter-spacing-cart cursor-pointer shadow-shop ml-3 py-2 text-uppercase mb-0 px-1 font-Futura-light custom-size-button"
       >
         Custom Size
       </span>
