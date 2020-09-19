@@ -41,7 +41,7 @@ const Profile = ({ user, LoadUser, orders }) => {
               </h4>
               <Orders />
             </div>
-            <div class=" mb-3 col-md-4">
+            <div class=" mb-3 col-md-5">
               <div class={"shadow-shop p-3"}>
                 <h4 class="text-uppercase font-Futura-bold mr-3 letter-spacing-cart mt-3 mb-3">
                   Personal Info
@@ -54,7 +54,7 @@ const Profile = ({ user, LoadUser, orders }) => {
                     </div>
                     <div class="row mb-3">
                       <div class="col-md-6 p-0">LASTNAME</div>
-                      <div class="col-md-6 p-0">{user && user.firstname}</div>
+                      <div class="col-md-6 p-0">{user && user.lastname}</div>
                     </div>
                     <div class="row mb-3">
                       <div class="col-md-6 p-0">EMAIL</div>

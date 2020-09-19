@@ -82,3 +82,6 @@
 .carousel__title, .carousel__subtitle,.home-btn{
   font-family: FuturaLtBT;
 }
+.menu{
+  text-transform: none !important;
+}
