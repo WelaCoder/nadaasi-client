@@ -1,25 +1,24 @@
 import React from "react";
+import { useHistory } from 'react-router-dom';
+const SectionNewsletter = () => {
 
-const SectionNewsletter = () => (
-  <div className="section">
-    <div className="section--newsletter">
-      <div className="section__text-box">
-        <h3 className="section__text">Sign up for our newsletter and get</h3>
-        <h4 className="section__text--big">20%</h4>
-        <h3 className="section__text">discount on evening dresses</h3>
-        <div className="section__subscription-box">
-          <input
-            type="email"
-            className="section__input"
-            placeholder="Your Email Address"
-          />
-          <button type="button" className="button button--dark section__button">
-            Subscribe
+  let history = useHistory();
+  return (
+    <div className="section">
+      <div className="section--newsletter">
+        <div className="section__text-box">
+          <h4 className="section__text--big mb-0 pb-0">Invite & Earn</h4>
+          <div className="my-1 d-flex justify-content-center align-items-center">
+
+            <button type="button" className="button button--dark section__button" onClick={() => { history.push('/invite') }}>
+              Invite
           </button>
+          </div>
+          <h3 className="section__text">Help your friends to raise their fashion style</h3>
         </div>
       </div>
     </div>
-  </div>
-);
+  )
+};
 
 export default SectionNewsletter;

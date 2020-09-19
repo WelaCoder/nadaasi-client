@@ -11,13 +11,17 @@ const SectionSocial = () => (
       <div className="social-item-three">
         <p className="text-center">Follow us on</p>
         <div className="d-flex justify-content-center align-items-center">
-          <img src={FacebookLogo} width="35" alt="facebook" className="mr-2" />
-          <img
-            src={InstagramLogo}
-            width="35"
-            alt="instagram"
-            className="ml-2"
-          />
+          <a href="https://www.facebook.com/nadaasidresses/">
+            <img src={FacebookLogo} width="35" alt="facebook" className="mr-2" />
+          </a>
+          <a href="https://www.instagram.com/nadaasidresses/">
+            <img
+              src={InstagramLogo}
+              width="35"
+              alt="instagram"
+              className="ml-2"
+            />
+          </a>
         </div>
       </div>
       <div className="social-item-four" />

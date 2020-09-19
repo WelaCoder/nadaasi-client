@@ -147,7 +147,7 @@ export const addToCart = (choosenProduct) => async (dispatch) => {
         choosenProduct.waist == null ||
         choosenProduct.underBust == null
       ) {
-        dispatch({
+        return dispatch({
           type: SET_TOAST,
           payload: {
             type: "error",

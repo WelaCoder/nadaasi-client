@@ -75,7 +75,7 @@ const Measurements = ({
         onClick={handleShow}
         className="letter-spacing-cart cursor-pointer shadow-shop ml-3 py-2 text-uppercase mb-0 px-1 font-Futura-light custom-size-button"
       >
-        Custom Size
+        Custom
       </span>
 
       <Modal size="lg" className="w-100" show={show} onHide={handleClose}>
