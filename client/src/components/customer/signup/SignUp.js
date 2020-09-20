@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
-
+import { useParams } from "react-router-dom";
 import { Link, Redirect } from "react-router-dom";
 import { toast } from "react-toastify";
 import { toastConfig } from "../../../config/toastConfig";
@@ -15,6 +15,7 @@ const SignUp = ({ signUp, auth: { isAuthenticated } }) => {
     email: "",
     password: "",
   });
+  const params = useParams();
   const [isloading, setisloading] = useState(false);
   const { firstname, lastname, inviteCode, email, password } = formdata;
   const onChange = (e) => {
@@ -23,6 +24,12 @@ const SignUp = ({ signUp, auth: { isAuthenticated } }) => {
       [e.target.name]: e.target.value,
     });
   };
+  useEffect(() => {
+    setformdata({
+      ...formdata,
+      inviteCode: params.id,
+    })
+  }, [params])
   if (isAuthenticated) {
     toast.success("Successfully Registered", toastConfig);
     return <Redirect to="/" />;

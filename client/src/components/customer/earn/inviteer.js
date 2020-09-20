@@ -65,10 +65,10 @@ const Invite = ({ user }) => {
                 </div>
             </div>
             <div className="d-flex row  justify-content-center" style={{ paddingBottom: '30px', backgroundColor: '#ffffff' }}>
-                <div className="col-4">
+                <div className="col-6">
                     <input
                         // readOnly={true}
-                        value={user != null ? user.inviteCode : ''}
+                        value={user != null ? 'http://nadaasi-client.herokuapp.com/user/sign-up/' + user.inviteCode : ''}
                         type="text"
                         class="form-control coupon-input font-Futura-light letter-spacing-cart shadow-shop"
                         placeholder="COUPON CODE"

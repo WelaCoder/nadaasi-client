@@ -68,7 +68,7 @@ const Invite = ({ user }) => {
                 <div className="col-4">
                     <input
                         // readOnly={true}
-                        value={user != null ? user.inviteCode : ''}
+                        value={user != null ? 'http://nadaasi-client.herokuapp.com/user/sign-up/' + user.inviteCode : ''}
                         type="text"
                         class="form-control coupon-input font-Futura-light letter-spacing-cart shadow-shop"
                         placeholder="COUPON CODE"

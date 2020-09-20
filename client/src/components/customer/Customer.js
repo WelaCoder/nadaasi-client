@@ -86,6 +86,7 @@ const Customer = ({
         <CustomerRoute exact path="/order/:id" component={OrderShow} />
         <Route exact path="/user/sign-in" component={Login} />
         <Route exact path="/user/sign-up" component={SignUp} />
+        <Route exact path="/user/sign-up/:id" component={SignUp} />
         <Route exact path="/shop-item/:id" component={ProductShow} />
         <Route exact path="/refundpolicy" component={RefundPolicy} />
         <Route exact path="/securepayment" component={SecurePayment} />

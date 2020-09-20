@@ -18,9 +18,10 @@ const FindYourOwnStyle = ({ loadingProducts, setFilters, setBodyType, filters })
       [e.target.name]: Number(e.target.value),
     });
   };
+  const [result, setResult] = useState('');
   const onSubmit = (e) => {
     e.preventDefault();
-    setShowModal(false);
+
     const { bust, hip, highHip, waist } = ownStyle;
     console.log(bust - hip);
     console.log(bust - waist);
@@ -31,15 +32,15 @@ const FindYourOwnStyle = ({ loadingProducts, setFilters, setBodyType, filters })
     ) {
       setFilters({ bodyType: "hourglass" });
       console.log("hourglass");
-      setBodyType('Hourglass');
+      setResult('Hourglass');
     } else if (bust - hip >= 3.6 && bust - waist < 9) {
       setFilters({ bodyType: "apple" });
-      setBodyType('Apple');
+      setResult('Apple');
       console.log("apple");
     } else if (hip - bust > 2 && hip - waist >= 7 && highHip / waist >= 1.193) {
       setFilters({ bodyType: "pear" });
       console.log("pear");
-      setBodyType('Pear');
+      setResult('Pear');
 
     } else if (
       hip - bust < 3.6 &&
@@ -49,7 +50,7 @@ const FindYourOwnStyle = ({ loadingProducts, setFilters, setBodyType, filters })
     ) {
       setFilters({ bodyType: "banana" });
       console.log("banana");
-      setBodyType('Banana');
+      setResult('Banana');
 
     }
     console.log(ownStyle);
@@ -93,83 +94,90 @@ const FindYourOwnStyle = ({ loadingProducts, setFilters, setBodyType, filters })
                   </button>
                 </div>
                 <div class="modal-body">
-                  <form class="" onSubmit={onSubmit}>
-                    <div class="col-sm-12">
-                      <div class="d-flex align-items-center justify-content-center row">
-                        <div class="col-md-3">Bust</div>
-                        <div class="col-md-9">
-                          <div class="mt-2 mb-0 form-group">
-                            <input
-                              name="bust"
-                              min={0}
-                              value={ownStyle.bust}
-                              onChange={onChange}
-                              placeholder="Enter Bust Size"
-                              type="number"
-                              required
-                              class="form-control"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="d-flex align-items-center justify-content-center row">
-                        <div class="col-md-3">Waist</div>
-                        <div class="col-md-9">
-                          <div class="mt-2 mb-0 form-group">
-                            <input
-                              name="waist"
-                              value={ownStyle.waist}
-                              onChange={onChange}
-                              min={0}
-                              required
-                              placeholder="Enter Waist Size"
-                              type="number"
-                              class="form-control"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="d-flex align-items-center justify-content-center row">
-                        <div class="col-md-3">High-Hip</div>
-                        <div class="col-md-9">
-                          <div class="mt-2 mb-0 form-group">
-                            <input
-                              name="highHip"
-                              value={ownStyle.highHip}
-                              min={0}
-                              required
-                              onChange={onChange}
-                              placeholder="Enter High-hip Size"
-                              type="number"
-                              class="form-control"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="d-flex align-items-center justify-content-center row">
-                        <div class="col-md-3">Hip</div>
-                        <div class="col-md-9">
-                          <div class="mt-2 mb-0 form-group">
-                            <input
-                              name="hip"
-                              value={ownStyle.hip}
-                              min={0}
-                              required
-                              onChange={onChange}
-                              placeholder="Enter Hip Size"
-                              type="number"
-                              class="form-control"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <button type="submit" class="mt-3 btn btn-dark btn-block">
-                          Find Your Style
+                  {result != '' ? <>
+                    <p className='lead text-center'>
+                      Your body type is {result}
+                    </p>
+                    <button class="mt-3 btn btn-dark btn-block" onClick={() => { setBodyType(result); setShowModal(false); setResult(''); }}>
+                      Save Body Type
                       </button>
+                  </> : <form class="" onSubmit={onSubmit}>
+                      <div class="col-sm-12">
+                        <div class="d-flex align-items-center justify-content-center row">
+                          <div class="col-md-3">Bust</div>
+                          <div class="col-md-9">
+                            <div class="mt-2 mb-0 form-group">
+                              <input
+                                name="bust"
+                                min={0}
+                                value={ownStyle.bust}
+                                onChange={onChange}
+                                placeholder="Enter Bust Size"
+                                type="number"
+                                required
+                                class="form-control"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center row">
+                          <div class="col-md-3">Waist</div>
+                          <div class="col-md-9">
+                            <div class="mt-2 mb-0 form-group">
+                              <input
+                                name="waist"
+                                value={ownStyle.waist}
+                                onChange={onChange}
+                                min={0}
+                                required
+                                placeholder="Enter Waist Size"
+                                type="number"
+                                class="form-control"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center row">
+                          <div class="col-md-3">High-Hip</div>
+                          <div class="col-md-9">
+                            <div class="mt-2 mb-0 form-group">
+                              <input
+                                name="highHip"
+                                value={ownStyle.highHip}
+                                min={0}
+                                required
+                                onChange={onChange}
+                                placeholder="Enter High-hip Size"
+                                type="number"
+                                class="form-control"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center row">
+                          <div class="col-md-3">Hip</div>
+                          <div class="col-md-9">
+                            <div class="mt-2 mb-0 form-group">
+                              <input
+                                name="hip"
+                                value={ownStyle.hip}
+                                min={0}
+                                required
+                                onChange={onChange}
+                                placeholder="Enter Hip Size"
+                                type="number"
+                                class="form-control"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <button type="submit" class="mt-3 btn btn-dark btn-block">
+                            Find Your Style
+                      </button>
+                        </div>
                       </div>
-                    </div>
-                  </form>
+                    </form>}
                 </div>
               </div>
             </Modal>
