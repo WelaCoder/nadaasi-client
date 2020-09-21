@@ -117,7 +117,7 @@ const SignUp = ({ signUp, auth: { isAuthenticated } }) => {
                 className="form-control"
               />
             </div>
-            <small id="emailHelp" class="form-text text-muted">Please include minimum eight characters, at least one letter and one number.</small>
+            <small id="emailHelp" class="form-text text-muted">Please include minimum eight characters, at least one uppercase, atleast one lowercase letter and one number.</small>
             <button type="submit" className="btn btn-block btn-dark my-2">
               <span
                 className={
