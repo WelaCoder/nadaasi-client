@@ -337,14 +337,21 @@ export default (state = initialState, action) => {
         ),
       };
     case DELETE_ITEM_FROM_CART:
+      let appliedCoupon = state.appliedCoupon;
+      if (state.cart.length <= 1) {
+        appliedCoupon = null;
+      }
       return {
         ...state,
         cart: state.cart.filter((c) => c._id != action.payload._id),
+        appliedCoupon,
       };
+
     case ADD_TO_CART:
       return {
         ...state,
         cart: [...state.cart, action.payload],
+        appliedCoupon: null,
       };
     case LOAD_CART:
       return {

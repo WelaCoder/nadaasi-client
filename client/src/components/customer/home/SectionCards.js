@@ -8,7 +8,7 @@ const SectionCards = ({ title, subtitle, items }) => (
       <Container>
         <div className="section__text-box">
           <h1>{title}</h1>
-          <h3>{subtitle}</h3>
+          {/* <h3>{subtitle}</h3> */}
         </div>
 
         <div className="row">

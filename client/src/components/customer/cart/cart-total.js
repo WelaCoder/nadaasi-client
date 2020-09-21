@@ -63,6 +63,8 @@ const CartTotal = ({
       setIsLoading(true);
       await createSession({ ...order, useBalance, appliedCoupon, usePoints }, user);
       setIsLoading(false);
+    } else {
+      toast.info("You must be logged in to Proceed...")
     }
   };
 
@@ -318,7 +320,7 @@ const CartTotal = ({
         <div className="row no-wrap">
           <div className="col-md-6 mt-2  p-0">VAT</div>
           <div className="col-md-6 mt-2 d-flex justify-content-end p-0 ">
-            €{total() * (24 / 100)}
+            24%
           </div>
         </div>
         <div className="row no-wrap">

@@ -37,7 +37,7 @@ const Carousel = ({ items, duration, title, subtitle, button }) => {
           <h5 className="carousel__subtitle text-uppercase">{subtitle}</h5>
           <div>
             {button && (
-              <Link to="/shop" className="home-btn">
+              <Link to="/shop" className="home-btn" style={{ color: 'black' }}>
                 {button}
               </Link>
             )}

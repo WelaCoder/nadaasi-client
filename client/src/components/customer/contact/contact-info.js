@@ -14,12 +14,13 @@ export const ContactInfo = () => {
             </div>
             <div className="info font-Futura-light ml-4">
               <p>
-                Suksitie 3, 820
+                Insinöörinkatu 68,
+                
+
                 <br />
-                84100 Ylivieska
+                33720, Tampere, Finland
                 <br />
-                Finland
-                <br />
+
                 Nadaasi
                 <br />
                 Registered Name / ID: <br />

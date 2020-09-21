@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import {
   Nav,
@@ -30,6 +30,7 @@ const MyNavbar = ({ LogOut, auth: { isAuthenticated }, cart, setFilters }) => {
   //     dispatch(isLoggedIn());
   //   }, [dispatch]);
   let path = useLocation();
+  const [showLogout, setShowLogout] = useState(false);
   return (
     <Navbar expand="lg" className="navbar" bsPrefix="navbar" collapseOnSelect>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -59,31 +60,43 @@ const MyNavbar = ({ LogOut, auth: { isAuthenticated }, cart, setFilters }) => {
         <Nav className="tools">
           {isAuthenticated ? (
             <>
-              <butthon
-                className="tool-item"
-                onClick={() => {
-                  LogOut();
-                }}
-              >
-                {"logout"}
-              </butthon>
+
               <NavLink to="/user/">
+
+                <span className="tool-item" onMouseEnter={() => setShowLogout(true)} onMouseLeave={() => setTimeout(() => {
+                  setShowLogout(false)
+                }, 2000)}>
+                  <img src={UserLogo} alt="User" width="20" />
+                </span>
+                {
+                  showLogout &&
+                  <butthon
+                    className="tool-item"
+                    id='logout_button'
+                    onClick={() => {
+                      LogOut();
+                    }}
+                  >
+                    {"logout"}
+                  </butthon>
+
+                }
+
+
+
+              </NavLink>
+            </>
+          ) : (
+              <NavLink to="/user/sign-in">
                 <span className="tool-item">
                   <img src={UserLogo} alt="User" width="20" />
                 </span>
               </NavLink>
-            </>
-          ) : (
-            <NavLink to="/user/sign-in">
-              <span className="tool-item">
-                <img src={UserLogo} alt="User" width="20" />
-              </span>
-            </NavLink>
-          )}
+            )}
           {path.pathname == "/shop" && (
             <OverlayTrigger
               rootClose
-              trigger="click"
+              trigger="hover"
               placement="bottom"
               overlay={
                 <Popover id="popover-basic">

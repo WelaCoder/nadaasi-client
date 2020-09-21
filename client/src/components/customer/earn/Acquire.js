@@ -18,7 +18,7 @@ const Acquire = ({ user }) => {
         <div ref={ref}>
             <div className='d-flex justify-content-center' style={{ backgroundColor: '#ffffff' }}>
                 <div className='col-6'>
-                    <Carousel activeIndex={index} onSelect={handleSelect}>
+                    <Carousel activeIndex={index} onSelect={handleSelect} interval={2000}>
                         <Carousel.Item>
                             <img
                                 width={400}

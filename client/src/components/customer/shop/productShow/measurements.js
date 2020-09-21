@@ -84,45 +84,51 @@ const Measurements = ({
             <div className="row">
               <div className="col-md-6">
                 <img className="h-80vh" src={CustomSize} alt="" />
-                <img className="ml-2" src={View} alt="" />
+                <img className="ml-2 img-vh-70" src={View} alt="" />
               </div>
-              <div className="col-md-6 font-Futura-light text-white">
-                <h3>Change Units</h3>
+              <div className="col-md-6 font-Futura-light text-white d-flex justify-content-end">
+                <div>
+                  <h3>Change Units</h3>
 
-                <Tabs
-                  id="controlled-tab-example"
-                  className="border-0 bg-transparent"
-                  activeKey={key}
-                  onSelect={(k) => {
-                    setKey(k);
-                    setChoosenProduct({
-                      unit: k,
-                    });
-                  }}
-                >
-                  <Tab
-                    tabClassName="border border-white "
-                    eventKey="cm"
-                    title="Cm"
+                  <Tabs
+                    id="controlled-tab-example"
+                    className="border-0 bg-transparent"
+                    activeKey={key}
+                    onSelect={(k) => {
+                      setKey(k);
+                      setChoosenProduct({
+                        unit: k,
+                      });
+                    }}
                   >
-                    <MeasurementForm />
-                  </Tab>
-                  <Tab
-                    tabClassName="border border-white  ml-2"
-                    eventKey="inch"
-                    title="Inch"
-                  >
-                    <MeasurementForm />
-                  </Tab>
-                </Tabs>
+                    <Tab
+                      tabClassName="border border-white "
+                      eventKey="cm"
+                      title="Cm"
+                    >
+                      <MeasurementForm />
+                      <Button className='mt-3' variant="dark" onClick={handleClose}>
+                        Save And Exit
+          </Button>
+                    </Tab>
+                    <Tab
+                      tabClassName="border border-white  ml-2"
+                      eventKey="inch"
+                      title="Inch"
+                    >
+                      <MeasurementForm />
+                      <Button variant="dark" className='mt-3' onClick={handleClose}>
+                        Save And Exit
+          </Button>
+                    </Tab>
+                  </Tabs>
+                </div>
               </div>
             </div>
           </div>
         </Modal.Body>
         <Modal.Footer className="bg-transparent-dark justify-content-center border-0">
-          <Button variant="dark" onClick={handleClose}>
-            Save And Exit
-          </Button>
+
         </Modal.Footer>
       </Modal>
     </div>

@@ -1,6 +1,11 @@
 import React from 'react'
+import { useEffect } from 'react';
 import './SizeChart.css'
 const SizeChart = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
   return (
     <div id='' className="container">
       <section style={{ marginTop: '50px' }} id="" class="">

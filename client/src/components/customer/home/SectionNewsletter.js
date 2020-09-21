@@ -8,9 +8,9 @@ const SectionNewsletter = () => {
       <div className="section--newsletter">
         <div className="section__text-box">
           <h4 className="section__text--big mb-0 pb-0">Invite & Earn</h4>
-          <div className="my-1 d-flex justify-content-center align-items-center">
+          <div className="my-2 d-flex justify-content-center align-items-center">
 
-            <button type="button" className="button button--dark section__button" onClick={() => { history.push('/invite') }}>
+            <button type="button" className=" invite-button" onClick={() => { history.push('/invite') }}>
               Invite
           </button>
           </div>

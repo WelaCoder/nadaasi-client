@@ -83,7 +83,7 @@ const Customer = ({
         <Route exact path="/shop" component={ShopPage} />
         <CustomerRoute exact path="/user" component={Profile} />
         <CustomerRoute exact path="/bonus" component={BonusPage} />
-        <CustomerRoute exact path="/invite" component={Invite} />
+        <Route exact path="/invite" component={Invite} />
         <CustomerRoute exact path="/acquire" component={Acquire} />
         <CustomerRoute exact path="/order/:id" component={OrderShow} />
         <Route exact path="/user/sign-in" component={Login} />

@@ -70,11 +70,11 @@ const Activities = ({ user, getVoucher }) => {
               ))
             )}
       </div>
-      <div className="d-flex justify-content-center align-items-center">
+      <div className="d-flex justify-content-start mb-3 align-items-center">
         <div
           id={"findStyleBtn"}
           style={{ maxHeight: '40px !important' }}
-          class="shadow-shop cursor-pointer mt-3 mb-0 p-2 text-center text-uppercase  font-Futura-bold "
+          class="ml-3 shadow-shop cursor-pointer mt-3 mb-0 p-2 text-center text-uppercase  font-Futura-bold "
           onClick={async () => {
             setIsLoading(true);
             await getVoucher();
@@ -84,12 +84,12 @@ const Activities = ({ user, getVoucher }) => {
           <div>
             <span
               className={
-                isLoading ? "mr-2 spinner-border spinner-border-sm" : ""
+                isLoading == true ? "mr-2 spinner-border spinner-border-sm" : ""
               }
               role="status"
               aria-hidden="true"
             ></span>
-            {isLoading ? 'Get 100€ voucher for 3 points' : 'Getting 100€ voucher for 3 points'} </div>
+            {isLoading == true ? 'Getting 100€ voucher for 3 points' : 'Get 100€ voucher for 3 points'} </div>
         </div>
       </div>
     </div>

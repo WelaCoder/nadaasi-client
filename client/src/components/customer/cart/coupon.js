@@ -7,7 +7,7 @@ import { applyCoupon } from "../../../actions/coupon";
 
 // import { applyCoupon } from '../../features/product/productSlice';
 import { connect } from "react-redux";
-const Coupon = ({ cart, applyCoupon, appliedCoupon }) => {
+const Coupon = ({ cart, applyCoupon, appliedCoupon, user }) => {
   const [coupon, setCoupon] = useState();
 
   const [loading, setloading] = useState(false);
@@ -60,7 +60,7 @@ const Coupon = ({ cart, applyCoupon, appliedCoupon }) => {
             />
             <div class="input-group-append">
               <button width="34px" className="btn btn-dark border-0"
-                disabled={loading}
+                disabled={loading || user == null}
               >
                 <span
                   className={
@@ -85,6 +85,7 @@ const Coupon = ({ cart, applyCoupon, appliedCoupon }) => {
 };
 const mapStateToProps = (state) => ({
   cart: state.app.cart,
+  user: state.app.user,
   appliedCoupon: state.app.appliedCoupon,
 });
 export default connect(mapStateToProps, { applyCoupon })(Coupon);

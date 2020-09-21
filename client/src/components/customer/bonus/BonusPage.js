@@ -36,9 +36,17 @@ const BonusPage = ({ user }) => {
                   </li>
                 </ol>
               </nav>
-              <h4 className="text-uppercase font-Futura-bold mr-3 letter-spacing-cart ">
-                Vouchers
-              </h4>
+
+              <div className="d-flex justify-content-between">
+                <h4 className="text-uppercase font-Futura-bold mr-3 letter-spacing-cart ">
+                  {'Vouchers'}
+                </h4>
+                <h4 className=" font-Futura-bold mr-3 letter-spacing-cart ">
+                  Points:
+                  {' '}
+                  {user != null && user.points}
+                </h4>
+              </div>
               <Vouchers />
               <h4 className="text-uppercase font-Futura-bold mr-3 letter-spacing-cart ">
                 Activites
