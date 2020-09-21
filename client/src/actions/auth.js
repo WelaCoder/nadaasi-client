@@ -5,13 +5,28 @@ import {
   AUTH_CUSTOMER_SUCCESS,
   LOAD_USER,
   AUTH_CUSTOMER_FAILURE,
-  AUTH_CUSTOMER_LOGOUT,
+  AUTH_CUSTOMER_LOGOUT, LOAD_CART
 } from "./types";
 import setAuthToken from "../utils/setAuthToken";
 import { loadOrders } from "./orders";
 import { loadCart, loadShipping } from "./appActions";
 import { API } from "../constants/constants";
+
+export const resendEmail = () => async (dispatch) => {
+  try {
+    if (localStorage.token) {
+      setAuthToken(localStorage.token);
+    }
+    const res = await axios.get(`${API}/api/verify`);
+    toast.success('Verification email sent successfully...')
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
 // LoadUser
+
 export const LoadUser = () => async (dispatch) => {
   if (localStorage.token) {
     setAuthToken(localStorage.token);
@@ -26,7 +41,17 @@ export const LoadUser = () => async (dispatch) => {
     dispatch(loadCart());
     dispatch(loadShipping());
   } catch (error) {
-
+    let cart = localStorage.getItem('cart');
+    cart = JSON.parse(cart);
+    if (cart == null) {
+      cart = []
+    } else {
+      cart = cart.cart;
+    }
+    dispatch({
+      type: LOAD_CART,
+      payload: cart,
+    });
     // toast.error(error.response.data.msg, { autoClose: "1500" });
     dispatch({
       type: AUTH_CUSTOMER_FAILURE,

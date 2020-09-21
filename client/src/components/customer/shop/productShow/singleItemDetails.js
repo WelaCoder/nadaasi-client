@@ -10,6 +10,7 @@ import Skeleton from "react-loading-skeleton";
 import { connect } from "react-redux";
 import { addToCart, deleteItemFromCart } from "../../../../actions/appActions";
 import { toast } from "react-toastify";
+import { addtoStorage, deleteItemfromLocalCart } from "../../../../actions/cartActions";
 const SingleItemDetails = ({
   currentProduct,
   addToCart,
@@ -17,6 +18,8 @@ const SingleItemDetails = ({
   cart,
   deleteItemFromCart,
   isAuthenticated,
+  addtoStorage,
+  deleteItemfromLocalCart
 }) => {
   if (currentProduct == null)
     return (
@@ -70,7 +73,12 @@ const SingleItemDetails = ({
           </div>
           <button
             onClick={() => {
-              deleteItemFromCart(id()._id);
+              if (isAuthenticated) {
+
+                deleteItemFromCart(id()._id);
+              } else {
+                deleteItemfromLocalCart(id()._id)
+              }
               // removeItem(_id);
             }}
             className="btn btn-dark mb-5"
@@ -106,7 +114,7 @@ const SingleItemDetails = ({
                   if (isAuthenticated) {
                     addToCart(choosenProduct);
                   } else {
-                    toast.error("You must be logged in first...");
+                    addtoStorage(choosenProduct, currentProduct);
                   }
                 }}
                 className="btn btn-dark btn-block"
@@ -128,6 +136,6 @@ const mapStateToProps = (state) => ({
   isAuthenticated: state.app.isAuthenticated,
   choosenProduct: state.app.choosenProduct,
 });
-export default connect(mapStateToProps, { addToCart, deleteItemFromCart })(
+export default connect(mapStateToProps, { addToCart, deleteItemFromCart, addtoStorage, deleteItemfromLocalCart })(
   SingleItemDetails
 );

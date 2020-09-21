@@ -33,6 +33,8 @@ import MerchartsReturn from './merchantsreturn/MerchantsReturn';
 import SizeChart from "./pages/SizeChart";
 import Acquire from "./earn/Acquire";
 import Invite from './earn/inviteer'
+import Verify from "./verify/Verify";
+import UserRoute from "../../utils/UserRoute";
 const Customer = ({
   toastMessage,
   loadCart,
@@ -77,7 +79,7 @@ const Customer = ({
         <Route exact path="/contact" component={ContactPage} />
         <Route exact path="/about" component={AboutPage} />
 
-        <CustomerRoute exact path="/cart" component={CartPage} />
+        <Route exact path="/cart" component={CartPage} />
         <Route exact path="/shop" component={ShopPage} />
         <CustomerRoute exact path="/user" component={Profile} />
         <CustomerRoute exact path="/bonus" component={BonusPage} />
@@ -87,6 +89,7 @@ const Customer = ({
         <Route exact path="/user/sign-in" component={Login} />
         <Route exact path="/user/sign-up" component={SignUp} />
         <Route exact path="/user/sign-up/:id" component={SignUp} />
+        <UserRoute exact path="/verify" component={Verify} />
         <Route exact path="/shop-item/:id" component={ProductShow} />
         <Route exact path="/refundpolicy" component={RefundPolicy} />
         <Route exact path="/securepayment" component={SecurePayment} />

@@ -32,10 +32,20 @@ const SignUp = ({ signUp, auth: { isAuthenticated } }) => {
   }, [params])
   if (isAuthenticated) {
     toast.success("Successfully Registered", toastConfig);
-    return <Redirect to="/" />;
+    return <Redirect to="/verify" />;
   }
   const onSubmit = (e) => {
     e.preventDefault();
+    const re = new RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
+    const isOk = re.test(password);
+
+    console.log(isOk);
+
+    if (!isOk) {
+      return toast.error('Please enter a secure password');
+    }
+
+
     setisloading(true);
     signUp({ firstname, lastname, inviteCode, email, password });
     setTimeout(() => {
@@ -107,7 +117,8 @@ const SignUp = ({ signUp, auth: { isAuthenticated } }) => {
                 className="form-control"
               />
             </div>
-            <button type="submit" className="btn btn-block btn-dark mb-2">
+            <small id="emailHelp" class="form-text text-muted">Please include minimum eight characters, at least one letter and one number.</small>
+            <button type="submit" className="btn btn-block btn-dark my-2">
               <span
                 className={
                   isloading ? "mr-2 spinner-border spinner-border-sm" : ""

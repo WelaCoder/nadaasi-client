@@ -49,7 +49,7 @@ const initialState = {
   },
   useBalance: true,
   usePoints: false,
-  cart: null,
+  cart: [],
   currentProduct: null,
   toastMessage: null,
   filters: {
@@ -208,10 +208,11 @@ export default (state = initialState, action) => {
         ...state,
         token: null,
         users: null,
+        user: null,
         isAuthenticated: false,
         isAdmin: false,
         loading: false,
-        cart: null,
+        cart: [],
       };
     case SORT_PRODUCTS:
       return {

@@ -192,12 +192,25 @@ export const setBodyType = (bodyType) => async (dispatch) => {
 
 export const loadCart = () => async (dispatch) => {
   try {
-    const res = await axios.get(`${API}/api/cart`);
+    let cart = localStorage.getItem('cart');
+    cart = JSON.parse(cart);
+    if (cart == null) {
+      cart = []
+    } else {
+      cart = cart.cart;
+    }
+    const res = await axios.put(`${API}/api/cart`, { cart }, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     dispatch({
       type: LOAD_CART,
       payload: res.data.cartItems,
     });
+    localStorage.removeItem('cart');
   } catch (error) {
+
     console.log(error);
   }
 };

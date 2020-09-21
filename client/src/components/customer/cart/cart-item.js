@@ -32,7 +32,7 @@ export const CartItem = ({ item }) => {
         justify-content-between"
         >
           <Price currency="€" price={price * quantity} sale={sale} originalPrice={originalPrice * quantity} />
-          <CartDelete showMobile />
+          <CartDelete showMobile id={_id} />
         </div>
       </div>
     </div>
