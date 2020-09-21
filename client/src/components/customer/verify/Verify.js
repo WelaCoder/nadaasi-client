@@ -10,7 +10,7 @@ const Verify = ({ user, resendEmail }) => {
         return <Redirect to='/' />
     }
     useEffect(() => {
-        await resendEmail();
+        resendEmail();
     }, [])
     const handle = async () => {
         setLoading(true);
