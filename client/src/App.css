@@ -113,6 +113,16 @@
   color: black;
  
 }
+#logout_button_extra{
+  /* color: red !important; */
+  position: absolute !important;
+  /* top: 30 !important; */
+  z-index: 100;
+  right: 145px;
+  top: 45px;
+  color: black;
+ 
+}
 .invite-button {
   color: #fff !important;
   text-transform: uppercase;

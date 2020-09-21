@@ -72,7 +72,7 @@ const MyNavbar = ({ LogOut, auth: { isAuthenticated }, cart, setFilters }) => {
                   showLogout &&
                   <butthon
                     className="tool-item"
-                    id='logout_button'
+                    id={path.pathname == "/shop" ? 'logout_button_extra' : 'logout_button'}
                     onClick={() => {
                       LogOut();
                     }}
