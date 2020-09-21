@@ -124,7 +124,10 @@ const Profile = ({ user, LoadUser, orders, setCountry }) => {
                     </div>
                     <div class="row mb-3">
                       <div class="col-md-6 p-0">EMAIL</div>
-                      <div class="col-md-6 p-0">{user && user.email}</div>
+                      <div class="col-md-6 p-0"><p>
+                        {user && user.email.split('@')[0]}
+                        {'...'}
+                      </p></div>
                     </div>
                     <div class="row mb-3">
                       <div class="col-md-6 p-0">COUNTRY</div>
