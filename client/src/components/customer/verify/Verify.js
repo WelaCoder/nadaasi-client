@@ -6,12 +6,12 @@ import { resendEmail } from '../../../actions/auth'
 
 const Verify = ({ user, resendEmail }) => {
     const [loading, setLoading] = useState(false);
-    if (user != null && user.isActive) {
-        return <Redirect to='/' />
-    }
     useEffect(() => {
         resendEmail();
     }, [])
+    if (user != null && user.isActive) {
+        return <Redirect to='/' />
+    }
     const handle = async () => {
         setLoading(true);
         await resendEmail();
