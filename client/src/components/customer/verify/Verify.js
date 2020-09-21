@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Redirect } from 'react-router-dom'
 import { useState } from 'react'
 import { resendEmail } from '../../../actions/auth'
@@ -9,6 +9,9 @@ const Verify = ({ user, resendEmail }) => {
     if (user != null && user.isActive) {
         return <Redirect to='/' />
     }
+    useEffect(() => {
+        await resendEmail();
+    }, [])
     const handle = async () => {
         setLoading(true);
         await resendEmail();
