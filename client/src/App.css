@@ -1,6 +1,7 @@
 #addColorBtn,
 #findStyleBtn {
-  background-color: #ffffff !important;
+  background-color: black !important;
+  color: white;
 }
 #orderContainer {
   margin-bottom: 400px !important;

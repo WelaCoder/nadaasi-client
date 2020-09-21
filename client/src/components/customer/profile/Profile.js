@@ -1,15 +1,48 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import Orders from "./Orders";
 import { LoadUser } from "../../../actions/auth";
 import { Link } from "react-router-dom";
-const Profile = ({ user, LoadUser, orders }) => {
+import { setCountry } from "../../../actions/appActions";
+const Profile = ({ user, LoadUser, orders, setCountry }) => {
   useEffect(() => {
 
     window.scrollTo(0, 0);
-
+    if (user != null && user.country != null) {
+      setcountry(user.country);
+    }
   }, [])
+  const [country, setcountry] = useState({
+    code: '',
+    name: ''
+  });
+  const countryName = (code) => {
+    switch (code) {
+      case "FI":
+        return "Finland";
+      case "SE":
+        return "Sweden";
+      case "NO":
+        return "Norway";
+      case "DE":
+        return "Germay";
+      case "NL":
+        return "Netherland";
+      case "AT":
+        return "Austria";
+      case "CH":
+        return "Switzerland";
+      case "US":
+        return "United States of America";
+      case "UK":
+        return "United Kingdom";
+      case "DK":
+        return "Denmark";
 
+      default:
+        return "";
+    }
+  };
   return (
     <div>
       <div
@@ -59,7 +92,7 @@ const Profile = ({ user, LoadUser, orders }) => {
                     </Link>
                       <Link to="/bonus" style={{ color: 'black' }} className='mb-1'>
                         Vouchers & Activities
-        </Link>
+                    </Link>
                     </div>
 
                   </div>
@@ -94,9 +127,47 @@ const Profile = ({ user, LoadUser, orders }) => {
                       <div class="col-md-6 p-0">{user && user.email}</div>
                     </div>
                     <div class="row mb-3">
+                      <div class="col-md-6 p-0">COUNTRY</div>
+                      <div class="col-md-6 p-0">{
+                        <select
+                          name="country"
+                          className="form-control filter-input"
+                          // ref={register}
+                          value={
+                            country.code
+                          }
+                          onChange={(e) => {
+                            setCountry(
+                              {
+                                name: countryName(e.target.value),
+                                code: e.target.value,
+                              },
+                            );
+                            setcountry({
+                              name: countryName(e.target.value),
+                              code: e.target.value,
+                            })
+                          }}
+                        >
+                          <option value="FI">Finland</option>
+                          <option value="SE">Sweden</option>
+                          <option value="NO">Norway</option>
+                          <option value="DE">Germany</option>
+                          <option value="NL">NETHERLAND</option>
+                          <option value="AT">AUSTRIA</option>
+                          <option value="CH">Switzerland</option>
+                          <option value="DK">Denmark</option>
+                          <option value="UK">United Kingdom</option>
+                          <option value="US">United States</option>
+                          <option value="">Choose Country</option>
+                        </select>
+                      }</div>
+                    </div>
+                    <div class="row mb-3">
                       <div class="col-md-6 p-0">BODY TYPE</div>
                       <div class="col-md-6 p-0">{user && user.bodyType}</div>
                     </div>
+
                     <div class="row mb-3">
                       <div class="col-md-6 p-0">BALANCE</div>
                       <div class="col-md-6 p-0 ">
@@ -109,9 +180,7 @@ const Profile = ({ user, LoadUser, orders }) => {
                     <div class="row mb-3">
                       <div class="col-md-6 p-0 ">POINTS</div>
                       <div class="col-md-6 p-0 text-info">
-
                         {user && user.points}
-
                       </div>
                     </div>
                     <div class="row mb-3">
@@ -134,4 +203,4 @@ const mapStateToProps = (state) => ({
   user: state.app.user,
   orders: state.app.orders,
 });
-export default connect(mapStateToProps, { LoadUser })(Profile);
+export default connect(mapStateToProps, { LoadUser, setCountry })(Profile);

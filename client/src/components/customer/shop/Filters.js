@@ -14,10 +14,12 @@ const Filters = ({ loadingProducts, filters, setFilters }) => {
 
   return (
     <div className="filters">
+      <div className='mb-3'>
+        <FindYourOwnStyle />
+      </div>
       <DressTypeFilter />
       <FilterSizes />
       <RangeFilter />
-      <FindYourOwnStyle />
     </div>
   );
 };

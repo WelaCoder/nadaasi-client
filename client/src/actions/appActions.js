@@ -190,6 +190,26 @@ export const setBodyType = (bodyType) => async (dispatch) => {
   }
 };
 
+
+export const setCountry = (country) => async (dispatch) => {
+  try {
+
+
+    const res = await axios.put(`${API}/api/user/setCountry`, { country }, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    dispatch({
+      type: SET_BODY_TYPE,
+      payload: res.data,
+    });
+    toast.success('Successfully updated country...')
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const loadCart = () => async (dispatch) => {
   try {
     let cart = localStorage.getItem('cart');

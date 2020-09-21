@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Visa from "../../../assets/images/Cart/banks/visa.svg";
 import Aktia from "../../../assets/images/Cart/banks/aktia.svg";
 import Danske from "../../../assets/images/Cart/banks/danske-bank.svg";
@@ -14,6 +14,7 @@ import axios from "axios";
 
 import { connect } from "react-redux";
 import { toast } from "react-toastify";
+import { setCountry } from "../../../actions/appActions";
 const CartTotal = ({
   cart,
   createSession,
@@ -21,7 +22,8 @@ const CartTotal = ({
   useBalance,
   shipping,
   appliedCoupon,
-  usePoints
+  usePoints,
+  setCountry,
 }) => {
   const [isLoading, setIsLoading] = useState(false);
   const total = () => {
@@ -60,6 +62,9 @@ const CartTotal = ({
     e.preventDefault();
     console.log(order);
     if (user) {
+      if (user.country == null) {
+        setCountry(order.country);
+      }
       setIsLoading(true);
       await createSession({ ...order, useBalance, appliedCoupon, usePoints }, user);
       setIsLoading(false);
@@ -67,6 +72,12 @@ const CartTotal = ({
       toast.info("You must be logged in to Proceed...")
     }
   };
+  useEffect(() => {
+    if (user != null && user.country != null) {
+      setOrder({ ...order, country: user.country });
+    }
+
+  }, [user])
 
   const countryName = (code) => {
     switch (code) {
@@ -221,32 +232,35 @@ const CartTotal = ({
           <div className="col-md-6 p-0">ADDRESS*</div>
           <div className="col-md-6 p-0">
             <div className="form-group">
-              <select
-                name="country"
-                className="form-control filter-input"
-                // ref={register}
-                onChange={(e) => {
-                  console.log(e.target.value);
-                  setOrder({
-                    ...order,
-                    country: {
-                      name: countryName(e.target.value),
-                      code: e.target.value,
-                    },
-                  });
-                }}
-              >
-                <option value="FI">Finland</option>
-                <option value="SE">Sweden</option>
-                <option value="NO">Norway</option>
-                <option value="DE">Germany</option>
-                <option value="NL">NETHERLAND</option>
-                <option value="AT">AUSTRIA</option>
-                <option value="CH">Switzerland</option>
-                <option value="DK">Denmark</option>
-                <option value="UK">United Kingdom</option>
-                <option value="US">United States</option>
-              </select>
+              {user == null || user.country == null ?
+                <select
+                  name="country"
+                  className="form-control filter-input"
+                  // ref={register}
+                  onChange={(e) => {
+                    console.log(e.target.value);
+                    setOrder({
+                      ...order,
+                      country: {
+                        name: countryName(e.target.value),
+                        code: e.target.value,
+                      },
+                    });
+                  }}
+                >
+                  <option value="FI">Finland</option>
+                  <option value="SE">Sweden</option>
+                  <option value="NO">Norway</option>
+                  <option value="DE">Germany</option>
+                  <option value="NL">NETHERLAND</option>
+                  <option value="AT">AUSTRIA</option>
+                  <option value="CH">Switzerland</option>
+                  <option value="DK">Denmark</option>
+                  <option value="UK">United Kingdom</option>
+                  <option value="US">United States</option>
+                </select> : user.country.name
+              }
+
             </div>
             <div className="form-group">
               <input
@@ -415,4 +429,4 @@ const mapStateToProps = (state) => ({
   appliedCoupon: state.app.appliedCoupon,
   shipping: state.app.shipping,
 });
-export default connect(mapStateToProps, { createSession })(CartTotal);
+export default connect(mapStateToProps, { createSession, setCountry })(CartTotal);
