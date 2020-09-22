@@ -17,11 +17,11 @@ const Acquire = ({ user }) => {
     return (
         <div ref={ref}>
             <div className='d-flex justify-content-center' style={{ backgroundColor: '#ffffff' }}>
-                <div className='col-6'>
+                <div className='col-5'>
                     <Carousel activeIndex={index} onSelect={handleSelect} interval={2000}>
                         <Carousel.Item>
                             <img
-                                width={300}
+                                width={100}
                                 height={500}
                                 className="d-block w-100"
                                 src={acquire1}
@@ -31,7 +31,7 @@ const Acquire = ({ user }) => {
                         </Carousel.Item>
                         <Carousel.Item>
                             <img
-                                width={300}
+                                width={100}
                                 height={500}
                                 className="d-block w-100"
                                 src={acquire2}
@@ -42,7 +42,7 @@ const Acquire = ({ user }) => {
                         </Carousel.Item>
                         <Carousel.Item>
                             <img
-                                width={300}
+                                width={100}
                                 height={500}
                                 className="d-block w-100"
                                 src={acquire3}
@@ -52,7 +52,7 @@ const Acquire = ({ user }) => {
                         </Carousel.Item>
                         <Carousel.Item>
                             <img
-                                width={300}
+                                width={100}
                                 height={500}
                                 className="d-block w-100"
                                 src={acquire4}
