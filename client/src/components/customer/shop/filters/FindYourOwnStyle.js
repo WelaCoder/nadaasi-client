@@ -30,15 +30,13 @@ const FindYourOwnStyle = ({ loadingProducts, setFilters, setBodyType, filters })
       hip - bust < 3.6 &&
       (bust - waist >= 9 || hip - waist >= 10)
     ) {
-      setFilters({ bodyType: "hourglass" });
+
       console.log("hourglass");
       setResult('Hourglass');
     } else if (bust - hip >= 3.6 && bust - waist < 9) {
-      setFilters({ bodyType: "apple" });
       setResult('Apple');
       console.log("apple");
     } else if (hip - bust > 2 && hip - waist >= 7 && highHip / waist >= 1.193) {
-      setFilters({ bodyType: "pear" });
       console.log("pear");
       setResult('Pear');
 
@@ -48,7 +46,6 @@ const FindYourOwnStyle = ({ loadingProducts, setFilters, setBodyType, filters })
       bust - waist < 9 &&
       hip - waist < 10
     ) {
-      setFilters({ bodyType: "banana" });
       console.log("banana");
       setResult('Banana');
 
@@ -98,7 +95,7 @@ const FindYourOwnStyle = ({ loadingProducts, setFilters, setBodyType, filters })
                     <p className='lead text-center'>
                       Your body type is {result}
                     </p>
-                    <button class="mt-3 btn btn-dark btn-block" onClick={() => { setBodyType(result); setShowModal(false); setResult(''); }}>
+                    <button class="mt-3 btn btn-dark btn-block" onClick={() => { setBodyType(result); setFilters({ bodyType: result.toLowerCase() }); setShowModal(false); setResult(''); }}>
                       Save Body Type
                       </button>
                   </> : <form class="" onSubmit={onSubmit}>

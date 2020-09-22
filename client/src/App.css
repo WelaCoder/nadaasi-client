@@ -179,7 +179,8 @@ transition: all 0.4s ease 0s;
       margin-left: 20px;
     }
     .fabrics-p{
-      font-size: 19px !important;
+      font-size: 26px !important;
+      font-family: FuturaLtBT !important;
     }
 
     .resp-sharing-button__link,
@@ -375,4 +376,20 @@ background-color: #FF6600
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+link, .nav-tabs .nav-link.active {
+
+  margin-right: 8px;
+  padding: 3px !important;
+}
+.nav-tabs .nav-link{
+  margin-right: 10px;
+  padding: 3px !important;
+
+}
+
+.filters__item{
+background-color: white   !important;
+  padding-left: 3px !important;
+  padding-right: 5px !important;
 }

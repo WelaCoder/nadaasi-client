@@ -75,24 +75,54 @@ const Profile = ({ user, LoadUser, orders, setCountry }) => {
             </ol>
           </nav>
           <div class="row">
-            <div class=" mb-3 col-md-2">
+            <div class=" mb-3 col-md-3">
               <div class={"shadow-shop p-3"}>
 
                 <form class="col-md-12 font-Futura-bold letter-spacing-cart mb-2 ">
                   <div class="row-wrap">
-                    <div class="row mb-3 ">
+
+                  <div>
+                      <Link to={'/user'} style={{ color: 'black' }} className='mb-1'>
+                        Personal Info
+                    </Link>
+                    </div>
+                    
+                    <div className='lead'>
+                      Bonus
+                      
+                    </div>
+                    <div>
+                      <Link to={'/invite'} style={{ color: 'black' }} className='mb-1'>
+       <span className='ml-1 pl-1' >Invite & Earn</span>
+                    </Link>
+                    </div>
+                    <div>
+                      <Link to={'/acquire'} style={{ color: 'black' }} className='mb-1'>
+       <span className='ml-1 pl-1' >   Acquire & Earn</span>
+                    </Link>
+                    </div>
+                    <div>
+                      <Link to={'/bonus'} style={{ color: 'black' }} className='mb-1'>
+       <span className='ml-1 pl-1' >Vouchers & Activities</span>
+                    </Link>
+                    </div>
+                    <div>
+                      <Link to={'/user'} style={{ color: 'black' }} className='mb-1'>
+                        Orders
+                    </Link>
+                    </div>
+                    <div>
                       <Link to={'/merchantreturn'} style={{ color: 'black' }} className='mb-1'>
                         Merchandise Returns
                     </Link>
-                      <Link to={'/invite'} style={{ color: 'black' }} className='mb-1'>
-                        Invite & Earn
-                    </Link>
-                      <Link to={'/acquire'} style={{ color: 'black' }} className='mb-1'>
-                        Acquire & Earn
-                    </Link>
-                      <Link to="/bonus" style={{ color: 'black' }} className='mb-1'>
-                        Vouchers & Activities
-                    </Link>
+                    </div>
+                    
+
+                    <div class="row mb-3 ">
+
+
+
+
                     </div>
 
                   </div>
@@ -126,6 +156,13 @@ const Profile = ({ user, LoadUser, orders, setCountry }) => {
                       <div class="col-md-6 p-0">EMAIL</div>
                       <div class="col-md-6 p-0"><p>
                         {user && user.email.split('@')[0]}
+                        {'...'}
+                      </p></div>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col-md-6 p-0">ADDRESS</div>
+                      <div class="col-md-6 p-0"><p>
+                        {user && user.address}
                         {'...'}
                       </p></div>
                     </div>

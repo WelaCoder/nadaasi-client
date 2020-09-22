@@ -5,6 +5,7 @@ import { ContactInfo } from "./ContactInfo";
 import { MerchartReturnBanner } from "./MerchantReturnBanner";
 import { Container } from "react-bootstrap";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const MerchartsReturn = () => {
   useEffect(() => {
@@ -14,19 +15,71 @@ const MerchartsReturn = () => {
   }, [])
 
   return (
-    <div className="bg-white">
-      <MerchartReturnBanner heading="Merchants Return" subheading="Working Service 24/7" />
+    <div className="bg-white p-3">
+     
       <Container>
         <div className="col-md-9 mx-auto mt-10 mb-2">
           <div className="row contact-row">
-            <div className="col-md-6 shadow-contact mb-3-sm">
-              <ContactInfo />
+            <div className="col-md-6  mb-3-sm d-flex justify-content-center align-items-center">
+            <div class=" mb-3 d-flex justify-content-center align-items-center">
+              <div class={"shadow-shop p-3"}>
+
+                <form class="col-md-12 font-Futura-bold letter-spacing-cart mb-2 ">
+                  <div class="row-wrap">
+
+                  <div>
+                      <Link to={'/user'} style={{ color: 'black' }} className='mb-1'>
+                        Personal Info
+                    </Link>
+                    </div>
+                    
+                    <div className='lead'>
+                      Bonus
+                      
+                    </div>
+                    <div>
+                      <Link to={'/invite'} style={{ color: 'black' }} className='mb-1'>
+       <span className='ml-1 pl-1' >Invite & Earn</span>
+                    </Link>
+                    </div>
+                    <div>
+                      <Link to={'/acquire'} style={{ color: 'black' }} className='mb-1'>
+       <span className='ml-1 pl-1' >   Acquire & Earn</span>
+                    </Link>
+                    </div>
+                    <div>
+                      <Link to={'/bonus'} style={{ color: 'black' }} className='mb-1'>
+       <span className='ml-1 pl-1' >Vouchers & Activities</span>
+                    </Link>
+                    </div>
+                    <div>
+                      <Link to={'/user'} style={{ color: 'black' }} className='mb-1'>
+                        Orders
+                    </Link>
+                    </div>
+                    <div>
+                      <Link to={'/merchantreturn'} style={{ color: 'black' }} className='mb-1'>
+                        Merchandise Returns
+                    </Link>
+                    </div>
+                    
+
+                    <div class="row mb-3 ">
+
+
+
+
+                    </div>
+
+                  </div>
+                </form>
+              </div>
+            </div>
             </div>
             <div className=" ml-2 contact px-0 col">
               <MerchantsReturnForm />
             </div>
           </div>
-          <ContactCardsList />
         </div>
       </Container>
     </div>

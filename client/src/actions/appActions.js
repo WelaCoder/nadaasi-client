@@ -191,11 +191,11 @@ export const setBodyType = (bodyType) => async (dispatch) => {
 };
 
 
-export const setCountry = (country) => async (dispatch) => {
+export const setCountry = (data) => async (dispatch) => {
   try {
 
 
-    const res = await axios.put(`${API}/api/user/setCountry`, { country }, {
+    const res = await axios.put(`${API}/api/user/setCountry`, data, {
       headers: {
         "Content-Type": "application/json",
       },
