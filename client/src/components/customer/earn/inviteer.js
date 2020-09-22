@@ -23,7 +23,7 @@ const Invite = ({ user }) => {
     return (
         <div ref={ref}>
             <div className='d-flex justify-content-center' style={{ backgroundColor: '#ffffff' }}>
-                <div className='col-5'>
+                <div className='col-md-12 col-lg-5'>
                     <Carousel activeIndex={index} onSelect={handleSelect} interval={2000}>
                         <Carousel.Item>
                             <img
