@@ -27,7 +27,7 @@ const Invite = ({ user }) => {
                     <Carousel activeIndex={index} onSelect={handleSelect} interval={2000}>
                         <Carousel.Item>
                             <img
-                                width={400}
+                                width={300}
                                 height={500}
                                 className="d-block w-100"
                                 src={acquire1}
@@ -36,7 +36,7 @@ const Invite = ({ user }) => {
                         </Carousel.Item>
                         <Carousel.Item>
                             <img
-                                width={400}
+                                width={300}
                                 height={500}
                                 className="d-block w-100"
                                 src={acquire2}
@@ -45,7 +45,7 @@ const Invite = ({ user }) => {
                         </Carousel.Item>
                         <Carousel.Item>
                             <img
-                                width={400}
+                                width={300}
                                 height={500}
                                 className="d-block w-100"
                                 src={acquire3}
@@ -54,7 +54,7 @@ const Invite = ({ user }) => {
                         </Carousel.Item>
                         <Carousel.Item>
                             <img
-                                width={400}
+                                width={300}
                                 height={500}
                                 className="d-block w-100"
                                 src={acquire4}
