@@ -167,7 +167,7 @@ const Profile = ({ user, LoadUser, orders, setCountry }) => {
                     </div>
                     <div class="row mb-3">
                       <div class="col-md-6 p-0">COUNTRY</div>
-        <div class="col-md-6 p-0">{user && user.country.name}</div>
+        <div class="col-md-6 p-0">{user && user?.country?.name}</div>
                     </div>
                     <div class="row mb-3">
                       <div class="col-md-6 p-0">BODY TYPE</div>
