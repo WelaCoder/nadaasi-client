@@ -70,7 +70,7 @@ const MyNavbar = ({ LogOut, auth: { isAuthenticated }, cart, setFilters }) => {
           {isAuthenticated ? (
             <>
 
-              <NavLink to="/user/" onClick={handleClick}>
+              <NavLink to="/user/">
 
                 <span className="tool-item" onMouseEnter={() => setShowLogout(true)} onMouseLeave={() => setTimeout(() => {
                   setShowLogout(false)
