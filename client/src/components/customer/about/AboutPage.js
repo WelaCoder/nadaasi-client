@@ -6,7 +6,7 @@ const AboutPage = () => (
   <>
     <Carousel />
     <Philosopy />
-    <div className="wrapper ">
+    <div className="wrapper custom-wrapper" >
       <div class="wrapper-item-about fabrics">
         <div class="fabric-section-one">
           <h1 className="font-Futura-medium text-capitalize">Our Fabrics</h1>

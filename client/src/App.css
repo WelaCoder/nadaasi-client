@@ -181,6 +181,7 @@ transition: all 0.4s ease 0s;
     .fabrics-p{
       font-size: 26px !important;
       font-family: FuturaLtBT !important;
+      line-height: 30px !important;
     }
 
     .resp-sharing-button__link,
@@ -389,7 +390,23 @@ link, .nav-tabs .nav-link.active {
 }
 
 .filters__item{
-background-color: white   !important;
+/* background-color: white   !important; */
   padding-left: 3px !important;
-  padding-right: 5px !important;
+  padding-right: 6px !important;
+}
+.custom-wrapper{
+  /* height: 150vh !important; */
+  height: initial !important;
+}
+
+.home-btn:after {
+  content: url(/static/media/login.20034d14.svg);
+  position: absolute;
+  width: 41px !important;
+  top: -1.5px !important;
+  right: -20px !important;
+}
+
+.home-btn{
+  margin-top: -1px !important;
 }

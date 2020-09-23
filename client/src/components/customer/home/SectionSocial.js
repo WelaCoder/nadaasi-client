@@ -14,7 +14,7 @@ const SectionSocial = () => (
           <a href={'#!'} onClick={() => { window.open("https://www.facebook.com/nadaasidresses/") }} >
             <img src={FacebookLogo} width="35" alt="facebook" className="mr-2" />
           </a>
-          <a href={'#!'} onClick={() => { window.open("https://www.instbuttongram.com/nadaasidresses/") }}>
+          <a href={'#!'} onClick={() => { window.open("https://www.instagram.com/nadaasidresses/") }}>
             <img
               src={InstagramLogo}
               width="35"
