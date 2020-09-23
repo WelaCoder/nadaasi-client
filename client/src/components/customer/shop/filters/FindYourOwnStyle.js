@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import Skeleton from "react-loading-skeleton";
 import { connect } from "react-redux";
+import { useHistory } from 'react-router-dom'
 import { setBodyType, setFilters } from "../../../../actions/appActions";
-const FindYourOwnStyle = ({ loadingProducts, setFilters, setBodyType, filters }) => {
+const FindYourOwnStyle = ({ loadingProducts, setFilters, setBodyType, filters, user }) => {
   const isLoading = false;
   const [showModal, setShowModal] = useState(false);
   const [ownStyle, setOwnStyle] = useState({
@@ -18,6 +19,7 @@ const FindYourOwnStyle = ({ loadingProducts, setFilters, setBodyType, filters })
       [e.target.name]: Number(e.target.value),
     });
   };
+  let history = useHistory();
   const [result, setResult] = useState('');
   const onSubmit = (e) => {
     e.preventDefault();
@@ -95,9 +97,21 @@ const FindYourOwnStyle = ({ loadingProducts, setFilters, setBodyType, filters })
                     <p className='lead text-center'>
                       Your body type is {result}
                     </p>
-                    <button class="mt-3 btn btn-dark btn-block" onClick={() => { setBodyType(result); setFilters({ bodyType: result.toLowerCase() }); setShowModal(false); setResult(''); }}>
-                      Save Body Type
-                      </button>
+                    <button class="mt-3 btn btn-dark btn-block" onClick={() => {
+                      if (user) {
+                        setBodyType(result);
+                        setFilters({ bodyType: result.toLowerCase() });
+
+                      } else {
+                        history.push('/user/sign-in')
+                      }
+                      setShowModal(false);
+                      setResult('');
+                    }}>
+                      {user == null ? 'Login to Save Body Type and Filter Dresses' : 'Save Body Type'}
+
+
+                    </button>
                   </> : <form class="" onSubmit={onSubmit}>
                       <div class="col-sm-12">
                         <div class="d-flex align-items-center justify-content-center row">
@@ -171,7 +185,8 @@ const FindYourOwnStyle = ({ loadingProducts, setFilters, setBodyType, filters })
                         <div class="row">
                           <button type="submit" class="mt-3 btn btn-dark btn-block">
                             Find Your Style
-                      </button>
+
+                          </button>
                         </div>
                       </div>
                     </form>}
@@ -186,5 +201,6 @@ const FindYourOwnStyle = ({ loadingProducts, setFilters, setBodyType, filters })
 const mapStateToProps = (state) => ({
   loadingProducts: state.app.loadingProducts,
   filters: state.app.filters,
+  user: state.app.user,
 });
 export default connect(mapStateToProps, { setFilters, setBodyType })(FindYourOwnStyle);

@@ -204,7 +204,7 @@ export const setCountry = (data) => async (dispatch) => {
       type: SET_BODY_TYPE,
       payload: res.data,
     });
-    toast.success('Successfully updated country...')
+    toast.success('Successfully updated address...')
   } catch (error) {
     console.log(error);
   }

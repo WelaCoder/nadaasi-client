@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import {
   Nav,
@@ -23,17 +23,26 @@ import { setFilters } from "../../../actions/appActions";
 // import { logout, selectUser, isLoggedIn } from "../../features/user/userSlice";
 
 const MyNavbar = ({ LogOut, auth: { isAuthenticated }, cart, setFilters }) => {
-  //   const { totalUniqueItems } = useCart();
-  //   const dispatch = useDispatch();
-  //   const { isAuthenticated } = useSelector(selectUser);
-  //   useEffect(() => {
-  //     dispatch(isLoggedIn());
-  //   }, [dispatch]);
+  const ref = useRef(null);
   let path = useLocation();
   const [showLogout, setShowLogout] = useState(false);
+  const handleClick = () => {
+    if (ref != null) {
+      if (getWindowDimensions().width < 992) {
+        ref.current.click();
+      }
+    }
+  }
+  function getWindowDimensions() {
+    const { innerWidth: width, innerHeight: height } = window;
+    return {
+      width,
+      height
+    };
+  }
   return (
     <Navbar expand="lg" className="navbar" bsPrefix="navbar" collapseOnSelect>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Toggle aria-controls="basic-navbar-nav" ref={ref} />
 
       <Navbar.Brand href="#" className="logo">
         <img src={logo} alt="logo" width="200" />
@@ -41,16 +50,16 @@ const MyNavbar = ({ LogOut, auth: { isAuthenticated }, cart, setFilters }) => {
 
       <Navbar.Collapse id="basic-navbar-nav" className="">
         <Nav className="menu">
-          <NavLink className="menu-item" to="/" exact>
+          <NavLink className="menu-item" to="/" onClick={handleClick} exact>
             Home
           </NavLink>
-          <NavLink className="menu-item" to="/shop">
+          <NavLink className="menu-item" to="/shop" onClick={handleClick}>
             Shop
           </NavLink>
-          <NavLink className="menu-item" to="/about">
+          <NavLink className="menu-item" to="/about" onClick={handleClick}>
             About
           </NavLink>
-          <NavLink className="menu-item" to="/contact">
+          <NavLink className="menu-item" to="/contact" onClick={handleClick}>
             Contact
           </NavLink>
         </Nav>
@@ -61,7 +70,7 @@ const MyNavbar = ({ LogOut, auth: { isAuthenticated }, cart, setFilters }) => {
           {isAuthenticated ? (
             <>
 
-              <NavLink to="/user/">
+              <NavLink to="/user/" onClick={handleClick}>
 
                 <span className="tool-item" onMouseEnter={() => setShowLogout(true)} onMouseLeave={() => setTimeout(() => {
                   setShowLogout(false)
@@ -87,7 +96,7 @@ const MyNavbar = ({ LogOut, auth: { isAuthenticated }, cart, setFilters }) => {
               </NavLink>
             </>
           ) : (
-              <NavLink to="/user/sign-in">
+              <NavLink to="/user/sign-in" onClick={handleClick}>
                 <span className="tool-item">
                   <img src={UserLogo} alt="User" width="20" />
                 </span>
@@ -116,7 +125,7 @@ const MyNavbar = ({ LogOut, auth: { isAuthenticated }, cart, setFilters }) => {
             </OverlayTrigger>
           )}
 
-          <NavLink to="/cart">
+          <NavLink to="/cart" onClick={handleClick}>
             <span className="tool-item">
               <img alt="Cart" src={CartLogo} width="20" />
               <span className="badge">

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ShopCarousel } from "./shop-carousel";
 import SingleItemImages from "./singleItemImages";
 import SingleItemCarousel from "./singleItemCarousel";
@@ -11,6 +11,7 @@ import Image2 from "../../../../assets/images/Shop/4.jpg";
 import Image3 from "../../../../assets/images/Shop/5.jpg";
 import Image4 from "../../../../assets/images/Shop/2.jpg";
 import { BreadCrumbs } from "../../utils/breadcrumb";
+import { SketchPicker } from "react-color";
 import { useParams, useLocation } from "react-router-dom";
 import { connect } from "react-redux";
 import {
@@ -91,18 +92,18 @@ const ProductShow = ({
   return (
     <div className="container">
       <div ref={ref}></div>
-      <div className="mt-5 col-md-11 mx-auto">
+      <div className="mt-5 col-md-12 mx-auto">
         <div className="col-md-12">
           {currentProduct == null ? (
             <Skeleton count={1} />
           ) : (
-            <>
-              <BreadCrumbs
-                currentLink={currentProduct.name}
-                currentLinkAddres={pathname}
-              />
-            </>
-          )}
+              <>
+                <BreadCrumbs
+                  currentLink={currentProduct.name}
+                  currentLinkAddres={pathname}
+                />
+              </>
+            )}
           <div className="row">
             <div className="col-md-2 order-mb-2">
               <SingleItemImages />
@@ -130,17 +131,17 @@ const ProductShow = ({
               {loadingProducts ? (
                 <Skeleton count={12} />
               ) : (
-                <>
-                  <h3 className="text-center font-Futura-bold py-3">
-                    More Relative Items
+                  <>
+                    <h3 className="text-center font-Futura-bold py-3">
+                      More Relative Items
                   </h3>
-                  <ShopCarousel itemsonMobile={2} itemsOnDesktop={4}>
-                    {relevantProducts.map((item, idx) => (
-                      <SingleCarouselItem key={idx} item={item} />
-                    ))}
-                  </ShopCarousel>
-                </>
-              )}
+                    <ShopCarousel itemsonMobile={2} itemsOnDesktop={4}>
+                      {relevantProducts.map((item, idx) => (
+                        <SingleCarouselItem key={idx} item={item} />
+                      ))}
+                    </ShopCarousel>
+                  </>
+                )}
             </div>
           </div>
         </div>

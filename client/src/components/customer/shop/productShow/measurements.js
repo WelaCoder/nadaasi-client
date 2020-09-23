@@ -107,9 +107,12 @@ const Measurements = ({
                       title="Cm"
                     >
                       <MeasurementForm />
-                      <Button className='mt-3' variant="dark" onClick={handleClose}>
-                        Save And Exit
+                      <div className="d-flex justify-content-end">
+
+                        <Button variant="dark" className='mt-3' onClick={handleClose}>
+                          Save And Exit
           </Button>
+                      </div>
                     </Tab>
                     <Tab
                       tabClassName="border border-white  ml-2"
@@ -117,9 +120,12 @@ const Measurements = ({
                       title="Inch"
                     >
                       <MeasurementForm />
-                      <Button variant="dark" className='mt-3' onClick={handleClose}>
-                        Save And Exit
+                      <div className="d-flex justify-content-end">
+
+                        <Button variant="dark" className='mt-3' onClick={handleClose}>
+                          Save And Exit
           </Button>
+                      </div>
                     </Tab>
                   </Tabs>
                 </div>

@@ -14,10 +14,15 @@ const SignUp = ({ signUp, auth: { isAuthenticated } }) => {
     inviteCode: "",
     email: "",
     password: "",
+    country: {
+      name: "Finland",
+      code: "FI"
+    },
+
   });
   const params = useParams();
   const [isloading, setisloading] = useState(false);
-  const { firstname, lastname, inviteCode, email, password } = formdata;
+  const { firstname, lastname, inviteCode, email, password, country } = formdata;
   const onChange = (e) => {
     setformdata({
       ...formdata,
@@ -47,14 +52,41 @@ const SignUp = ({ signUp, auth: { isAuthenticated } }) => {
 
 
     setisloading(true);
-    signUp({ firstname, lastname, inviteCode, email, password });
+    signUp({ firstname, lastname, inviteCode, email, password, country });
     setTimeout(() => {
       setisloading(false);
     }, 700);
   };
+  const countryName = (code) => {
+    switch (code) {
+      case "FI":
+        return "Finland";
+      case "SE":
+        return "Sweden";
+      case "NO":
+        return "Norway";
+      case "DE":
+        return "Germay";
+      case "NL":
+        return "Netherland";
+      case "AT":
+        return "Austria";
+      case "CH":
+        return "Switzerland";
+      case "US":
+        return "United States of America";
+      case "UK":
+        return "United Kingdom";
+      case "DK":
+        return "Denmark";
+
+      default:
+        return "";
+    }
+  };
   return (
     <Fragment>
-      <div className="d-flex justify-content-center align-items-center font-Futura-light custom-height container">
+      <div className="d-flex justify-content-center align-items-center font-Futura-light custom-height-sign-up container">
         <div className="mx-auto col-md-6">
           <form className="" onSubmit={onSubmit}>
             <div className="row">
@@ -105,6 +137,42 @@ const SignUp = ({ signUp, auth: { isAuthenticated } }) => {
                 type="email"
                 className="form-control"
               />
+
+            </div>
+            <div className="form-group">
+              <select
+                name="country"
+                className="form-control filter-input"
+                // ref={register}
+                value={
+                  formdata.country.code
+                }
+                required
+                onChange={(e) => {
+                  setformdata(
+                    {
+                      ...formdata,
+                      country: {
+                        name: countryName(e.target.value),
+                        code: e.target.value,
+                      }
+                    },
+                  );
+
+                }}
+              >
+                <option value="FI">Finland</option>
+                <option value="SE">Sweden</option>
+                <option value="NO">Norway</option>
+                <option value="DE">Germany</option>
+                <option value="NL">NETHERLAND</option>
+                <option value="AT">AUSTRIA</option>
+                <option value="CH">Switzerland</option>
+                <option value="DK">Denmark</option>
+                <option value="UK">United Kingdom</option>
+                <option value="US">United States</option>
+
+              </select>
             </div>
             <div className="form-group">
               <input
@@ -117,6 +185,7 @@ const SignUp = ({ signUp, auth: { isAuthenticated } }) => {
                 className="form-control"
               />
             </div>
+
             <small id="emailHelp" class="form-text text-muted">Please include minimum eight characters, at least one uppercase, atleast one lowercase letter and one number.</small>
             <button type="submit" className="btn btn-block btn-dark my-2">
               <span

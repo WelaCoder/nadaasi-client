@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { setChoosenProduct } from "../../../actions/appActions";
+import { SketchPicker } from "react-color";
 const FilterColors = ({
   currentProduct,
   choosenProduct,
@@ -20,17 +21,51 @@ const FilterColors = ({
       ></span>
     );
   };
-  var colors = [];
+  const [showPicker, setShowPicker] = useState(false);
+  const [currentColor, setcurrentColor] = useState(null);
+
+  var colors = currentProduct?.dressColor;
+  if (currentColor) {
+    colors = [...colors, currentColor];
+  }
   return (
-    <div className="d-flex align-items-end font-Futura-light ">
+    <div className=" font-Futura-light ">
       <div className="filters w-100 d-flex justify-content-between align-items-center">
         <h6 className="mb-0 font-Futura-light">COLOR</h6>
-        <div className="filters__item d-flex ml-4 shadow-shop ">
-          {currentProduct?.dressColor?.map((color) => (
+
+        <div className="filters__item d-flex  shadow-shop ">
+          {colors?.map((color) => (
             <FilterColor key={color} color={color} />
           ))}
         </div>
       </div>
+      <a
+        id={"addColorBtn"}
+        href={"#!"}
+        className="btn btn-light"
+        onClick={() => {
+          setShowPicker(!showPicker);
+          if (showPicker) {
+            // setdata({
+            //   ...data,
+            //   dressColor: [...data.dressColor, currentColor],
+            // });
+          }
+        }}
+      >
+        Custom Color
+                </a>
+
+      {showPicker && (
+        <SketchPicker
+          color={currentColor || '#ffffff'}
+          onChangeComplete={(val) => {
+            console.log(val);
+            setChoosenProduct({ color: val.hex });
+            setcurrentColor(val.hex);
+          }}
+        />
+      )}
     </div>
   );
 };

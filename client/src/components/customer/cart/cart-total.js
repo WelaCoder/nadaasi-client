@@ -64,6 +64,9 @@ const CartTotal = ({
     if (user) {
       if (user.country == null) {
         setCountry({ country: order.country, address: order.address, });
+      } else {
+        setCountry({ address: order.address, });
+
       }
       setIsLoading(true);
       await createSession({ ...order, useBalance, appliedCoupon, usePoints }, user);

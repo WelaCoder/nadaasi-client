@@ -410,3 +410,13 @@ link, .nav-tabs .nav-link.active {
 .home-btn{
   margin-top: -1px !important;
 }
+.sm-category-custom{
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.custom-height-sign-up{
+  height: 66vh;
+}

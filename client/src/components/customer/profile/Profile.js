@@ -82,37 +82,37 @@ const Profile = ({ user, LoadUser, orders, setCountry }) => {
                   <div class="row-wrap">
 
                   <div>
-                      <Link to={'/user'} style={{ color: 'black' }} className='mb-1'>
+                      <Link to={'/user'} style={{ color: 'black' }} className='mb-1 lead'>
                         Personal Info
                     </Link>
                     </div>
                     
-                    <div className='lead'>
+                    <div className='lead mb-1'>
                       Bonus
                       
                     </div>
                     <div>
                       <Link to={'/invite'} style={{ color: 'black' }} className='mb-1'>
-       <span className='ml-1 pl-1' >Invite & Earn</span>
+       <span className='ml-1 pl-1' >- Invite & Earn</span>
                     </Link>
                     </div>
                     <div>
                       <Link to={'/acquire'} style={{ color: 'black' }} className='mb-1'>
-       <span className='ml-1 pl-1' >   Acquire & Earn</span>
+       <span className='ml-1 pl-1' >   - Acquire & Earn</span>
                     </Link>
                     </div>
                     <div>
                       <Link to={'/bonus'} style={{ color: 'black' }} className='mb-1'>
-       <span className='ml-1 pl-1' >Vouchers & Activities</span>
+       <span className='ml-1 pl-1' >- Vouchers & Activities</span>
                     </Link>
                     </div>
                     <div>
-                      <Link to={'/user'} style={{ color: 'black' }} className='mb-1'>
+                      <Link to={'/user'} style={{ color: 'black' }} className='mb-1 lead'>
                         Orders
                     </Link>
                     </div>
                     <div>
-                      <Link to={'/merchantreturn'} style={{ color: 'black' }} className='mb-1'>
+                      <Link to={'/merchantreturn'} style={{ color: 'black' }} className='mb-1 lead'>
                         Merchandise Returns
                     </Link>
                     </div>
@@ -163,45 +163,11 @@ const Profile = ({ user, LoadUser, orders, setCountry }) => {
                       <div class="col-md-6 p-0">ADDRESS</div>
                       <div class="col-md-6 p-0"><p>
                         {user && user.address}
-                        {'...'}
                       </p></div>
                     </div>
                     <div class="row mb-3">
                       <div class="col-md-6 p-0">COUNTRY</div>
-                      <div class="col-md-6 p-0">{
-                        <select
-                          name="country"
-                          className="form-control filter-input"
-                          // ref={register}
-                          value={
-                            country.code
-                          }
-                          onChange={(e) => {
-                            setCountry(
-                              {
-                                name: countryName(e.target.value),
-                                code: e.target.value,
-                              },
-                            );
-                            setcountry({
-                              name: countryName(e.target.value),
-                              code: e.target.value,
-                            })
-                          }}
-                        >
-                          <option value="FI">Finland</option>
-                          <option value="SE">Sweden</option>
-                          <option value="NO">Norway</option>
-                          <option value="DE">Germany</option>
-                          <option value="NL">NETHERLAND</option>
-                          <option value="AT">AUSTRIA</option>
-                          <option value="CH">Switzerland</option>
-                          <option value="DK">Denmark</option>
-                          <option value="UK">United Kingdom</option>
-                          <option value="US">United States</option>
-                          <option value="">Choose Country</option>
-                        </select>
-                      }</div>
+        <div class="col-md-6 p-0">{user && user.country.name}</div>
                     </div>
                     <div class="row mb-3">
                       <div class="col-md-6 p-0">BODY TYPE</div>

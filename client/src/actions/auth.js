@@ -66,6 +66,7 @@ export const signUp = ({
   inviteCode,
   email,
   password,
+  country
 }) => async (dispatch) => {
   try {
     const config = {
@@ -79,6 +80,7 @@ export const signUp = ({
       inviteCode,
       email,
       password,
+      country,
     });
     const res = await axios.post(`${API}/api/user/signup`, body, config);
     dispatch({
