@@ -420,3 +420,15 @@ link, .nav-tabs .nav-link.active {
 .custom-height-sign-up{
   height: 66vh;
 }
+@media only screen and (max-width: 600px) {
+  #logout_button{
+    /* color: red !important; */
+    position: absolute !important;
+    /* top: 30 !important; */
+    z-index: 100;
+    right: 22px !important;
+    top: 98px !important;
+    color: black;
+   
+  }
+}
