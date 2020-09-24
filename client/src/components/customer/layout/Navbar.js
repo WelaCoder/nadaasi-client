@@ -52,7 +52,7 @@ const MyNavbar = ({ LogOut, auth: { isAuthenticated }, cart, setFilters }) => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" ref={ref} />
 
       <Navbar.Brand href="#" className="logo">
-        <img src={logo} alt="logo" width="200" />
+        <img src={logo} alt="logo" width={width < 500 ? '100' : "200"} />
         {width < 992 && <NavLink to="/cart" className='ml-3'>
           <span className="tool-item">
             <img alt="Cart" src={CartLogo} width="20" />
