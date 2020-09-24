@@ -83,6 +83,10 @@
 .carousel__title, .carousel__subtitle,.home-btn{
   font-family: FuturaLtBT;
 }
+.my-font-futura{
+  font-family: FuturaLtBT !important;
+
+}
 .menu{
   text-transform: none !important;
 }
@@ -430,5 +434,8 @@ link, .nav-tabs .nav-link.active {
     top: 98px !important;
     color: black;
    
+  }
+  .custom-height-sign-up{
+    height: 86vh !important;
   }
 }

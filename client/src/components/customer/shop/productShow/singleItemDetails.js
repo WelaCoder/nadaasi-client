@@ -58,11 +58,13 @@ const SingleItemDetails = ({
           <h4 className="font-Futura-bold mb-0">{currentProduct.name}</h4>
           <div className="d-flex justify-content-between align-items-center py-2">
             <Price
-              currency="$"
+              currency="€"
               price={
                 // price
                 currentProduct.price
               }
+              discount={currentProduct.discount}
+              discountType={currentProduct.discountType}
             />
             <Ratings
               rating={
@@ -70,7 +72,9 @@ const SingleItemDetails = ({
                 currentProduct.rating
               }
             />
+
           </div>
+
           <button
             onClick={() => {
               if (isAuthenticated) {
@@ -97,6 +101,8 @@ const SingleItemDetails = ({
                 }
                 sale={currentProduct.sale}
                 originalPrice={currentProduct.originalPrice}
+                discount={currentProduct.discount}
+                discountType={currentProduct.discountType}
               />
               <Ratings
                 rating={
@@ -105,6 +111,7 @@ const SingleItemDetails = ({
                 }
               />
             </div>
+
             <Measurements />
             <Quantity />
             <FilterColors />

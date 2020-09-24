@@ -22,7 +22,7 @@ export const ItemDetails = ({ children }) => {
   );
 };
 
-export const Price = ({ currency, price, sale, originalPrice }) => {
+export const Price = ({ currency, price, sale, originalPrice, discount, discountType }) => {
   return (
     <h6 className="font-weight-bold mb-0">
 
@@ -35,6 +35,7 @@ export const Price = ({ currency, price, sale, originalPrice }) => {
         <span style={{ textDecoration: 'line-through' }}>
           {originalPrice}
         </span>
+        <span className='ml-2' style={{ fontSize: '0.8rem' }}>{discount}{discountType == "Amount" ? `€ ` : '% '}OFF</span>
       </> : <><span className="mr-1">
         {currency}
       </span><span>{price}</span></>}

@@ -6,11 +6,9 @@ import { setUseBalance } from "../../../actions/orders";
 import { setUsePoints } from "../../../actions/appActions";
 const NewsLetter = ({ setUseBalance, useBalance, usePoints, setUsePoints }) => {
   return (
-    <div class="d-flex align-items-center flex-col-mb justify-content-between w-100 cart-details  font-Futura-light">
-      <div className="font-Futura-light">
+    <div class="d-flex row cart-details  font-Futura-light">
 
-      </div>
-      <div className="d-flex justify-content-end align-items-center">
+      <div className="d-flex justify-content-end align-items-center col-6">
         <span className="mr-2">Use Points</span>
         <Toggle
           id="123"
@@ -21,7 +19,7 @@ const NewsLetter = ({ setUseBalance, useBalance, usePoints, setUsePoints }) => {
           }}
         />
       </div>
-      <div className="d-flex justify-content-end align-items-center">
+      <div className="d-flex justify-content-end align-items-center col-6">
         <span className="mr-2">Use Balance</span>
         <Toggle
           id="123"

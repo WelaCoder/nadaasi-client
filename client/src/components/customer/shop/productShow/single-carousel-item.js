@@ -6,7 +6,7 @@ import { setCurrentProduct } from "../../../../actions/appActions";
 import { connect } from "react-redux";
 import { API } from "../../../../constants/constants";
 const SingleCarouselItem = ({ item, setCurrentProduct }) => {
-  const { images, name, rating, price, _id, sale, originalPrice } = item;
+  const { images, name, rating, price, _id, sale, originalPrice, discount, discountType } = item;
   return (
     <Link
       to={`/shop-item/${_id}`}
@@ -23,7 +23,7 @@ const SingleCarouselItem = ({ item, setCurrentProduct }) => {
             {/* <img src={Like} width="17px" alt="like" /> */}
           </ItemDetails>
           <ItemDetails>
-            <Price currency="€" price={price} sale={sale} originalPrice={originalPrice} />
+            <Price currency="€" price={price} sale={sale} originalPrice={originalPrice} discount={discount} discountType={discountType} />
             <Ratings rating={rating} />
           </ItemDetails>
         </div>

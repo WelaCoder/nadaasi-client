@@ -17,6 +17,7 @@ import { LogOut } from "../../../actions/auth";
 import { useLocation } from "react-router-dom";
 import { connect } from "react-redux";
 import { setFilters } from "../../../actions/appActions";
+import { useEffect } from "react";
 // import { useCart } from "react-use-cart";
 // import { useDispatch, useSelector } from "react-redux";
 
@@ -26,6 +27,12 @@ const MyNavbar = ({ LogOut, auth: { isAuthenticated }, cart, setFilters }) => {
   const ref = useRef(null);
   let path = useLocation();
   const [showLogout, setShowLogout] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      setWidth(window.innerWidth);
+    });
+  }, [])
   const handleClick = () => {
     if (ref != null) {
       if (getWindowDimensions().width < 992) {
@@ -46,6 +53,17 @@ const MyNavbar = ({ LogOut, auth: { isAuthenticated }, cart, setFilters }) => {
 
       <Navbar.Brand href="#" className="logo">
         <img src={logo} alt="logo" width="200" />
+        {width < 992 && <NavLink to="/cart" className='ml-3'>
+          <span className="tool-item">
+            <img alt="Cart" src={CartLogo} width="20" />
+            <span className="badge">
+              {
+                cart != null && cart.length
+                //   totalUniqueItems
+              }
+            </span>
+          </span>
+        </NavLink>}
       </Navbar.Brand>
 
       <Navbar.Collapse id="basic-navbar-nav" className="">
@@ -124,18 +142,18 @@ const MyNavbar = ({ LogOut, auth: { isAuthenticated }, cart, setFilters }) => {
               </span>
             </OverlayTrigger>
           )}
-
-          <NavLink to="/cart" onClick={handleClick}>
-            <span className="tool-item">
-              <img alt="Cart" src={CartLogo} width="20" />
-              <span className="badge">
-                {
-                  cart != null && cart.length
-                  //   totalUniqueItems
-                }
+          {width > 992 &&
+            <NavLink to="/cart" onClick={handleClick}>
+              <span className="tool-item">
+                <img alt="Cart" src={CartLogo} width="20" />
+                <span className="badge">
+                  {
+                    cart != null && cart.length
+                    //   totalUniqueItems
+                  }
+                </span>
               </span>
-            </span>
-          </NavLink>
+            </NavLink>}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

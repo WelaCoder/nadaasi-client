@@ -13,12 +13,12 @@ const RefundPolicy = () => {
       <section id="main">
 
         <header style={{ paddingTop: '50px' }} class="page-header">
-          <h1 class="tt-innerpagetitle">
+          <h1 class="tt-innerpagetitle my-font-futura">
             Refund policy
           </h1>
         </header>
 
-        <section style={{ marginTop: "50px", marginBottom: "100px", }} id="" class="page-content page-cms page-cms-8">
+        <section style={{ marginTop: "50px", marginBottom: "100px", }} id="" class="page-content page-cms page-cms-8 my-font-futura">
           <h1>Refund policy</h1>
           <p>You have a 14-day right to return or exchange a product according to Finnish
             consumer protection legislation. You have the right to return the order if:</p>

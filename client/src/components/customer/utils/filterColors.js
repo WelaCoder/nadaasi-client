@@ -53,8 +53,8 @@ const FilterColors = ({
           }
         }}
       >
-        Custom Color
-                </a>
+        {showPicker ? 'Close Color Picker' : ' Custom Color'}
+      </a>
 
       {showPicker && (
         <SketchPicker
