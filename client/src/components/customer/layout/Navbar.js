@@ -59,6 +59,8 @@ const MyNavbar = ({ LogOut, auth: { isAuthenticated }, cart, setFilters }) => {
             <span className="badge">
               {
                 cart != null && cart.length
+
+                //nice
                 //   totalUniqueItems
               }
             </span>
