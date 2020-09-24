@@ -125,7 +125,7 @@ const MyNavbar = ({ LogOut, auth: { isAuthenticated }, cart, setFilters }) => {
           {path.pathname == "/shop" && (
             <OverlayTrigger
               rootClose
-              trigger="hover"
+              trigger="click"
               placement="bottom"
               overlay={
                 <Popover id="popover-basic">
