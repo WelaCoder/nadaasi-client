@@ -19,7 +19,7 @@ const Acquire = ({ user }) => {
     return (
         <div ref={ref}>
             <div className='d-flex justify-content-center row' style={{ backgroundColor: '#ffffff' }}>
-            <div class=" mb-3 col-md-12 col-lg-3 d-flex justify-content-center align-items-center pt-md-2">
+            {user!=null && <div class=" mb-3 col-md-12 col-lg-3 d-flex justify-content-center align-items-center pt-md-2">
               <div class={"shadow-shop p-3"}>
 
                 <form class="col-md-12 font-Futura-bold letter-spacing-cart mb-2 ">
@@ -72,7 +72,7 @@ const Acquire = ({ user }) => {
                   </div>
                 </form>
               </div>
-            </div>
+            </div>}
                 <div className='col-md-12 col-lg-5'>
                     <Carousel activeIndex={index} onSelect={handleSelect} interval={2000}>
                         <Carousel.Item>

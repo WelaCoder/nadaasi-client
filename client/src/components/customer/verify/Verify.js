@@ -26,6 +26,8 @@ const Verify = ({ user, resendEmail }) => {
                 </h4>
                     <div class="col-md-12 font-Futura-bold letter-spacing-cart mb-2 ">
                         A verification email has been sent to your email address at {user != null && user.email}
+                        <br />
+                        Note: Check your spam or section if you don't recieve the email...
                     </div>
                     <div className="d-flex justify-content-center align-items center">
                         <div className="col-8">
