@@ -120,7 +120,7 @@ const Invite = ({ user }) => {
                         </Carousel.Item>
                     </Carousel>
                     <div className="d-flex row  justify-content-center mt-0 p-0" style={{ paddingBottom: '30px', backgroundColor: '#ffffff' }}>
-                <p className="lead text-center">
+                <p className="lead text-center mx-3">
                     Copy and Share your personal invite link...
                 </p>
             </div>

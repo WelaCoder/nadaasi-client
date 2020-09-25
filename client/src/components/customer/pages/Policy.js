@@ -8,9 +8,9 @@ const Policy = () => {
   }, [])
 
   return (
-    <div className="container">
+    <div className="container my-font-futura">
 
-      <section style={{ marginTop: '50px', marginBottom: '60px' }} id="" class="">
+      <section style={{ marginTop: '50px', marginBottom: '60px' }} id="" class="my-font-futura">
         <h1>Privacy Policy</h1>
         <p>NADAASI is committed to respecting your privacy. NADAASI is the sole owner of
         the information collected on www.nadaasi.com. The information is used entirely

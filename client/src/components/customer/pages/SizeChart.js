@@ -7,31 +7,31 @@ const SizeChart = () => {
   }, [])
 
   return (
-    <div id='' className="container">
+    <div id='' className="container my-font-futura">
       <section style={{ marginTop: '50px' }} id="" class="">
         <div class="col-sm-12 col-md-6">
-          <h2>Detailed Guide</h2>
-          <p>A detailed breakdown of our sizes</p>
-          <table class="size-info-table">
+          <h2 className='my-font-futura'>Detailed Guide</h2>
+          <p className='my-font-futura'>A detailed breakdown of our sizes</p>
+          <table class="size-info-table my-font-futura">
             <thead>
               <tr>
                 <td></td>
-                <td colspan="2">P/XS</td>
-                <td colspan="2">S</td>
-                <td colspan="2">M</td>
-                <td colspan="2">L</td>
-                <td>XL</td>
+                <td colspan="2" className='my-font-futura'>P/XS</td>
+                <td colspan="2" className='my-font-futura'>S</td>
+                <td colspan="2" className='my-font-futura'>M</td>
+                <td colspan="2" className='my-font-futura'>L</td>
+                <td className='my-font-futura'>XL</td>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>BUST</td>
-                <td>32</td>
-                <td>33</td>
-                <td>34</td>
-                <td>35</td>
-                <td>36</td>
-                <td>37</td>
+                <td className='my-font-futura'>BUST</td>
+                <td className='my-font-futura'>32</td>
+                <td className='my-font-futura'>33</td>
+                <td className='my-font-futura'>34</td>
+                <td className='my-font-futura'>35</td>
+                <td className='my-font-futura'>36</td>
+                <td className='my-font-futura'>37</td>
                 <td>38½</td>
                 <td>40</td>
                 <td>41½</td>
@@ -96,10 +96,10 @@ const SizeChart = () => {
             <li>Fit can vary by fabrication; however, we try our best to keep it close.</li>
           </ol>
         </div>
-        <div class="col-sm-12 col-md-6">
+        <div class="col-sm-12 col-md-6 my-font-futura">
           <h2>Size Guide</h2>
           <p>Our sizes, compared to EU sizes.</p>
-          <table class="size-info-table-eu">
+          <table class="size-info-table-eu my-font-futura">
             <thead>
               <tr>
                 <td colspan="2">SIZE</td>
