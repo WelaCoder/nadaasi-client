@@ -9,8 +9,12 @@ import { toast } from "react-toastify";
 import { toastConfig } from "../../../config/toastConfig";
 
 import { login } from "../../../actions/auth";
+import { useEffect } from "react";
 
 const UserSignin = ({ login, auth }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
   const [formdata, setformdata] = useState({
     email: "",
     password: "",
