@@ -97,6 +97,7 @@ export const signUp = ({
 };
 // Login
 export const login = ({ email, password }) => async (dispatch) => {
+  let res;
   try {
     const config = {
       headers: {
@@ -104,7 +105,7 @@ export const login = ({ email, password }) => async (dispatch) => {
       },
     };
     const body = JSON.stringify({ email, password });
-    const res = await axios.post(`${API}/api/user/login`, body, config);
+    res = await axios.post(`${API}/api/user/login`, body, config);
 
     dispatch({
       type: AUTH_CUSTOMER_SUCCESS,
@@ -112,7 +113,8 @@ export const login = ({ email, password }) => async (dispatch) => {
     });
     dispatch(LoadUser());
   } catch (error) {
-    toast.error("Failed to Login", { autoClose: "1500" });
+
+    toast.error(error.response.data.msg, { autoClose: "1500" });
     dispatch({
       type: AUTH_CUSTOMER_FAILURE,
       payload: error,

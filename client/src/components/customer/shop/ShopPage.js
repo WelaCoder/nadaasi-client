@@ -34,14 +34,17 @@ const ShopePage = ({ loadingProducts, getProducts, loadCart }) => {
                 <Skeleton count={1} height="300px" />
               </div>
             ) : (
-              <Banner
-                textLeft
-                height="300px"
-                image={BannerImage}
-                title="New Collection 2020"
-                subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting"
-              />
-            )}
+                <Banner
+                  textLeft
+                  height="300px"
+                  image={BannerImage}
+                  title="LATEST DESIGNS WITH NADAASI"
+                  subtitle="Shop the latest customizable designs with our monthly edit of what’s new in online at
+                  Nadaasi. With our latest collection of dresses and personalized services, we aim to
+                  serve every woman and every occasion. Explore the personalized fashion here and
+                  now with us."
+                />
+              )}
           </Row>
           <Col sm={12} md={3} className="d-mb mt-4 ipad-shop">
             <Filters></Filters>
@@ -52,8 +55,8 @@ const ShopePage = ({ loadingProducts, getProducts, loadCart }) => {
                 <Skeleton count={1} height="40px" />
               </div>
             ) : (
-              <ShopFilter />
-            )}
+                <ShopFilter />
+              )}
           </Row>
           <ShopList />
           <Row className="mt-4 justify-content-end p-3-mb">
