@@ -10,7 +10,7 @@ import MasterCard from "../../../assets/images/footer/mastercard-white.svg";
 const Footer = () => (
   <div className="footer">
     <div className="footer-company">
-      <p>
+      <p className='mb-3'>
         <a href="/" className="footer-logo">
           <img src={FooterLogo} width="200px" alt="logo" />
         </a>
@@ -31,7 +31,7 @@ const Footer = () => (
       </p>
     </div>
     <div className="footer-info">
-      <h2>Information</h2>
+      <h2 className='mb-3'>Information</h2>
       <p>
         <Link to="/securepayment">Secure Payment</Link>
       </p>
@@ -46,7 +46,7 @@ const Footer = () => (
       </p>
     </div>
     <div className="footer-personal w-100">
-      <h2>Your Account</h2>
+      <h2 className='mb-3'>Your Account</h2>
 
       <p>
         <Link to="/user" className="card-link">
@@ -75,7 +75,7 @@ const Footer = () => (
       </p> */}
     </div>
     <div className="footer-personal w-100">
-      <h2>Bonus</h2>
+      <h2 className='mb-3'>Bonus</h2>
 
       <p>
         <Link to="/invite" className="card-link">
