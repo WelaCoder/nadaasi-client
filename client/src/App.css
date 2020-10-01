@@ -59,10 +59,10 @@
 }
 .carousel-indicators li {
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   margin: 10px;
-  border: 3px solid #1d1717;
+  border: 2px solid #1d1717;
   text-indent: 0;
   cursor: pointer;
   /* border: none; */
@@ -76,8 +76,8 @@
   /* height: 78vh !important; */
 }
 .carousel-indicators .active {
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   margin: 10px;
   background-color: #1d1717;
 }
@@ -443,4 +443,13 @@ link, .nav-tabs .nav-link.active {
 
 #content-wrapper {
   font-family: FuturaLtBT !important;
+}
+
+.carousel img {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: auto;
+  max-width: none;
 }
