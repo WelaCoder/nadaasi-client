@@ -9,7 +9,7 @@ import SectionTestimonial from "./SectionTestimonial";
 
 import CottonIcon from "../../../assets/images/home/icons/cotton.svg";
 import PaintBrushIcon from "../../../assets/images/home/icons/paint-brush.svg";
-import TShirtIcon from "../../../assets/images/home/icons/t-shirt.svg";
+import TShirtIcon from "../../../assets/images/home/icons/dress.svg";
 // import ShipIcon from '../../../assets/images/home/icons/ship.svg';
 // import MoneyIcon from '../../../assets/images/home/icons/money-back.svg';
 // import HoursIcon from '../../../assets/images/home/icons/24-hours.svg';

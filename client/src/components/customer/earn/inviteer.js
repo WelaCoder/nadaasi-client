@@ -27,42 +27,42 @@ const Invite = ({ user }) => {
         <div ref={ref} >
             <div className='d-flex justify-content-center row '  style={{ backgroundColor: '#ffffff' }}>
             {user!=null && <div class=" mb-3 col-md-12 col-lg-3 d-flex justify-content-center align-items-center pt-md-2">
-              <div class={"shadow-shop p-3"}>
+              <div class={"shadow-shop"}>
 
-                <form class="col-md-12 font-Futura-bold letter-spacing-cart mb-2 ">
+                <form class="col-md-12 p-0 font-Futura-bold letter-spacing-cart mb-2 ">
                   <div class="row-wrap">
 
-                  <div>
+                  <div className = 'pl-3 pr-3 pt-1'>
                       <Link to={'/user'} style={{ color: 'black' }} className='mb-1 lead'>
                         Personal Info
                     </Link>
                     </div>
                     
-                    <div className='lead mb-1'>
+                    <div className='lead mb-1 pl-3 pr-3 pt-1'>
                       Bonus
                       
                     </div>
-                    <div>
+                    <div className = 'pl-3 pr-3 pt-1'>
                       <Link to={'/invite'} style={{ color: 'black' }} className='mb-1'>
        <span className='ml-1 pl-1' >- Invite & Earn</span>
                     </Link>
                     </div>
-                    <div>
+                    <div className = 'pl-3 pr-3 pt-1'>
                       <Link to={'/acquire'} style={{ color: 'black' }} className='mb-1'>
        <span className='ml-1 pl-1' >   - Acquire & Earn</span>
                     </Link>
                     </div>
-                    <div>
+                    <div className = 'pl-3 pr-3 pt-1'>
                       <Link to={'/bonus'} style={{ color: 'black' }} className='mb-1'>
        <span className='ml-1 pl-1' >- Vouchers & Activities</span>
                     </Link>
                     </div>
-                    <div>
+                    <div className = 'pl-3 pr-3 pt-1'>
                       <Link to={'/user'} style={{ color: 'black' }} className='mb-1 lead'>
                         Orders
                     </Link>
                     </div>
-                    <div>
+                    <div className = 'pl-3 pr-3 pt-1'>
                       <Link to={'/merchantreturn'} style={{ color: 'black' }} className='mb-1 lead'>
                         Merchandise Returns
                     </Link>
