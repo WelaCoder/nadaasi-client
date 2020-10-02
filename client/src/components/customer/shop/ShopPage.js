@@ -38,7 +38,7 @@ const ShopePage = ({ loadingProducts, getProducts, loadCart }) => {
                   textLeft
                   height="300px"
                   image={BannerImage}
-                  title="LATEST DESIGNS WITH NADAASI"
+                  title="SHOP THE LATEST DESIGNS WITH NADAASI’S NEW IN COLLECTION"
                   subtitle="Shop the latest customizable designs with our monthly edit of what’s new in online at
                   Nadaasi. With our latest collection of dresses and personalized services, we aim to
                   serve every woman and every occasion. Explore the personalized fashion here and
