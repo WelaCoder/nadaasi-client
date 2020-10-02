@@ -35,6 +35,7 @@ import Acquire from "./earn/Acquire";
 import Invite from './earn/inviteer'
 import Verify from "./verify/Verify";
 import UserRoute from "../../utils/UserRoute";
+import OrdersPage from "./profile/OrdersPage";
 const Customer = ({
   toastMessage,
   loadCart,
@@ -82,6 +83,7 @@ const Customer = ({
         <Route exact path="/cart" component={CartPage} />
         <Route exact path="/shop" component={ShopPage} />
         <CustomerRoute exact path="/user" component={Profile} />
+        <CustomerRoute exact path="/orders" component={OrdersPage} />
         <CustomerRoute exact path="/bonus" component={BonusPage} />
         <Route exact path="/invite" component={Invite} />
         <Route exact path="/acquire" component={Acquire} />

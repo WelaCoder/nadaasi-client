@@ -4,7 +4,7 @@ import Orders from "./Orders";
 import { LoadUser } from "../../../actions/auth";
 import { Link } from "react-router-dom";
 import { setCountry } from "../../../actions/appActions";
-const Profile = ({ user, LoadUser, orders, setCountry }) => {
+const OrdersPage = ({ user, LoadUser, orders, setCountry }) => {
   useEffect(() => {
 
     window.scrollTo(0, 0);
@@ -68,8 +68,8 @@ const Profile = ({ user, LoadUser, orders, setCountry }) => {
                     </a>
               </li>
               <li class="breadcrumb-item" aria-current="page">
-                <a class="text-dark font-weight-bold" href="/user">
-                  Profile
+                <a class="text-dark font-weight-bold" href="/orders">
+                  Orders
                     </a>
               </li>
             </ol>
@@ -129,69 +129,15 @@ const Profile = ({ user, LoadUser, orders, setCountry }) => {
                 </form>
               </div>
             </div>
-            
-            <div class=" mb-3 col-lg-8">
-              <div class={"shadow-shop p-3"}>
-                <h4 class="text-uppercase font-Futura-bold mr-3 letter-spacing-cart mt-3 mb-3">
-                  Personal Info
-                </h4>
-                <form class="col-md-12 font-Futura-bold letter-spacing-cart mb-2 ">
-                  <div class="row-wrap">
-                    <div class="row mb-3">
-                      <div class="col-md-6 p-0">FIRSTNAME</div>
-                      <div class="col-md-6 p-0">{user && user.firstname}</div>
-                    </div>
-                    <div class="row mb-3">
-                      <div class="col-md-6 p-0">LASTNAME</div>
-                      <div class="col-md-6 p-0">{user && user.lastname}</div>
-                    </div>
-                    <div class="row mb-3">
-                      <div class="col-md-6 p-0">EMAIL</div>
-                      <div class="col-md-6 p-0"><p>
-                        {user && user.email.split('@')[0]}
-                        {'...'}
-                      </p></div>
-                    </div>
-                    <div class="row mb-3">
-                      <div class="col-md-6 p-0">ADDRESS</div>
-                      <div class="col-md-6 p-0"><p>
-                        {user && user.address}
-                      </p></div>
-                    </div>
-                    <div class="row mb-3">
-                      <div class="col-md-6 p-0">COUNTRY</div>
-        <div class="col-md-6 p-0">{user && user?.country?.name}</div>
-                    </div>
-                    <div class="row mb-3">
-                      <div class="col-md-6 p-0">BODY TYPE</div>
-                      <div class="col-md-6 p-0">{user && user.bodyType}</div>
-                    </div>
+            <div class="ml-3 col p-0-mb">
 
-                    <div class="row mb-3">
-                      <div class="col-md-6 p-0">BALANCE</div>
-                      <div class="col-md-6 p-0 ">
-                        <span className="text-info mr-1">
-                          {user && user.balance}
-                        </span>
-                        €
-                      </div>
-                    </div>
-                    <div class="row mb-3">
-                      <div class="col-md-6 p-0 ">POINTS</div>
-                      <div class="col-md-6 p-0 text-info">
-                        {user && user.points}
-                      </div>
-                    </div>
-                    <div class="row mb-3">
-                      <div class="col-md-6 p-0">MEMBER SINCE</div>
-                      <div class="col-md-6 p-0">
-                        {user && new Date(user.date).toDateString()}
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
+              <h4 class="text-uppercase font-Futura-bold mr-3 letter-spacing-cart undefined">
+                Orders
+              </h4>
+
+              <Orders />
             </div>
+            
           </div>
         </div>
       </div>
@@ -202,4 +148,4 @@ const mapStateToProps = (state) => ({
   user: state.app.user,
   orders: state.app.orders,
 });
-export default connect(mapStateToProps, { LoadUser, setCountry })(Profile);
+export default connect(mapStateToProps, { LoadUser, setCountry })(OrdersPage);

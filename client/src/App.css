@@ -458,7 +458,7 @@ link, .nav-tabs .nav-link.active {
 .App{
     position: relative;
     min-height: 100vh;
-    padding-bottom: 300px;
+    padding-bottom: 270px;
     background-color: white;
 }
 .footer{
@@ -471,4 +471,9 @@ link, .nav-tabs .nav-link.active {
 }
 .navbar{
   background-color: #f8f9fa;
+}
+#orderContainer{
+  /* background-color: #f8f9fa; */
+  margin-bottom: 2px !important;
+
 }

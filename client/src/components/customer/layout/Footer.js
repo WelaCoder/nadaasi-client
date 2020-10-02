@@ -59,7 +59,7 @@ const Footer = () => (
         </Link>
       </p>
       <p>
-        <Link to="/user" className="card-link">
+        <Link to="/orders" className="card-link">
           Orders
         </Link>
       </p>
