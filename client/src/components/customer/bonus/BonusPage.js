@@ -71,12 +71,12 @@ const BonusPage = ({ user }) => {
                     </Link>
                     </div>
                     <div>
-                      <Link to={'/bonus'} style={{ color: 'black' }} className='mb-1'>
+                      <Link to={'/bonus'} style={{ color: 'black', fontSize:'1.5rem' }} className='mb-1'>
        <span className='ml-1 pl-1' >- Vouchers & Activities</span>
                     </Link>
                     </div>
                     <div>
-                      <Link to={'/user'} style={{ color: 'black' }} className='mb-1 lead'>
+                      <Link to={'/orders'} style={{ color: 'black' }} className='mb-1 lead'>
                         Orders
                     </Link>
                     </div>

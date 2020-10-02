@@ -82,7 +82,7 @@ const Profile = ({ user, LoadUser, orders, setCountry }) => {
                   <div class="row-wrap">
 
                   <div>
-                      <Link to={'/user'} style={{ color: 'black' }} className='mb-1 lead'>
+                      <Link to={'/user'} style={{ color: 'black', fontSize:'1.5rem' }} className='mb-1 lead'>
                         Personal Info
                     </Link>
                     </div>
@@ -107,7 +107,7 @@ const Profile = ({ user, LoadUser, orders, setCountry }) => {
                     </Link>
                     </div>
                     <div>
-                      <Link to={'/user'} style={{ color: 'black' }} className='mb-1 lead'>
+                      <Link to={'/orders'} style={{ color: 'black' }} className='mb-1 lead'>
                         Orders
                     </Link>
                     </div>
@@ -148,8 +148,8 @@ const Profile = ({ user, LoadUser, orders, setCountry }) => {
                     <div class="row mb-3">
                       <div class="col-md-6 p-0">EMAIL</div>
                       <div class="col-md-6 p-0"><p>
-                        {user && user.email.split('@')[0]}
-                        {'...'}
+                        {user && user.email}
+                        {''}
                       </p></div>
                     </div>
                     <div class="row mb-3">

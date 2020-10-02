@@ -41,7 +41,7 @@ const SignUp = ({ signUp, auth: { isAuthenticated } }) => {
   }
   const onSubmit = (e) => {
     e.preventDefault();
-    const re = new RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
+    const re = new RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$");
     const isOk = re.test(password);
 
     console.log(isOk);

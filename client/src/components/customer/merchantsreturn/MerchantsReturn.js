@@ -54,12 +54,12 @@ const MerchartsReturn = () => {
                     </Link>
                     </div>
                     <div>
-                      <Link to={'/user'} style={{ color: 'black' }} className='mb-1 lead'>
+                      <Link to={'/orders'} style={{ color: 'black' }} className='mb-1 lead'>
                         Orders
                     </Link>
                     </div>
                     <div>
-                      <Link to={'/merchantreturn'} style={{ color: 'black' }} className='mb-1 lead'>
+                      <Link to={'/merchantreturn'} style={{ color: 'black', fontSize:'1.5rem' }} className='mb-1 lead'>
                         Merchandise Returns
                     </Link>
                     </div>

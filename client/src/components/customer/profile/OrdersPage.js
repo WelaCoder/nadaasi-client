@@ -75,7 +75,7 @@ const OrdersPage = ({ user, LoadUser, orders, setCountry }) => {
             </ol>
           </nav>
           <div class="row">
-            <div class=" mb-3 col-md-3">
+            <div class=" mb-3 col-md-4">
               <div class={"shadow-shop p-3"}>
 
                 <form class="col-md-12 font-Futura-bold letter-spacing-cart mb-2 ">
@@ -107,7 +107,7 @@ const OrdersPage = ({ user, LoadUser, orders, setCountry }) => {
                     </Link>
                     </div>
                     <div>
-                      <Link to={'/user'} style={{ color: 'black' }} className='mb-1 lead'>
+                      <Link to={'/orders'} style={{ color: 'black' ,fontSize:'1.5rem'}} className='mb-1 lead'>
                         Orders
                     </Link>
                     </div>
