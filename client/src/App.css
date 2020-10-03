@@ -445,11 +445,11 @@ link, .nav-tabs .nav-link.active {
 @media only screen and (max-width: 768px) {
  
   .App{
-    padding-bottom: 700px !important;
+    padding-bottom: 780px !important;
 }
 .footer{
   
-  height: 700PX !important;            /* Footer height */
+  height: 780PX !important;            /* Footer height */
   
 }
 }
