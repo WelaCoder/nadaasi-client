@@ -25,7 +25,7 @@ const Invite = ({ user }) => {
     return (
         
         <div ref={ref} style={{minHeight:'60vh' , backgroundColor:'white'}}>
-            <div className='d-flex justify-content-center row '  style={{ backgroundColor: '#ffffff' }}>
+            <div className='d-flex justify-content-center row '  style={{ backgroundColor: '#ffffff'  ,maxWidth:'100%'}}>
             {user!=null && <div class=" mb-3 col-md-12 col-lg-3 d-flex justify-content-center align-items-center pt-md-2">
               <div class={"shadow-shop"}>
 
