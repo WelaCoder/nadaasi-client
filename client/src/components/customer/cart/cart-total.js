@@ -14,7 +14,7 @@ import axios from "axios";
 
 import { connect } from "react-redux";
 import { toast } from "react-toastify";
-import { setCountry } from "../../../actions/appActions";
+import { loadShipping, setCountry } from "../../../actions/appActions";
 const CartTotal = ({
   cart,
   createSession,
@@ -24,6 +24,7 @@ const CartTotal = ({
   appliedCoupon,
   usePoints,
   setCountry,
+  loadShipping
 }) => {
   const [isLoading, setIsLoading] = useState(false);
   const total = () => {
@@ -79,6 +80,7 @@ const CartTotal = ({
     if (user != null && user.country != null) {
       setOrder({ ...order, country: user.country });
     }
+    loadShipping();
 
   }, [user])
 
@@ -136,7 +138,7 @@ const CartTotal = ({
   //   }
   // };
   let balanceDiscount = 0;
-  let shippingCost;
+  let shippingCost = 0;
   if (shipping) {
     if (order.shipping == "standard") {
       shippingCost = shipping.standardCost;
@@ -432,4 +434,4 @@ const mapStateToProps = (state) => ({
   appliedCoupon: state.app.appliedCoupon,
   shipping: state.app.shipping,
 });
-export default connect(mapStateToProps, { createSession, setCountry })(CartTotal);
+export default connect(mapStateToProps, { createSession, setCountry, loadShipping })(CartTotal);
