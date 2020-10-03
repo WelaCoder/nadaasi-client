@@ -77,6 +77,7 @@ const Customer = ({
       <MyNavbar />
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/deleteEmail/:email" component={HomePage} />
         <Route exact path="/contact" component={ContactPage} />
         <Route exact path="/about" component={AboutPage} />
 

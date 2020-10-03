@@ -1,4 +1,5 @@
 import React from "react";
+import { Modal } from 'react-bootstrap'
 
 import Carousel from "./Carousel";
 import SectionCards from "./SectionCards";
@@ -17,6 +18,9 @@ import TShirtIcon from "../../../assets/images/home/icons/dress.svg";
 import ItemOne from "../../../assets/images/home/n1.jpg";
 import ItemTwo from "../../../assets/images/home/n2.jpg";
 import ItemThree from "../../../assets/images/home/n3.jpg";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const sectionQualityData = {
   title: "We Provide",
@@ -39,29 +43,65 @@ const sectionQualityData = {
 
 const items = [ItemOne, ItemTwo, ItemThree];
 
-const HomePage = () => (
-  <div>
-    <Carousel
-      items={items}
-      title="Give freedom to create,"
-      subtitle="choose and consume fashion in a way that inspires and empowers."
-      button="Shop Now"
-    />
-    {/* <SectionTextile /> */}
-    <SectionCards
-      items={sectionQualityData.items}
-      title={sectionQualityData.title}
-      subtitle={sectionQualityData.subtitle}
-    />
-    <SectionNewsletter />
-    {/* <SectionCards
+const HomePage = () => {
+  let params = useParams();
+  useEffect(() => {
+    console.log(params.email);
+    if (params.email) {
+      setShowModal(true);
+    }
+  }, [])
+  const [showModal, setShowModal] = useState(false);
+  return (
+    <div>
+      <Carousel
+        items={items}
+        title="Give freedom to create,"
+        subtitle="choose and consume fashion in a way that inspires and empowers."
+        button="Shop Now"
+      />
+      {/* <SectionTextile /> */}
+      <SectionCards
+        items={sectionQualityData.items}
+        title={sectionQualityData.title}
+        subtitle={sectionQualityData.subtitle}
+      />
+      <SectionNewsletter />
+      {/* <SectionCards
       items={sectionServicesData.items}
       title={sectionServicesData.title}
       subtitle={sectionServicesData.subtitle}
     /> */}
-    <SectionSocial />
-    <SectionTestimonial />
-  </div>
-);
+      <SectionSocial />
+      <SectionTestimonial />
+      <Modal className='d-flex justify-content-center align-items-center' show={showModal} onHide={() => setShowModal(false)}>
+        <div style={{ backgroundColor: "white" }}>
+          <div class="modal-header">
+            <div class="modal-title h4">Account Deleted</div>
+            <button
+
+              type="button"
+              class="close"
+              onClick={() => setShowModal(false)}
+            >
+              <span aria-hidden="true">×</span>
+              <span class="sr-only">Close</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div className='d-flex justify-content-center '>
+
+              <p className="lead text-center">
+                The acount for {params.email} has been deleted successfully...
+                                    </p>
+
+
+            </div>
+          </div>
+        </div>
+      </Modal>
+    </div>
+  )
+};
 
 export default HomePage;

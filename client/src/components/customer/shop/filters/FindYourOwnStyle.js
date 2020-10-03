@@ -103,6 +103,8 @@ const FindYourOwnStyle = ({ loadingProducts, setFilters, setBodyType, filters, u
                         setFilters({ bodyType: result.toLowerCase() });
 
                       } else {
+                        localStorage.setItem('bodyType', result);
+                        localStorage.setItem('filter', true);
                         history.push('/user/sign-in')
                       }
                       setShowModal(false);
@@ -120,11 +122,11 @@ const FindYourOwnStyle = ({ loadingProducts, setFilters, setBodyType, filters, u
                             <div class="mt-2 mb-0 form-group">
                               <input
                                 name="bust"
-                                min={0}
-                                value={ownStyle.bust}
+
+                                // value={ownStyle.bust}
                                 onChange={onChange}
                                 placeholder="Enter Bust Size"
-                                type="number"
+                                type="text"
                                 required
                                 class="form-control"
                               />
@@ -137,12 +139,12 @@ const FindYourOwnStyle = ({ loadingProducts, setFilters, setBodyType, filters, u
                             <div class="mt-2 mb-0 form-group">
                               <input
                                 name="waist"
-                                value={ownStyle.waist}
+                                // value={ownStyle.waist}
                                 onChange={onChange}
-                                min={0}
+
                                 required
                                 placeholder="Enter Waist Size"
-                                type="number"
+                                type="text"
                                 class="form-control"
                               />
                             </div>
@@ -154,12 +156,12 @@ const FindYourOwnStyle = ({ loadingProducts, setFilters, setBodyType, filters, u
                             <div class="mt-2 mb-0 form-group">
                               <input
                                 name="highHip"
-                                value={ownStyle.highHip}
-                                min={0}
+                                // value={ownStyle.highHip}
+
                                 required
                                 onChange={onChange}
                                 placeholder="Enter High-hip Size"
-                                type="number"
+                                type="text"
                                 class="form-control"
                               />
                             </div>
@@ -171,12 +173,12 @@ const FindYourOwnStyle = ({ loadingProducts, setFilters, setBodyType, filters, u
                             <div class="mt-2 mb-0 form-group">
                               <input
                                 name="hip"
-                                value={ownStyle.hip}
-                                min={0}
+                                // value={ownStyle.hip}
+
                                 required
                                 onChange={onChange}
                                 placeholder="Enter Hip Size"
-                                type="number"
+                                type="text"
                                 class="form-control"
                               />
                             </div>

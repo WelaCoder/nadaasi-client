@@ -9,7 +9,7 @@ import {
 } from "./types";
 import setAuthToken from "../utils/setAuthToken";
 import { loadOrders } from "./orders";
-import { loadCart, loadShipping } from "./appActions";
+import { loadCart, loadShipping, setFilters } from "./appActions";
 import { API } from "../constants/constants";
 
 export const resendEmail = () => async (dispatch) => {
@@ -40,6 +40,12 @@ export const LoadUser = () => async (dispatch) => {
     dispatch(loadOrders());
     dispatch(loadCart());
     dispatch(loadShipping());
+    let result = res.data.bodyType;
+    let filter = localStorage.getItem('filter');
+    if (result && filter) {
+      localStorage.removeItem('filter');
+      dispatch(setFilters({ bodyType: result.toLowerCase() }))
+    }
   } catch (error) {
     let cart = localStorage.getItem('cart');
     cart = JSON.parse(cart);
@@ -74,6 +80,8 @@ export const signUp = ({
         "Content-Type": "application/json",
       },
     };
+    let bodyType = localStorage.getItem('bodyType');
+    localStorage.removeItem('bodyType');
     const body = JSON.stringify({
       firstname,
       lastname,
@@ -81,6 +89,7 @@ export const signUp = ({
       email,
       password,
       country,
+      bodyType,
     });
     const res = await axios.post(`${API}/api/user/signup`, body, config);
     dispatch({
@@ -89,10 +98,12 @@ export const signUp = ({
     });
     dispatch(LoadUser());
   } catch (error) {
+    toast.error(error.response.data.errors[0].msg, { autoClose: "1500" });
     dispatch({
       type: AUTH_CUSTOMER_FAILURE,
       payload: error,
     });
+    console.log(error.response.data);
   }
 };
 // Login
@@ -104,7 +115,10 @@ export const login = ({ email, password }) => async (dispatch) => {
         "Content-Type": "application/json",
       },
     };
-    const body = JSON.stringify({ email, password });
+    let bodyType = localStorage.getItem('bodyType');
+    localStorage.removeItem('bodyType');
+
+    const body = JSON.stringify({ email, password, bodyType });
     res = await axios.post(`${API}/api/user/login`, body, config);
 
     dispatch({
