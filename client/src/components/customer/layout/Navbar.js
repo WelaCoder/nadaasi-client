@@ -10,6 +10,7 @@ import {
 
 import logo from "../../../assets/images/nadaasi/Nadaasioriginal.png";
 import UserLogo from "../../../assets/images/home/icons/user.svg";
+import LogoutLogo from "../../../assets/images/navigation/log-out.svg";
 import SearchLogo from "../../../assets/images/home/icons/search.svg";
 import CartLogo from "../../../assets/images/home/icons/shopping-cart.svg";
 
@@ -97,22 +98,17 @@ const MyNavbar = ({ LogOut, auth: { isAuthenticated }, cart, setFilters }) => {
                 }, 2000)}>
                   <img src={UserLogo} alt="User" width="20" />
                 </span>
-                {
-                  showLogout &&
-                  <butthon
-                    className="tool-item"
-                    id={path.pathname == "/shop" ? 'logout_button_extra' : 'logout_button'}
-                    onClick={() => {
-                      LogOut();
-                    }}
-                  >
-                    {"logout"}
-                  </butthon>
-
-                }
 
 
 
+
+              </NavLink>
+              <NavLink to="/user/sign-in" onClick={() => {
+                LogOut();
+              }}>
+                <span className="tool-item">
+                  <img src={LogoutLogo} alt="User" width="20" />
+                </span>
               </NavLink>
             </>
           ) : (
