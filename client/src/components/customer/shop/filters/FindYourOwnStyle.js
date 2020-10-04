@@ -74,7 +74,11 @@ const FindYourOwnStyle = ({ loadingProducts, setFilters, setBodyType, filters, u
             </div> : <div
               id={"findStyleBtn"}
               class="shadow-shop cursor-pointer mt-3 mb-0 py-2 text-center text-uppercase  font-Futura-bold "
-              onClick={() => setFilters({ bodyType: null })}
+              onClick={() => {
+                setFilters({ bodyType: null });
+                localStorage.removeItem('filter');
+
+              }}
             >
                 <div>Clear Body Type Filter </div>
               </div>}

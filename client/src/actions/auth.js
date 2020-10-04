@@ -43,7 +43,6 @@ export const LoadUser = () => async (dispatch) => {
     let result = res.data.bodyType;
     let filter = localStorage.getItem('filter');
     if (result && filter) {
-      localStorage.removeItem('filter');
       dispatch(setFilters({ bodyType: result.toLowerCase() }))
     }
   } catch (error) {
