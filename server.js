@@ -12,11 +12,17 @@ const PORT = process.env.PORT || 5000;
 // });
 app.use(function (req, res, next) {
   if (req.secure) {
+    console.log('secure');
     // request was via https, so do no special handling
-    next();
+    return next();
   } else {
+    console.log('not secure');
+    console.log(req.secure);
+    console.log(req.headers.host);
+    console.log(req.url);
+    console.log('https://' + req.headers.host + req.url);
+    next();
     // request was via http, so redirect to https
-    res.redirect('https://' + req.headers.host + req.url);
   }
 });
 app.get("/payment", (req, res) => {
