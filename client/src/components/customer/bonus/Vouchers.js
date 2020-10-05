@@ -70,7 +70,7 @@ const Activities = ({ user, getVoucher }) => {
               ))
             )}
       </div>
-      <div className="d-flex justify-content-start mb-3 align-items-center">
+      <div className="d-flex justify-content-end mb-3 align-items-center">
         <div
           id={"findStyleBtn"}
           style={{ maxHeight: '40px !important' }}

@@ -24,14 +24,22 @@ const ContactForm = ({ createFeedback }) => {
       [e.target.name]: e.target.value
     })
   }
-  const onSubmit = e => {
+  const onSubmit = async e => {
     e.preventDefault();
 
-    setIsLoading(true)
-    createFeedback({ name, subject, email, message, phone })
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 700);
+    setIsLoading(true);
+    await createFeedback({ name, subject, email, message, phone })
+    setIsLoading(false);
+    setformdata({
+      name: '',
+      subject: '',
+      email: '',
+      message: '',
+      phone: '',
+    })
+    // setTimeout(() => {
+    //   setIsLoading(false)
+    // }, 700);
   };
 
   return (

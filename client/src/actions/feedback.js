@@ -24,7 +24,7 @@ export const createFeedback = ({ name, subject, email, message, phone }) => asyn
       type: CREATE_FEEDBACK,
       payload: res.data
     })
-    toast.success("Successfully submitted feedback...")
+    toast.success("Successfully submitted your message...")
   } catch (error) {
     dispatch({
       type: CREATE_FEEDBACK_ERROR

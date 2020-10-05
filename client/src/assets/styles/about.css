@@ -1,11 +1,13 @@
 .philosopy-section {
-  background-image: url('../images/about/Group-106.png');
+  background-image: url('../images/about/Group-106 - Copy.png');
   height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
+  color: white;
 }
 .about-p {
   width: 80%;
+  color: #fff;
   text-align: left;
   line-height: 2em;
   font-size: 1.25em;
