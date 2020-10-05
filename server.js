@@ -10,6 +10,15 @@ const PORT = process.env.PORT || 5000;
 // app.get("/uploads/:file", (req, res) => {
 //   res.sendFile(__dirname + "/client/public/uploads/" + req.params.file);
 // });
+app.use(function (req, res, next) {
+  if (req.secure) {
+    // request was via https, so do no special handling
+    next();
+  } else {
+    // request was via http, so redirect to https
+    res.redirect('https://' + req.headers.host + req.url);
+  }
+});
 app.get("/payment", (req, res) => {
   fs.writeFile("mynewfile3.html", req.body.html, function (err) {
     if (err) throw err;
