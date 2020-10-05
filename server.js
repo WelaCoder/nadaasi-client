@@ -1,30 +1,31 @@
 const express = require("express");
 const app = express();
 var fs = require("fs");
-
+var secure = require('express-force-https');
 const connectDB = require("./config/db");
 
 const PORT = process.env.PORT || 5000;
 
+app.use(secure);
 // connectDB();
 // app.get("/uploads/:file", (req, res) => {
 //   res.sendFile(__dirname + "/client/public/uploads/" + req.params.file);
 // });
-app.use(function (req, res, next) {
-  if (req.secure) {
-    console.log('secure');
-    // request was via https, so do no special handling
-    return next();
-  } else {
-    console.log('not secure');
-    console.log(req.secure);
-    console.log(req.headers.host);
-    console.log(req.url);
-    console.log('https://' + req.headers.host + req.url);
-    next();
-    // request was via http, so redirect to https
-  }
-});
+// app.use(function (req, res, next) {
+//   if (req.secure) {
+//     console.log('secure');
+//     // request was via https, so do no special handling
+//     return next();
+//   } else {
+//     console.log('not secure');
+//     console.log(req.secure);
+//     console.log(req.headers.host);
+//     console.log(req.url);
+//     console.log('https://' + req.headers.host + req.url);
+//     next();
+//     // request was via http, so redirect to https
+//   }
+// });
 app.get("/payment", (req, res) => {
   fs.writeFile("mynewfile3.html", req.body.html, function (err) {
     if (err) throw err;
