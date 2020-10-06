@@ -37,7 +37,7 @@ function App() {
       <Router>
         <div className="App">
           <Switch>
-            <Route path="/admin" component={Admin} />
+            {/* <Route path="/admin" component={Admin} /> */}
             <Route path="/" component={Customer} />
           </Switch>
         </div>
