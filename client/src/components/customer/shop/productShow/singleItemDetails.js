@@ -117,6 +117,7 @@ const SingleItemDetails = ({
             <FilterColors />
             <div className=" mt-5">
               <button
+                disabled={!currentProduct.inStock || (currentProduct.useStock && choosenProduct.quantity > currentProduct.stock)}
                 onClick={() => {
                   if (isAuthenticated) {
                     addToCart(choosenProduct);
@@ -127,8 +128,10 @@ const SingleItemDetails = ({
                 className="btn btn-dark btn-block"
               >
                 {
-                  // inCart(_id) ? "Already In Cart" :
-                  "ADD TO CART"
+                  currentProduct.inStock ?
+                    currentProduct.useStock &&
+                      choosenProduct.quantity > currentProduct.stock ? "NOT ENOUGH STOCK" :
+                      "ADD TO CART" : "OUT OF STOCK"
                 }
               </button>
             </div>

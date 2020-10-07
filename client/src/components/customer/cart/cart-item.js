@@ -18,7 +18,7 @@ export const CartItem = ({ item }) => {
           <CartItemName name={name} />
           <div className="d-flex align-items-center w-100-mb justify-content-between-mb">
             <CartHeading Heading="Quantity" />
-            <CartQuantity quantity={quantity} id={_id} />
+            <CartQuantity quantity={quantity} id={_id} item={item} />
             <div
               className="d-none-mb d-flex align-items-center justify-content-center 
             ml-3 mb-3"

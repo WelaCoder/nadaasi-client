@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { updateCount } from "../../../actions/appActions";
 import { updateLocalCartCount } from "../../../actions/cartActions";
-const CartQuantity = ({ quantity, id, updateCount, user, updateLocalCartCount }) => {
+const CartQuantity = ({ quantity, id, updateCount, user, updateLocalCartCount, item }) => {
   // const { updateItemQuantity } = useCart();
   console.log(quantity);
   return (
@@ -10,6 +10,7 @@ const CartQuantity = ({ quantity, id, updateCount, user, updateLocalCartCount })
       <input
         defaultValue={quantity}
         min={1}
+        max={item.product.useStock ? item.product.stock : null}
         onChange={async (e) => {
           const value =
             e.target.value === Number(0) ? 1 : Number(e.target.value);

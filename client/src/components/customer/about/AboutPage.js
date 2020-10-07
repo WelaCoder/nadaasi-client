@@ -24,10 +24,7 @@ const AboutPage = () => (
           />
           <h1>Chiffon/ Silk Chiffon</h1>
           <p className="fabrics-p ">
-            Cotton is the world's most widely used natural fibre and still the
-            undisputed "king" of the global textiles industry. Cotton is almost
-            pure cellulose, with softness and breathability that have made it
-            the world's most popular natural fibre.
+            Silk Chiffon Fabric remains a dignified, sheer fabric with an ease in drape and crepe-like texture. The inherent brilliance of this fabric is due to the triangular shape of each fibre that refracts light in many directions. Lightweight and absorbent, Chiffon Fabric will keep you comfortable in the summer as well as warm in the winter since it holds warm air close to your skin.
           </p>
         </div>
         <div class="fabric-section fabric-section-three">
