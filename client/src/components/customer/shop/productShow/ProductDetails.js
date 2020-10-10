@@ -37,6 +37,7 @@ const ProductDetails = ({ currentProduct }) => {
       />
       <ProductDetailItem heading="Closure" text={currentProduct?.closure} />
       <ProductDetailItem heading="Details" text={currentProduct?.details} />
+      <ProductDetailItem heading="Fabric" text={currentProduct?.fabric} />
       <ProductDetailItem heading="Length" text={currentProduct?.length} />
       <ProductDetailItem heading="Waistline" text={currentProduct?.waistLine} />
       <ProductDetailItem heading="Neckline" text={currentProduct?.neckLine} />

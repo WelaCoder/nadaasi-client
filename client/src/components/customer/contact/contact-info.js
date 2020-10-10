@@ -45,7 +45,7 @@ export const ContactInfo = () => {
               <img src={Envelope} width="40px" alt="home" />
             </div>
             <div className="info font-Futura-light ml-4 d-flex">
-              <p className="mt-2">info@nadaasi.fi</p>
+              <p className="mt-2">info@nadaasi.com</p>
             </div>
           </div>
         </div>
