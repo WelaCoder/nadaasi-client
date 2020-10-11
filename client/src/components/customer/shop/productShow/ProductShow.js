@@ -92,7 +92,7 @@ const ProductShow = ({
   return (
     <div className="container">
       <div ref={ref}></div>
-      <div className="mt-5 col-md-12 mx-auto">
+      <div className="mt-5 col-md-12 mx-auto custom-size">
         <div className="col-md-12">
           {currentProduct == null ? (
             <Skeleton count={1} />
