@@ -34,7 +34,7 @@ const Carousel = ({ items, duration, title, subtitle, button }) => {
         />
         <div className="carousel__text-box">
           <h1 className="carousel__title text-uppercase">{title}</h1>
-          <h5 className="carousel__subtitle text-uppercase">{subtitle}</h5>
+          <h5 className="carousel__subtitle ">{subtitle}</h5>
           <div>
             {button && (
               <Link to="/shop" className="home-btn" style={{ color: 'black' }}>

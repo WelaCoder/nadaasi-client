@@ -56,8 +56,8 @@ const HomePage = () => {
     <div>
       <Carousel
         items={items}
-        title="Give freedom to create,"
-        subtitle="choose and consume fashion in a way that inspires and empowers."
+        title="SIMPLE FABRIC WEDDING DRESSES"
+        subtitle="Beautiful fabrics last, synthetics don't."
         button="Shop Now"
       />
       {/* <SectionTextile /> */}

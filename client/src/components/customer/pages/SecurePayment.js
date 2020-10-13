@@ -23,39 +23,61 @@ const SecurePayment = () => {
 
               <header class="page-header">
                 <h1 class="tt-innerpagetitle my-font-futura">
-                  Secure payment
+                  Klarna Checkout.
                   </h1>
               </header>
 
               <section id="#content" class="page-content page-cms page-cms-5 my-font-futura">
-                <p className='my-font-futura'>We use klarna as our online payment method that allows us to give customers a
-                personalised and smooth purchase experience. It includes several different
-                payment options, both Klarna’s own Payment Methods as well as such provided by
-                    third parties.</p>
+                <h1 className='my-font-futura'>Klarna Checkout</h1>
+                  <p className="font-futura-bold" style={{fontWeight:'bold'}}>Now you can shop with us and pay easily with Klarna. That’s smoooth.   </p>
+                  <p className="font-futura-bold mb-0" style={{fontWeight:'bold'}}>Smoooth payments by Klarna. Now available to all our customers. </p>
+                <p className='my-font-futura'>When shopping with us you can now pay the way you want with Klarna. It’s up to you whether you pay right away, pay later or pay over time. That’s smoooth. </p>
+                <p className="font-futura-bold mb-0" style={{fontWeight:'bold'}}>We’ve made it smoooth! Pay the way you want with Klarna. </p>
+                <p className='my-font-futura'>When shopping with us you can now pay the way you want with Klarna. It’s up to you whether you prefer to pay right away, pay later or pay over time. That’s pretty smoooth, right? </p>
+                <p className="font-futura-bold mb-0" style={{fontWeight:'bold'}}>Buy what you like. Pay the way you like with Klarna. </p>
+                <p className='my-font-futura'>You’re the one buying, so you should be the one who controls when and how to do the paying. Whenever you shop with us you can choose to Pay now, Pay later or Slice it with Klarna. That’s smoooth.</p>
                 <p className='my-font-futura'></p>
                 <p className='my-font-futura'></p>
-                <h2 className='my-font-futura'>Pay Now</h2>
-                <p className='my-font-futura'>Pay now allows customers to pay at the time of the purchase. The service
-                enables customers to pay with a number of different payment methods, such as
-                direct debit, debit/credit card, direct banking and So forth. Pay now includes
-                both payment methods provided by Klarna itself as well as payment methods
-                    provided by third parties.</p>
+                <h1 className='my-font-futura'>Pay later.</h1>
+                <h2 className='my-font-futura mt-1'>Invoice:</h2>
+                <p className='my-font-futura mb-0' style={{fontWeight:'bold'}}>Pay later with Klarna now available.</p>
+                <p className='my-font-futura'>Get the goods first and pay up to 30 days after delivery. That’s smoooth. </p>
+                <p className='my-font-futura mb-0' style={{fontWeight:'bold'}}>Try before you buy with Klarna. Buy it. Love it. Pay later with Klarna. </p>
+                <p className='my-font-futura'>Get the goods first and pay after delivery. Sounds pretty smoooth, right?  </p>
+                <p className='my-font-futura mb-0' style={{fontWeight:'bold'}}>Turn your sitting room into a fitting room. Pay later with Klarna. </p>
+                <p className='my-font-futura'>No fees or interest, only pay for what you keep. Use Klarna's Pay later at checkout. That’s smoooth.  </p>
+
+                <p className='my-font-futura mb-0' style={{fontWeight:'bold'}}>Pay after delivery with Klarna. </p>
+                <p className='my-font-futura'>Get your goods first and pay after delivery when you shop with us. No fees or interest, only pay for what you keep. Just select Pay later at checkout. That’s smoooth. </p>
+                <p className='my-font-futura mb-0' style={{fontWeight:'bold'}}>Buy it. Love it. Pay later with Klarna. </p>
+                <p className='my-font-futura'>Get your goods first and pay after delivery when you shop with us. No fees or interest, only pay for what you keep. Select Pay later at checkout. That’s smoooth.</p>
                 <p></p>
-                <h2 className='my-font-futura'>Pay Later</h2>
-                <p className='my-font-futura'>Pay later offers interest-free deferred payments for customers who want to
-                buy with the minimum of fuss and then pay later at their convenience. There’s no
-                need for the consumer to provide lengthy personal details or card numbers to
-                make a purchase. Pay later gives customers full control and trust and can be
-                seen as a ‘get first, pay later’ option which lets customers enjoy the purchase
-                and deal with how to pay at a later stage, confident they won’t have to pay for
-                    things they decide not to keep.</p>
+
+                <h2 className='my-font-futura mt-1'>Instalments:</h2>
+                <p className='my-font-futura mb-0' style={{fontWeight:'bold'}}>Shop now, pay in 3 equal instalments.</p>
+                <p className='my-font-futura'>No interest. No upfront fees. Just smoooth payments. </p>
+                <p className='my-font-futura mb-0' style={{fontWeight:'bold'}}>Buy now, Pay later.</p>
+                <p className='my-font-futura'>Pay in four easy instalments, interest-free.</p>
+                <p className='my-font-futura mb-0' style={{fontWeight:'bold'}}>Pay later in 3 equal instalments, interest-free.</p>
+                <p className='my-font-futura'>Choose Klarna at the checkout.  </p>
                 <p></p>
-                <h2 className='my-font-futura'>Slice It</h2>
-                <p className='my-font-futura'>Slice it is a payment method which offers consumers to finance their
-                purchases over time. The type of credit offered is seen on the website. In cases
-                of account credit, consumers who do not yet have a Slice it account can apply
-                for one by placing a Slice it purchase. The response is always instant. Slice it
-                    consists of a range of different instalment plans.</p>
+                <h1 className='my-font-futura'>Slice it.</h1>
+                <p className='my-font-futura mb-0' style={{fontWeight:'bold'}}>Slice up your payment with Klarna. </p>
+                <p className='my-font-futura'>Pay over time for your purchase instead of all at once. Just select Slice it at checkout when you shop with us. That’s smoooth. Credit offered subject to financial circumstances. Must be 18. Representative APR 18.9% (variable).  </p>
+                
+                <p className='my-font-futura mb-0' style={{fontWeight:'bold'}}>Pay in instalments with Klarna. </p>
+                <p className='my-font-futura'>Have the choice of when and how much to pay. Klarna gives you the flexibility of spreading your payments over time. Just select Slice it at checkout next time you shop with us. That’s smoooth. Credit offered subject to financial circumstances. Must be 18. Representative APR 18.9% (variable).  </p>
+                
+                <p className='my-font-futura mb-0' style={{fontWeight:'bold'}}>Pay at your own pace. Slice it with Klarna.   </p>
+                <p className='my-font-futura'>Do you want to pay for your purchases over time? Just use Slice it from Klarna. Now that’s smoooth. Credit offered subject to financial circumstances. Must be 18. Representative APR 18.9% (variable).  </p>
+                
+                <p className='my-font-futura mb-0' style={{fontWeight:'bold'}}>Pay over time with Klarna.   </p>
+                <p className='my-font-futura'>Do you want to pay in instalments for your purchases? Just use Slice it from Klarna. Now that’s smoooth. Credit offered subject to financial circumstances. Must be 18. Representative APR 18.9% (variable). </p>
+                
+                <p className='my-font-futura mb-0' style={{fontWeight:'bold'}}>Slice up your payment with Klarna.  </p>
+                <p className='my-font-futura'>Have the choice of when and how to pay. With Klarna you can pay at your own pace, giving you control and flexibility. That’s smoooth. Credit offered subject to financial circumstances. Must be 18. Representative APR 18.9% (variable).  </p>
+
+             
 
               </section>
             </section>
