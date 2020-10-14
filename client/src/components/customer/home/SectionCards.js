@@ -1,19 +1,31 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Card, Container } from "react-bootstrap";
+import { useHistory ,} from "react-router-dom";
 
-const SectionCards = ({ title, subtitle, items }) => (
+const SectionCards = ({ title, subtitle, items }) => {
+  let history  = useHistory();
+  return (
   <div className="section">
     <div className="section--cards">
       <Container>
-        <div className="section__text-box">
+        <div className="section__text-box my-font-futura">
           <h1>{title}</h1>
           {/* <h3>{subtitle}</h3> */}
         </div>
 
         <div className="row">
-          {items.map(({ id, icon, desc }) => (
-            <div key={id} className="col-md-6 col-sm-12 mb-2 p-0">
+          {items.map(({ id, icon, desc },index) => (
+            index==0?
+            <div key={id} className="col-md-6 col-sm-12 mb-2 p-0" onClick={()=>{history.push('/shop/?showFilter=true')}}>
+              <Card className="section__card">
+                <div>
+                  <Card.Img src={icon} className="section__image" />
+                </div>
+                <Card.Body>{desc}</Card.Body>
+              </Card>
+            </div>:
+            <div key={id} className="col-md-6 col-sm-12 mb-2 p-0" >
               <Card className="section__card">
                 <div>
                   <Card.Img src={icon} className="section__image" />
@@ -26,7 +38,7 @@ const SectionCards = ({ title, subtitle, items }) => (
       </Container>
     </div>
   </div>
-);
+)};
 
 SectionCards.defaultProps = {
   title: "",

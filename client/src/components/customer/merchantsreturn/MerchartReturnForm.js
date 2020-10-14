@@ -24,14 +24,23 @@ const MerchartsReturnForm = ({ returnMerchant }) => {
       [e.target.name]: e.target.value
     })
   }
-  const onSubmit = e => {
+  const onSubmit = async(e) => {
     e.preventDefault();
 
     setIsLoading(true)
-    returnMerchant({ name, orderId, email, problem, phone })
-    setTimeout(() => {
+ await   returnMerchant({ name, orderId, email, problem, phone })
+ 
       setIsLoading(false)
-    }, 700);
+      setformdata({
+        name: '',
+        subject: '',
+        email: '',
+        problem: '',
+        phone: '',
+        orderId: ''
+        
+      })
+ 
   };
 
   return (

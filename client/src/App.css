@@ -511,3 +511,8 @@ link, .nav-tabs .nav-link.active {
   font-size: 20px !important;
 }
 
+.philosopy-section{
+  height: auto !important;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}

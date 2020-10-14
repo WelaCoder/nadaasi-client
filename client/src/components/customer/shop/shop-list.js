@@ -73,6 +73,9 @@ const ShopList = ({
               {productsToShow.map((product) => (
                 <ShopItem key={product._id} product={product} />
               ))}{" "}
+              {productsToShow.length%3 == 2? <div className="invisible">
+                  <ShopItem className='invisible' key={'invisible div'} product={productsToShow[0]} />
+                </div>: <></>}
             </>
           ) : (
             <div className=" d-flex align-items-center w-100 justify-content-center">

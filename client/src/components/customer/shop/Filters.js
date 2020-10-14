@@ -11,7 +11,7 @@ const Filters = ({ loadingProducts, filters, setFilters }) => {
   function isEmpty(obj) {
     return Object.keys(obj).length === 0;
   }
-
+ 
   return (
     <div className="filters">
       <div className='mb-3'>

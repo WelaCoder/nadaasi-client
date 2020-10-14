@@ -9,9 +9,7 @@ import { Link } from "react-router-dom";
 
 const MerchartsReturn = () => {
   useEffect(() => {
-
     window.scrollTo(0, 0);
-
   }, [])
 
   return (

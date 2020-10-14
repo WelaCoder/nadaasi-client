@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
 import Skeleton from "react-loading-skeleton";
 import { connect } from "react-redux";
-import { useHistory } from 'react-router-dom'
+import { useHistory ,useLocation} from 'react-router-dom'
 import { setBodyType, setFilters } from "../../../../actions/appActions";
-const FindYourOwnStyle = ({ loadingProducts, setFilters, setBodyType, filters, user }) => {
+const FindYourOwnStyle = ({ loadingProducts, setFilters, setBodyType, filters, user , }) => {
   const isLoading = false;
   const [showModal, setShowModal] = useState(false);
   const [ownStyle, setOwnStyle] = useState({
@@ -13,6 +14,22 @@ const FindYourOwnStyle = ({ loadingProducts, setFilters, setBodyType, filters, u
     highHip: null,
     hip: null,
   });
+  let location = useLocation();
+  let showFilter = Boolean(new URLSearchParams(location.search).get('showFilter'));
+  const [process, setProcess] = useState(true);
+  useEffect(()=>{
+    console.log('userEffect called');
+    if(!process) return;
+    setProcess(false);
+    if (showFilter) {
+      if (user && user.bodyType!=null && user.bodyType!='') {
+        setBodyType(user.bodyType);
+      }else{
+        setShowModal(true);
+        console.log(showModal);
+      }
+    }
+  },[]);
   const onChange = (e) => {
     setOwnStyle({
       ...ownStyle,

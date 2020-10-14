@@ -60,18 +60,14 @@ const HomePage = () => {
         subtitle="Beautiful fabrics last, synthetics don't."
         button="Shop Now"
       />
-      {/* <SectionTextile /> */}
+  
       <SectionCards
         items={sectionQualityData.items}
         title={sectionQualityData.title}
         subtitle={sectionQualityData.subtitle}
       />
       <SectionNewsletter />
-      {/* <SectionCards
-      items={sectionServicesData.items}
-      title={sectionServicesData.title}
-      subtitle={sectionServicesData.subtitle}
-    /> */}
+     
       <SectionSocial />
       <SectionTestimonial />
       <Modal className='d-flex justify-content-center align-items-center' show={showModal} onHide={() => setShowModal(false)}>

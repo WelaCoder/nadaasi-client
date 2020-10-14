@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import { Container, Col, Row } from "react-bootstrap";
 
 import Banner from "./Banner";
@@ -14,18 +14,25 @@ import Pagination from "./pagination";
 import Skeleton from "react-loading-skeleton";
 
 const ShopePage = ({ loadingProducts, getProducts, loadCart }) => {
+  const [width, setWidth] = useState(window.innerWidth);
   useEffect(() => {
     getProducts();
     loadCart();
     // eslint-disable-next-line
   }, []);
-
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      setWidth(window.innerWidth);
+    });
+  }, [])
+ 
+  
   return (
     <Container className="py-0-mb">
       <BreadCrumbs />
       <Row className="col-reverse-mb">
         <Col sm={12} md={3} className="d-none-mb">
-          <Filters></Filters>
+        {width>=770?  <Filters></Filters>:<></>}
         </Col>
         <Col sm={12} md={9}>
           <Row>
@@ -47,7 +54,7 @@ const ShopePage = ({ loadingProducts, getProducts, loadCart }) => {
               )}
           </Row>
           <Col sm={12} md={3} className="d-mb mt-4 ipad-shop">
-            <Filters></Filters>
+           {width<770?  <Filters></Filters>:<></>}
           </Col>
           <Row className="mt-4 p-3-mb">
             {loadingProducts ? (
