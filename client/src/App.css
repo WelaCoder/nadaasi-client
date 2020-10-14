@@ -425,6 +425,9 @@ link, .nav-tabs .nav-link.active {
 .custom-height-sign-up{
   height: 66vh;
 }
+.invisible{
+  opacity: 0 !important;
+}
 @media only screen and (max-width: 600px) {
   #logout_button{
     /* color: red !important; */
@@ -436,10 +439,17 @@ link, .nav-tabs .nav-link.active {
     color: black;
    
   }
+  
   .custom-height-sign-up{
     height: 86vh !important;
   }
   
+}
+
+@media only screen and (max-width: 1200px){
+  .invisible{
+    display: none !important;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -500,3 +510,4 @@ link, .nav-tabs .nav-link.active {
 .custom-size{
   font-size: 20px !important;
 }
+
