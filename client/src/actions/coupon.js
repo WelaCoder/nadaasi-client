@@ -83,6 +83,7 @@ export const applyCoupon = (code) => async (dispatch) => {
       payload: res.data,
     });
   } catch (error) {
+    toast.error("Coupon not found...");
     dispatch({
       type: COUPON_ERROR,
       payload: error.response.data.msg,

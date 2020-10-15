@@ -7,6 +7,7 @@ import { applyCoupon } from "../../../actions/coupon";
 
 // import { applyCoupon } from '../../features/product/productSlice';
 import { connect } from "react-redux";
+import { toast } from "react-toastify";
 const Coupon = ({ cart, applyCoupon, appliedCoupon, user }) => {
   const [coupon, setCoupon] = useState();
 
@@ -19,7 +20,11 @@ const Coupon = ({ cart, applyCoupon, appliedCoupon, user }) => {
   const onSubmit = async (e) => {
     e.preventDefault();
     setloading(true);
-    await applyCoupon(coupon);
+    if (user) {
+      await applyCoupon(coupon);
+    } else {
+      toast.error("You must be logged in to apply coupon...");
+    }
     setloading(false);
   };
   if (cart == null) return <></>;
@@ -39,47 +44,45 @@ const Coupon = ({ cart, applyCoupon, appliedCoupon, user }) => {
             🎉
           </span>{" "}
           <span>
-            {appliedCoupon.id != null ? `Voucher has been applied with discount of ${appliedCoupon.discount}%.` : `${appliedCoupon.name || 'Voucher'} applied successfully...`}
+            {appliedCoupon.id != null
+              ? `Voucher has been applied with discount of ${appliedCoupon.discount}%.`
+              : `${appliedCoupon.name || "Voucher"} applied successfully...`}
           </span>
         </div>
       ) : (
-          <form onSubmit={onSubmit} class="input-group mb-3 col p-0">
-            <div class="input-group-prepend">
-              <span class="input-group-text border-0 bg-white black-border">
-                <img src={Order} alt="order" width="34px" />
-              </span>
-            </div>
+        <form onSubmit={onSubmit} class="input-group mb-3 col p-0">
+          <div class="input-group-prepend">
+            <span class="input-group-text border-0 bg-white black-border">
+              <img src={Order} alt="order" width="34px" />
+            </span>
+          </div>
 
-            <input
-              type="text"
-              class="form-control coupon-input font-Futura-light letter-spacing-cart shadow-shop"
-              placeholder="COUPON CODE"
-              onChange={(e) => {
-                setCoupon(e.target.value);
-              }}
-            />
-            <div class="input-group-append">
-              <button width="34px" className="btn btn-dark border-0"
-                disabled={loading || user == null}
-              >
-                <span
-                  className={
-                    loading ? "mr-2 spinner-border spinner-border-sm" : ""
-                  }
-                  role="status"
-                  aria-hidden="true"
-                ></span>
-                {loading ?
-
-                  'Applying'
-                  :
-                  'APPLY'
+          <input
+            type="text"
+            class="form-control coupon-input font-Futura-light letter-spacing-cart shadow-shop"
+            placeholder="COUPON CODE"
+            onChange={(e) => {
+              setCoupon(e.target.value);
+            }}
+          />
+          <div class="input-group-append">
+            <button
+              width="34px"
+              className="btn btn-dark border-0"
+              disabled={loading}
+            >
+              <span
+                className={
+                  loading ? "mr-2 spinner-border spinner-border-sm" : ""
                 }
-
-              </button>
-            </div>
-          </form>
-        )}
+                role="status"
+                aria-hidden="true"
+              ></span>
+              {loading ? "Applying" : "APPLY"}
+            </button>
+          </div>
+        </form>
+      )}
     </>
   );
 };
