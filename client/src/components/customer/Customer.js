@@ -28,11 +28,11 @@ import OrderShow from "./profile/OrderShow/OrderShow";
 import BonusPage from "./bonus/BonusPage";
 import RefundPolicy from "./pages/RefundPolicy";
 import SecurePayment from "./pages/SecurePayment";
-import Policy from './pages/Policy';
-import MerchartsReturn from './merchantsreturn/MerchantsReturn';
+import Policy from "./pages/Policy";
+import MerchartsReturn from "./merchantsreturn/MerchantsReturn";
 import SizeChart from "./pages/SizeChart";
 import Acquire from "./earn/Acquire";
-import Invite from './earn/inviteer'
+import Invite from "./earn/inviteer";
 import Verify from "./verify/Verify";
 import UserRoute from "../../utils/UserRoute";
 import OrdersPage from "./profile/OrdersPage";
@@ -44,7 +44,7 @@ const Customer = ({
   loadOrders,
   getTestimonials,
   orders,
-  loadDressTypes
+  loadDressTypes,
 }) => {
   useEffect(() => {
     if (toastMessage != null) {
@@ -97,7 +97,11 @@ const Customer = ({
         <Route exact path="/refundpolicy" component={RefundPolicy} />
         <Route exact path="/securepayment" component={SecurePayment} />
         <Route exact path="/sizechart" component={SizeChart} />
-        <CustomerRoute exact path="/merchantreturn" component={MerchartsReturn} />
+        <CustomerRoute
+          exact
+          path="/merchantreturn"
+          component={MerchartsReturn}
+        />
         <Route exact path="/policy" component={Policy} />
         <Route path="*" component={() => <Redirect to="/" />} />
       </Switch>
@@ -117,5 +121,5 @@ export default connect(mapStateToProps, {
   LoadUser,
   loadOrders,
   getTestimonials,
-  loadDressTypes
+  loadDressTypes,
 })(Customer);
