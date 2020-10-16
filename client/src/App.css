@@ -509,3 +509,7 @@ link,
 .color-black {
   color: black !important;
 }
+
+.pointer {
+  cursor: pointer;
+}

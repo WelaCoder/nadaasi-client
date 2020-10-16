@@ -19,7 +19,7 @@ const SectionCards = ({ title, subtitle, items }) => {
               index == 0 ? (
                 <div
                   key={id}
-                  className="col-md-6 col-sm-12 mb-2 p-0"
+                  className="col-md-6 col-sm-12 mb-2 p-0 pointer"
                   onClick={() => {
                     history.push("/shop/?showFilter=true");
                   }}
@@ -28,13 +28,16 @@ const SectionCards = ({ title, subtitle, items }) => {
                     <div>
                       <Card.Img src={icon} className="section__image" />
                     </div>
-                    <Card.Body>{desc}</Card.Body>
+                    <Card.Body>
+                      <p className="lead text-center mb-0">{desc}</p>
+                      Get a dress that fits and suits you.
+                    </Card.Body>
                   </Card>
                 </div>
               ) : (
                 <div
                   key={id}
-                  className="col-md-6 col-sm-12 mb-2 p-0"
+                  className="col-md-6 col-sm-12 mb-2 p-0 pointer"
                   onClick={() => {
                     history.push("/about/?naturalFabric=true");
                   }}
@@ -43,7 +46,10 @@ const SectionCards = ({ title, subtitle, items }) => {
                     <div>
                       <Card.Img src={icon} className="section__image" />
                     </div>
-                    <Card.Body>{desc}</Card.Body>
+                    <Card.Body>
+                      <p className="lead text-center mb-0">{desc}</p>
+                      All our fabrics are picked/sourced thoughtfully.
+                    </Card.Body>
                   </Card>
                 </div>
               )

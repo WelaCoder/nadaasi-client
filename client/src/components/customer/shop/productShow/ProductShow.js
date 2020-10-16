@@ -97,13 +97,13 @@ const ProductShow = ({
           {currentProduct == null ? (
             <Skeleton count={1} />
           ) : (
-              <>
-                <BreadCrumbs
-                  currentLink={currentProduct.name}
-                  currentLinkAddres={pathname}
-                />
-              </>
-            )}
+            <>
+              <BreadCrumbs
+                currentLink={currentProduct.name}
+                currentLinkAddres={pathname}
+              />
+            </>
+          )}
           <div className="row">
             <div className="col-md-2 order-mb-2">
               <SingleItemImages />
@@ -131,17 +131,17 @@ const ProductShow = ({
               {loadingProducts ? (
                 <Skeleton count={12} />
               ) : (
-                  <>
-                    <h3 className="text-center font-Futura-bold py-3">
-                      More Relative Items
+                <>
+                  <h3 className="text-center font-Futura-bold py-3">
+                    More Similar Items
                   </h3>
-                    <ShopCarousel itemsonMobile={2} itemsOnDesktop={4}>
-                      {relevantProducts.map((item, idx) => (
-                        <SingleCarouselItem key={idx} item={item} />
-                      ))}
-                    </ShopCarousel>
-                  </>
-                )}
+                  <ShopCarousel itemsonMobile={2} itemsOnDesktop={4}>
+                    {relevantProducts.map((item, idx) => (
+                      <SingleCarouselItem key={idx} item={item} />
+                    ))}
+                  </ShopCarousel>
+                </>
+              )}
             </div>
           </div>
         </div>

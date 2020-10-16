@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal } from 'react-bootstrap'
+import { Modal } from "react-bootstrap";
 
 import Carousel from "./Carousel";
 import SectionCards from "./SectionCards";
@@ -50,32 +50,35 @@ const HomePage = () => {
     if (params.email) {
       setShowModal(true);
     }
-  }, [])
+  }, []);
   const [showModal, setShowModal] = useState(false);
   return (
     <div>
       <Carousel
         items={items}
-        title="SIMPLE FABRIC WEDDING DRESSES"
-        subtitle="Beautiful fabrics last, synthetics don't."
+        title="GIVE FREEDOM TO CREATE,"
+        subtitle="CHOOSE AND CONSUME FASHION IN A WAY THAT INSPIRES AND EMPOWERS."
         button="Shop Now"
       />
-  
+
       <SectionCards
         items={sectionQualityData.items}
         title={sectionQualityData.title}
         subtitle={sectionQualityData.subtitle}
       />
       <SectionNewsletter />
-     
+
       <SectionSocial />
       <SectionTestimonial />
-      <Modal className='d-flex justify-content-center align-items-center' show={showModal} onHide={() => setShowModal(false)}>
+      <Modal
+        className="d-flex justify-content-center align-items-center"
+        show={showModal}
+        onHide={() => setShowModal(false)}
+      >
         <div style={{ backgroundColor: "white" }}>
           <div class="modal-header">
             <div class="modal-title h4">Account Deleted</div>
             <button
-
               type="button"
               class="close"
               onClick={() => setShowModal(false)}
@@ -85,19 +88,16 @@ const HomePage = () => {
             </button>
           </div>
           <div class="modal-body">
-            <div className='d-flex justify-content-center '>
-
+            <div className="d-flex justify-content-center ">
               <p className="lead text-center">
                 The acount for {params.email} has been deleted successfully...
-                                    </p>
-
-
+              </p>
             </div>
           </div>
         </div>
       </Modal>
     </div>
-  )
+  );
 };
 
 export default HomePage;

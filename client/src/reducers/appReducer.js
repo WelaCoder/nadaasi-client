@@ -28,7 +28,10 @@ import {
   USE_BALANCE,
   LOAD_SHIPPING,
   APPLY_COUPON,
-  SET_SEARCH, USE_POINTS, GET_VOUCHER, SET_BODY_TYPE
+  SET_SEARCH,
+  USE_POINTS,
+  GET_VOUCHER,
+  SET_BODY_TYPE,
 } from "../actions/types";
 import { toast } from "react-toastify";
 const initialState = {
@@ -76,17 +79,17 @@ export default (state = initialState, action) => {
       return {
         ...state,
         user: action.payload,
-      }
+      };
     case SET_BODY_TYPE:
       return {
         ...state,
         user: action.payload,
-      }
+      };
     case LOAD_DRESS_TYPES:
       return {
         ...state,
-        dressTypeOptions: action.payload
-      }
+        dressTypeOptions: action.payload,
+      };
     case SET_SEARCH:
       return {
         ...state,
@@ -111,7 +114,6 @@ export default (state = initialState, action) => {
         appliedCoupon: action.payload ? null : state.appledCoupon,
         usePoints: action.payload ? false : state.usePoints,
         useBalance: action.payload,
-
       };
     case USE_POINTS:
       return {
@@ -137,7 +139,9 @@ export default (state = initialState, action) => {
       return {
         ...state,
         relevantProducts: state.products.filter(
-          (p) => p.dressType == state.currentProduct.dressType
+          (p) =>
+            p.dressType == state.currentProduct.dressType &&
+            p._id !== state.currentProduct._id
         ),
       };
     case CLEAR_CURRENT_PRODUCT:
