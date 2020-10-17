@@ -30,7 +30,9 @@ const SectionCards = ({ title, subtitle, items }) => {
                     </div>
                     <Card.Body>
                       <p className="lead text-center mb-0">{desc}</p>
-                      Get a dress that fits and suits you.
+                      <p className="lead text-center mb-0">
+                        "Get a dress that fits and suits you"
+                      </p>
                     </Card.Body>
                   </Card>
                 </div>
@@ -48,7 +50,9 @@ const SectionCards = ({ title, subtitle, items }) => {
                     </div>
                     <Card.Body>
                       <p className="lead text-center mb-0">{desc}</p>
-                      All our fabrics are picked/sourced thoughtfully.
+                      <p className="lead text-center mb-0">
+                        "All our fabrics are picked/sourced thoughtfully"
+                      </p>
                     </Card.Body>
                   </Card>
                 </div>
