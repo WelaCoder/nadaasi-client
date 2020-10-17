@@ -1,7 +1,7 @@
 export const OPTIONS = {
   dressSizeOptions: [
     {
-      value: "SM",
+      value: "S",
       label: "Small",
     },
     {

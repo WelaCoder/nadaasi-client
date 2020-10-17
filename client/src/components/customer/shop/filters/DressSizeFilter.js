@@ -10,8 +10,8 @@ const DressSizeFilter = ({ loadingProducts, setFilters }) => {
       value: "XS",
     },
     {
-      label: "SM",
-      value: "SM",
+      label: "S",
+      value: "S",
     },
     {
       label: "MD",
