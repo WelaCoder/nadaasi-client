@@ -37,9 +37,9 @@ const SectionCards = ({ title, subtitle, items }) => {
                       </p>
                       <p
                         className="lead text-center mb-0"
-                        style={{ color: "black" }}
+                        style={{ color: "black", fontWeight: "bold" }}
                       >
-                        "Get a dress that fits and suits you"
+                        Get a dress that fits and suits you
                       </p>
                     </Card.Body>
                   </Card>
@@ -65,9 +65,9 @@ const SectionCards = ({ title, subtitle, items }) => {
                       </p>
                       <p
                         className="lead text-center mb-0"
-                        style={{ color: "black" }}
+                        style={{ color: "black", fontWeight: "bold" }}
                       >
-                        "All our fabrics are picked/sourced thoughtfully"
+                        All our fabrics are picked/sourced thoughtfully
                       </p>
                     </Card.Body>
                   </Card>
