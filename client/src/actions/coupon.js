@@ -78,6 +78,11 @@ export const applyCoupon = (code) => async (dispatch) => {
       { code },
       config
     );
+    if (res.data.coupon.isActive === false) {
+      toast.info('Coupon is Expired')
+    }else if (res.data.isUsed) {
+      toast.info('Coupon is Already Used')
+    }
     dispatch({
       type: APPLY_COUPON,
       payload: res.data,

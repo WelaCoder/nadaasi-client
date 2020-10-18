@@ -22,6 +22,7 @@ const CartTotal = ({
   useBalance,
   shipping,
   appliedCoupon,
+  appliedCouponIsUsed,
   usePoints,
   setCountry,
   loadShipping
@@ -164,7 +165,7 @@ const CartTotal = ({
 
     }
   }
-  if (user && appliedCoupon && appliedCoupon.isActive) {
+  if (user && appliedCoupon && appliedCoupon.isActive && !appliedCouponIsUsed) {
     let units = 0;
     for (let index = 0; index < cart.length; index++) {
       const cartProduct = cart[index];
@@ -432,6 +433,7 @@ const mapStateToProps = (state) => ({
   useBalance: state.app.useBalance,
   usePoints: state.app.usePoints,
   appliedCoupon: state.app.appliedCoupon,
+  appliedCouponIsUsed : state.app.appliedCouponIsUsed,
   shipping: state.app.shipping,
 });
 export default connect(mapStateToProps, { createSession, setCountry, loadShipping })(CartTotal);

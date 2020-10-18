@@ -57,7 +57,7 @@ const RangeFilter = ({
                 Filter
               </button>
               <span className="font-Futura-bold">
-                ${filters.price.min}-${filters.price.max}
+              €{filters.price.min}-€{filters.price.max}
               </span>
             </div>
           </div>

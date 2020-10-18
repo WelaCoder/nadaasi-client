@@ -72,6 +72,7 @@ const initialState = {
   currentPage: 1,
   testimonials: null,
   appledCoupon: null,
+  appliedCouponIsUsed: null
 };
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -99,7 +100,8 @@ export default (state = initialState, action) => {
       return {
         ...state,
         appliedCoupon: action.payload.coupon,
-        useBalance: false,
+        appliedCouponIsUsed: action.payload.isUsed,
+        useBalance: action.payload.coupon.isActive && !action.payload.isUsed  ? false : true,
         usePoints: false,
       };
 
