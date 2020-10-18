@@ -33,11 +33,11 @@ const Carousel = ({ items, duration, title, subtitle, button }) => {
           className="carousel__image"
         />
         <div className="carousel__text-box">
-          <h1 className="carousel__title text-uppercase">{title}</h1>
+          <h5 className="carousel__title text-uppercase">{title}</h5>
           <h5 className="carousel__subtitle ">{subtitle}</h5>
           <div>
             {button && (
-              <Link to="/shop" className="home-btn" style={{ color: 'black' }}>
+              <Link to="/shop" className="home-btn" style={{ color: "black" }}>
                 {button}
               </Link>
             )}

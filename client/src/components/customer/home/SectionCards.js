@@ -29,8 +29,16 @@ const SectionCards = ({ title, subtitle, items }) => {
                       <Card.Img src={icon} className="section__image" />
                     </div>
                     <Card.Body>
-                      <p className="lead text-center mb-0">{desc}</p>
-                      <p className="lead text-center mb-0">
+                      <p
+                        className="lead text-center mb-0"
+                        style={{ color: "black" }}
+                      >
+                        {desc}
+                      </p>
+                      <p
+                        className="lead text-center mb-0"
+                        style={{ color: "black" }}
+                      >
                         "Get a dress that fits and suits you"
                       </p>
                     </Card.Body>
@@ -49,8 +57,16 @@ const SectionCards = ({ title, subtitle, items }) => {
                       <Card.Img src={icon} className="section__image" />
                     </div>
                     <Card.Body>
-                      <p className="lead text-center mb-0">{desc}</p>
-                      <p className="lead text-center mb-0">
+                      <p
+                        className="lead text-center mb-0"
+                        style={{ color: "black" }}
+                      >
+                        {desc}
+                      </p>
+                      <p
+                        className="lead text-center mb-0"
+                        style={{ color: "black" }}
+                      >
                         "All our fabrics are picked/sourced thoughtfully"
                       </p>
                     </Card.Body>
