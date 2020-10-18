@@ -72,7 +72,7 @@ const initialState = {
   currentPage: 1,
   testimonials: null,
   appledCoupon: null,
-  appliedCouponIsUsed: null
+  appliedCouponIsUsed: null,
 };
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -84,7 +84,7 @@ export default (state = initialState, action) => {
     case SET_BODY_TYPE:
       return {
         ...state,
-        user: action.payload,
+        filters: { ...state.filters, ...action.payload },
       };
     case LOAD_DRESS_TYPES:
       return {
@@ -101,7 +101,10 @@ export default (state = initialState, action) => {
         ...state,
         appliedCoupon: action.payload.coupon,
         appliedCouponIsUsed: action.payload.isUsed,
-        useBalance: action.payload.coupon.isActive && !action.payload.isUsed  ? false : true,
+        useBalance:
+          action.payload.coupon.isActive && !action.payload.isUsed
+            ? false
+            : true,
         usePoints: false,
       };
 
