@@ -22,7 +22,8 @@ import {
   USE_POINTS,
   LOAD_DRESS_TYPES,
   SET_SEARCH,
-  GET_VOUCHER, SET_BODY_TYPE
+  GET_VOUCHER,
+  SET_BODY_TYPE,
 } from "./types";
 
 import { toast } from "react-toastify";
@@ -71,9 +72,8 @@ export const getProducts = () => async (dispatch) => {
 };
 export const getVoucher = () => async (dispatch) => {
   try {
-
     const res = await axios.get(`${API}/api/voucher`);
-    toast.success('Successfully got 100€ voucher');
+    toast.success("Successfully got 100€ voucher");
     dispatch({
       type: GET_VOUCHER,
       payload: res.data,
@@ -83,12 +83,17 @@ export const getVoucher = () => async (dispatch) => {
     console.log(error);
   }
 };
+export const clearcurrentProduct = () => (dispatch) => {
+  dispatch({
+    type: CLEAR_CURRENT_PRODUCT,
+  });
+};
 export const setCurrentProduct = (productId) => async (dispatch) => {
   try {
     dispatch({
       type: CLEAR_CURRENT_PRODUCT,
     });
-    for (let index = 0; index < 200000; index++) { }
+    for (let index = 0; index < 200000; index++) {}
     dispatch({
       type: SET_CURRENT_PRODUCT,
       payload: productId,
@@ -171,16 +176,17 @@ export const addToCart = (choosenProduct) => async (dispatch) => {
   }
 };
 
-
 export const setBodyType = (bodyType) => async (dispatch) => {
   try {
-
-
-    const res = await axios.put(`${API}/api/user/setBodyType`, { bodyType }, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const res = await axios.put(
+      `${API}/api/user/setBodyType`,
+      { bodyType },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     dispatch({
       type: SET_BODY_TYPE,
       payload: res.data,
@@ -190,11 +196,8 @@ export const setBodyType = (bodyType) => async (dispatch) => {
   }
 };
 
-
 export const setCountry = (data) => async (dispatch) => {
   try {
-
-
     const res = await axios.put(`${API}/api/user/setCountry`, data, {
       headers: {
         "Content-Type": "application/json",
@@ -204,7 +207,7 @@ export const setCountry = (data) => async (dispatch) => {
       type: SET_BODY_TYPE,
       payload: res.data,
     });
-    toast.success('Successfully updated address...')
+    toast.success("Successfully updated address...");
   } catch (error) {
     console.log(error);
   }
@@ -212,31 +215,33 @@ export const setCountry = (data) => async (dispatch) => {
 
 export const loadCart = () => async (dispatch) => {
   try {
-    let cart = localStorage.getItem('cart');
+    let cart = localStorage.getItem("cart");
     cart = JSON.parse(cart);
     if (cart == null) {
-      cart = []
+      cart = [];
     } else {
       cart = cart.cart;
     }
-    const res = await axios.put(`${API}/api/cart`, { cart }, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const res = await axios.put(
+      `${API}/api/cart`,
+      { cart },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     dispatch({
       type: LOAD_CART,
       payload: res.data.cartItems,
     });
-    localStorage.removeItem('cart');
+    localStorage.removeItem("cart");
   } catch (error) {
-
     console.log(error);
   }
 };
 export const setUsePoints = (value) => async (dispatch) => {
   try {
-
     dispatch({
       type: USE_POINTS,
       payload: value,
@@ -269,7 +274,7 @@ export const updateCount = (cartId, count) => async (dispatch) => {
 };
 export const loadDressTypes = () => async (dispatch) => {
   try {
-    console.log('loading dress types');
+    console.log("loading dress types");
     const res = await axios.get(`${API}/api/dressType`);
 
     dispatch({

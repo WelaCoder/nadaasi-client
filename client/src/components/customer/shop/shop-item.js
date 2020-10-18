@@ -1,19 +1,30 @@
 import React from "react";
-import { API } from '../../../constants/constants'
+import { API } from "../../../constants/constants";
 import Like from "../../../assets/images/home/icons/heart.svg";
 import { Ratings, ItemDetails, Price } from "../utils/details";
-
 import { useHistory } from "react-router-dom";
 import FadeIn from "react-fade-in";
-
-export const ShopItem = ({ product }) => {
-  const { name, rating, price, images, _id, originalPrice, sale, discountType, discount } = product;
+import { clearcurrentProduct } from "../../../actions/appActions";
+import { connect } from "react-redux";
+const ShopItem = ({ product, clearcurrentProduct }) => {
+  const {
+    name,
+    rating,
+    price,
+    images,
+    _id,
+    originalPrice,
+    sale,
+    discountType,
+    discount,
+  } = product;
   const history = useHistory();
   return (
     <FadeIn>
       <div className="mb-3 w-100-mb   p-0">
         <div
           onClick={() => {
+            clearcurrentProduct();
             history.push(`/shop-item/${_id}`);
           }}
           className="thumbnail cursor-pointer shadow-shop"
@@ -30,7 +41,14 @@ export const ShopItem = ({ product }) => {
             {/* <img src={Like} width="17px" alt="like" /> */}
           </ItemDetails>
           <ItemDetails>
-            <Price currency="€" price={price} sale={sale} originalPrice={originalPrice} discount={discount} discountType={discountType} />
+            <Price
+              currency="€"
+              price={price}
+              sale={sale}
+              originalPrice={originalPrice}
+              discount={discount}
+              discountType={discountType}
+            />
             <Ratings rating={rating} />
           </ItemDetails>
         </div>
@@ -38,3 +56,5 @@ export const ShopItem = ({ product }) => {
     </FadeIn>
   );
 };
+
+export default connect(null, { clearcurrentProduct })(ShopItem);

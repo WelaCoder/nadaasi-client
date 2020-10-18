@@ -31,13 +31,13 @@ const SectionCards = ({ title, subtitle, items }) => {
                     <Card.Body>
                       <p
                         className="lead text-center mb-0"
-                        style={{ color: "black" }}
+                        style={{ color: "black", fontWeight: "bold" }}
                       >
                         {desc}
                       </p>
                       <p
                         className="lead text-center mb-0"
-                        style={{ color: "black", fontWeight: "bold" }}
+                        style={{ color: "black" }}
                       >
                         Get a dress that fits and suits you
                       </p>
@@ -59,15 +59,15 @@ const SectionCards = ({ title, subtitle, items }) => {
                     <Card.Body>
                       <p
                         className="lead text-center mb-0"
-                        style={{ color: "black" }}
+                        style={{ color: "black", fontWeight: "bold" }}
                       >
                         {desc}
                       </p>
                       <p
                         className="lead text-center mb-0"
-                        style={{ color: "black", fontWeight: "bold" }}
+                        style={{ color: "black" }}
                       >
-                        All our fabrics are picked/sourced thoughtfully
+                        All our fabrics are picked and sourced thoughtfully
                       </p>
                     </Card.Body>
                   </Card>
